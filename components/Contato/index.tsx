@@ -20,9 +20,12 @@ type Props = {
   transformar : string;
   conversar: string;
   envieMe: string;
+  oportunidades: string;
+  crescimento: string;
+  imediato: string;
 };
 
-function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco, nome, assunto, mensagem, enviar, disponivel, resposta, horas, respondo, pronto, transformar, conversar, envieMe }: Props) {
+function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco, nome, assunto, mensagem, enviar, disponivel, resposta, horas, respondo, pronto, transformar, conversar, envieMe, oportunidades, crescimento, imediato }: Props) {
     return (
         <section className='py-15 px-15'>
             <h1 className='text-center text-5xl mb-8'>{titulo}</h1>
@@ -103,9 +106,9 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
 
                     <div className='flex flex-col gap-2 border border-gray-500/20 p-4 rounded-3xl h-fit w-[22rem]'>
                         <BriefcaseBusiness size={50} className='mx-auto'/>
-                        <h2 className='font-bold text-2xl'>Aberto a Oportunidades</h2>
-                        <p className='text-[#a1a1a1]'>Crescimento profissional</p>
-                        <p className='text-[#a1a1a1]'>Disponível para início imediato (remoto, presencial ou híbrido).</p>
+                        <h2 className='font-bold text-2xl'>{oportunidades}</h2>
+                        <p className='text-[#a1a1a1]'>{crescimento}</p>
+                        <p className='text-[#a1a1a1]'>{imediato}</p>
                     </div>
                 </div>
 

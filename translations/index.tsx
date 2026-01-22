@@ -65,7 +65,10 @@ export const translations = {
       pronto: "Pronto para começar seu projeto?",
       transformar: "Vamos transformar suas ideias em realidade. Entre em contato e vamos discutir como posso ajudar você.",
       conversar: 'Conversar no WhatsApp',
-      envieMe: 'Ou me envie um Email ou entre em contato pelo Linkedin.'
+      envieMe: 'Ou me envie um Email ou entre em contato pelo Linkedin.',
+      oportunidades: 'Aberto a Oportunidades',
+      crescimento: 'Crescimento profissional',
+      imediato: 'Disponível para início imediato (remoto, presencial ou híbrido).'
     }
   },
 
@@ -135,7 +138,10 @@ export const translations = {
       pronto: "Ready to start your project?",
       transformar: "Let's turn your ideas into reality. Get in touch and let's discuss how I can help you.",
       conversar: 'Chat on WhatsApp',
-      envieMe: 'Either send me an email or contact me through LinkedIn.'
+      envieMe: 'Either send me an email or contact me through LinkedIn.',
+      oportunidades: 'Open to Opportunities',
+      crescimento: 'Professional growth',
+      imediato: 'Available for immediate start (remote, in-person, or hybrid).'
     }
   },
 };

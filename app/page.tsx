@@ -38,7 +38,10 @@ export default function Home() {
         pronto={t.contato.pronto}
         transformar={t.contato.transformar}
         conversar={t.contato.conversar}
-        envieMe={t.contato.envieMe}/>
+        envieMe={t.contato.envieMe}
+        oportunidades={t.contato.oportunidades}
+        crescimento={t.contato.crescimento}
+        imediato={t.contato.imediato}/>
       <Rodape />
     </>
   )
