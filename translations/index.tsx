@@ -14,6 +14,7 @@ export const translations = {
         "Estou Graduando Engenharia de Software",
         "Seja Bem-Vindo ao Meu Portfólio!",
       ],
+      sobre: 'Sou um desenvolvedor Full-Stack apaixonado em criar soluções digitais eficientes, escaláveis e com excelente experiência de uso.',
       download: "Download Currículo",
       conversar: "Vamos Conversar",
     },
@@ -33,9 +34,9 @@ export const translations = {
         titulo: 'Ferramentas',
         descricao: 'O essencial para criar, evoluir e entregar soluções digitais.',
       },
-      banco: {
-        titulo: 'Banco de Dados',
-        descricao: 'Gerenciamento de dados seguro e escalável.',
+      agil: {
+        titulo: 'Metodologias Ágeis',
+        descricao: 'Desenvolvimento iterativo com foco em entrega e adaptação.',
       },
       mobile: {
         titulo: 'Mobile',
@@ -68,7 +69,10 @@ export const translations = {
       envieMe: 'Ou me envie um Email ou entre em contato pelo Linkedin.',
       oportunidades: 'Aberto a Oportunidades',
       crescimento: 'Crescimento profissional',
-      imediato: 'Disponível para início imediato (remoto, presencial ou híbrido).'
+      imediato: 'Disponível para início imediato (remoto, presencial ou híbrido).',
+    },
+    rodape: {
+      desenvolvido: '© 2026 Felipe Deangelles. Desenvolvido com Next.js e Tailwind CSS.',
     }
   },
 
@@ -87,6 +91,7 @@ export const translations = {
         "I am studying Software Engineering",
         "Welcome to my Portfolio!",
       ],
+      sobre: 'I am a Full-Stack developer passionate about creating efficient, scalable digital solutions with an excellent user experience.',
       download: "Download Resume",
       conversar: "Let's Talk",
     },
@@ -106,9 +111,9 @@ export const translations = {
         titulo: 'Tools',
         descricao: 'Essential tools to build, evolve and deliver digital solutions.',
       },
-      banco: {
-        titulo: 'Databases',
-        descricao: 'Secure and scalable data management.',
+      agil: {
+        titulo: 'Agile Methodologies',
+        descricao: 'Iterative development focused on delivery and adaptation.',
       },
       mobile: {
         titulo: 'Mobile',
@@ -142,6 +147,9 @@ export const translations = {
       oportunidades: 'Open to Opportunities',
       crescimento: 'Professional growth',
       imediato: 'Available for immediate start (remote, in-person, or hybrid).'
-    }
+    },
+    rodape: {
+      desenvolvido: '© 2026 Felipe Deangelles. Developed with Next.js and Tailwind CSS.',
+    },
   },
 };

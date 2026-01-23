@@ -4,6 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Estilos globais mínimos */
 
 @theme inline {

@@ -4,9 +4,10 @@ import { useEffect, useRef, useState } from 'react'
 import { Download, MessageSquare } from 'lucide-react';
 
 type Props = {
-  texts: string[];
-  downloadText: string;
-  conversarText: string;
+    texts: string[];
+    sobre: string;
+    downloadText: string;
+    conversarText: string;
 };
 
 // const texts = [
@@ -16,7 +17,7 @@ type Props = {
 //     'Seja Bem-Vindo ao Meu Portifólio!'
 // ]
 
-export default function Inico({ texts, downloadText, conversarText }: Props) {
+export default function Inico({ texts, sobre, downloadText, conversarText }: Props) {
     const writeTime = 80
     const removeTime = 1000
 
@@ -62,7 +63,7 @@ export default function Inico({ texts, downloadText, conversarText }: Props) {
     }, [texts])
 
     return (
-        <section className="h-[130vh] flex flex-col items-center justify-center">
+        <section className="h-[120vh] flex flex-col items-center justify-center">
             <div className="h-[160px] flex items-center justify-center">
                 <h1 className="typewriter  text-[var(--cor-texto)]
     text-[4rem]
@@ -88,9 +89,13 @@ export default function Inico({ texts, downloadText, conversarText }: Props) {
     after:animate-[flasher_0.8s_steps(1)_infinite]">{text}</h1>
             </div>
 
+            <div className='flex justify-center text-xl'>
+                <p className='w-[70%] text-center text-[#a1a1a1]'>{sobre}</p>
+            </div>
+
             <div className="mt-10 flex gap-6">
-                <a href="" className='border border-gray-700/30 px-4 py-3 rounded-sm flex items-center gap-2'> <Download /> {downloadText}</a>
-                <a href="" className='border border-gray-300/20 px-4 py-3 rounded-sm bg-[#0d0d0d] flex items-center gap-2 text-white'><MessageSquare /> {conversarText}</a>
+                <a href="" className='border border-gray-700/30 px-4 py-3 rounded-sm flex items-center gap-2 hover:bg-white hover:text-black'> <Download /> {downloadText}</a>
+                <a href="#contato" className='border border-gray-300/20 px-4 py-3 rounded-sm bg-[#1b1b1b] flex items-center gap-2 text-white hover:bg-black'><MessageSquare /> {conversarText}</a>
             </div>
         </section>
     )

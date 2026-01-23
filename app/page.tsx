@@ -10,6 +10,7 @@ import Contato from "@/components/Contato";
 import Habilidades from "@/components/Habilidades";
 import Inicio from "@/components/Inicio";
 import Rodape from "@/components/Rodape";
+import Sobre from '@/components/Sobre';
 
 
 export default function Home() {
@@ -20,8 +21,10 @@ export default function Home() {
     <>
       <Cabecalho text={t.cabecalho} lang={lang} setLang={setLang} />
       <Inicio texts={t.inicio.textos}
+        sobre={t.inicio.sobre}
         downloadText={t.inicio.download}
         conversarText={t.inicio.conversar} />
+      {/* <Sobre/> */}
       <Habilidades t={t.habilidades} />
       <Contato titulo={t.contato.titulo}
         subtitulo={t.contato.subtitulo} descricao={t.contato.descricao} telefone={t.contato.telefone}
@@ -41,8 +44,8 @@ export default function Home() {
         envieMe={t.contato.envieMe}
         oportunidades={t.contato.oportunidades}
         crescimento={t.contato.crescimento}
-        imediato={t.contato.imediato}/>
-      <Rodape />
+        imediato={t.contato.imediato} />
+      <Rodape desenvolvido={t.rodape.desenvolvido} />
     </>
   )
 }

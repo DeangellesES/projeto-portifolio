@@ -2,15 +2,15 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Lato } from "next/font/google"
+import SplashCursor from '../components/SplashCursor'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+
+const lato = Lato ({
+  weight: ['400'],
+  variable: "--font-lato",
+  subsets: ["latin"]
 })
 
 export const metadata: Metadata = {
@@ -26,8 +26,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        className={`${lato.className} antialiased`}
+      ><SplashCursor />
         <ThemeProvider
             attribute="class"
             defaultTheme="system"

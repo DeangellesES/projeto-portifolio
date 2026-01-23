@@ -12,13 +12,13 @@ export function LanguageSwitcher({ lang, setLang }: Props) {
     <div className="flex gap-2 justify-center text-xs">
       <button
         onClick={() => setLang('pt')}
-        className={`px-3 py-1 border rounded ${lang === 'pt' ? 'bg-gray-200' : ''}`}
+        className={`px-3 py-1 border border-gray-300/40 rounded cursor-pointer ${lang === 'pt' ? 'bg-gray-500 text-white border-gray-800' : 'bg-transparent text-gray-400 hover:bg-gray-700 hover:text-white'}`}
       >
         PT
       </button>
       <button
         onClick={() => setLang('en')}
-        className={`px-3 py-1 border rounded ${lang === 'en' ? 'bg-gray-200' : ''}`}
+        className={`px-3 py-1 border border-gray-300/40 rounded cursor-pointer ${lang === 'en' ? 'bg-gray-500 text-white border-gray-800' : 'bg-transparent text-gray-400 hover:bg-gray-700 hover:text-white'}`}
       >
         EN
       </button>

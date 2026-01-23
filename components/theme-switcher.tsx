@@ -8,8 +8,8 @@ const ThemeSwitcher = () => {
     const {theme, setTheme} = useTheme()
 
     return(
-        <Button className="cursor-pointer" onClick={ ()=> setTheme( theme  === 'light' ? 'dark' : 'light' )} >
-            {theme === "light" ? (<Moon className="text-white"/> ): (<Sun />)}
+        <Button className="cursor-pointer h-7 w-7 p-0" onClick={ ()=> setTheme( theme  === 'light' ? 'dark' : 'light' )} >
+            {theme === "light" ? (<Moon className="text-white "/> ): (<Sun />)}
         </Button>
     )
 }

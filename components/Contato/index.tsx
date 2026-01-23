@@ -27,7 +27,7 @@ type Props = {
 
 function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco, nome, assunto, mensagem, enviar, disponivel, resposta, horas, respondo, pronto, transformar, conversar, envieMe, oportunidades, crescimento, imediato }: Props) {
     return (
-        <section className='py-15 px-15'>
+        <section className='py-15 px-15 mt-13' id='contato'>
             <h1 className='text-center text-5xl mb-8'>{titulo}</h1>
             <div className='grid grid-cols-2 gap-20'>
                 <div className='w-[80%]'>
@@ -80,7 +80,7 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                         <label for="menssage" data-i18n="mensagem" className='text-xl font-bold'>{mensagem}</label>
                         <textarea name="message" id="message" rows="6" required className='bg-[#fff] p-2 rounded-md border border-gray-700/20'></textarea>
                        
-                        <a href="" className='text-center bg-white text-black py-3 text-xl font-bold rounded-md mt-2 border border-gray-700/20 flex items-center justify-center gap-2'>{enviar} <Send /></a>
+                        <a href="" className='text-center bg-white text-black py-3 text-xl font-bold rounded-md mt-2 border border-gray-900/20 flex items-center justify-center gap-2 hover:bg-black hover:text-white'>{enviar} <Send /></a>
                     </form>
                 </div>
             </div>

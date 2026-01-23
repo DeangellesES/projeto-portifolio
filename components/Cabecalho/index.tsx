@@ -24,13 +24,13 @@ function Cabecalho({ text, lang, setLang }: Props) {
 
             <nav className="flex justify-center gap-6 py-5 ">
                 <a href="" className="hover:text-[#acacac] text-white">{text?.inicio ?? "..."}</a>
-                <a href="" className="hover:text-[#acacac] text-white">{text?.sobre ?? "..."}</a>
-                <a href="" className="hover:text-[#acacac] text-white">{text?.habilidades ?? "..."}</a>
+                {/* <a href="" className="hover:text-[#acacac] text-white">{text?.sobre ?? "..."}</a> */}
+                <a href="#habilidades" className="hover:text-[#acacac] text-white">{text?.habilidades ?? "..."}</a>
                 <a href="" className="hover:text-[#acacac] text-white">{text?.projetos ?? "..."}</a>
-                <a href="" className="hover:text-[#acacac] text-white">{text?.contato ?? "..."}</a>
+                <a href="#contato" className="hover:text-[#acacac] text-white">{text?.contato ?? "..."}</a>
             </nav>
 
-            <div className='flex items-center'>
+            <div className='flex items-center gap-3'>
                 <ThemeSwitcher />
                 <LanguageSwitcher lang={lang} setLang={setLang} />
             </div>
