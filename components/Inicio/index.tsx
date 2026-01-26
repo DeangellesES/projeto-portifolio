@@ -63,7 +63,7 @@ export default function Inico({ texts, sobre, downloadText, conversarText }: Pro
     }, [texts])
 
     return (
-        <section className="h-[120vh] flex flex-col items-center justify-center">
+        <section className="h-[110vh] flex flex-col items-center justify-center mt-10" id='inicio'>
             <div className="h-[160px] flex items-center justify-center">
                 <h1 className="typewriter  text-[var(--cor-texto)]
     text-[4rem]
@@ -94,8 +94,8 @@ export default function Inico({ texts, sobre, downloadText, conversarText }: Pro
             </div>
 
             <div className="mt-10 flex gap-6">
-                <a href="" className='border border-gray-700/30 px-4 py-3 rounded-sm flex items-center gap-2 hover:bg-white hover:text-black'> <Download /> {downloadText}</a>
-                <a href="#contato" className='border border-gray-300/20 px-4 py-3 rounded-sm bg-[#1b1b1b] flex items-center gap-2 text-white hover:bg-black'><MessageSquare /> {conversarText}</a>
+                <a href="" className='border border-gray-700/30 px-4 py-3 rounded-sm flex items-center gap-2 hover:bg-white hover:text-black transition duration-400'> <Download /> {downloadText}</a>
+                <a href="#contato" className='border border-gray-300/20 px-4 py-3 rounded-sm bg-[#1b1b1b] flex items-center gap-2 text-white hover:bg-black transition duration-300'><MessageSquare /> {conversarText}</a>
             </div>
         </section>
     )

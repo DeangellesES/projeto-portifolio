@@ -4,13 +4,12 @@ import { useState } from 'react';
 import { translations } from '../translations';
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
 
-
 import Cabecalho from "@/components/Cabecalho";
 import Contato from "@/components/Contato";
 import Habilidades from "@/components/Habilidades";
 import Inicio from "@/components/Inicio";
 import Rodape from "@/components/Rodape";
-import Sobre from '@/components/Sobre';
+// import Sobre from '@/components/Sobre';
 
 
 export default function Home() {
