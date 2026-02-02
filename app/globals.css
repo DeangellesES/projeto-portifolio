@@ -226,7 +226,7 @@ html {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-black text-white;
+    @apply bg-background text-foreground;
   }
 }
 
