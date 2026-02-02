@@ -26,7 +26,7 @@ function Cabecalho({ text, lang, setLang }: Props) {
                 <a href="#inicio" className="hover:text-[#acacac] text-white transition duration-300">{text?.inicio ?? "..."}</a>
                 {/* <a href="" className="hover:text-[#acacac] text-white">{text?.sobre ?? "..."}</a> */}
                 <a href="#habilidades" className="hover:text-[#acacac] text-white transition duration-300">{text?.habilidades ?? "..."}</a>
-                <a href="" className="hover:text-[#acacac] text-white transition duration-300">{text?.projetos ?? "..."}</a>
+                <a href="#projetos" className="hover:text-[#acacac] text-white transition duration-300">{text?.projetos ?? "..."}</a>
                 <a href="#contato" className="hover:text-[#acacac] text-white transition duration-300">{text?.contato ?? "..."}</a>
             </nav>
 

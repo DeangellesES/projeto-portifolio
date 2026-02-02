@@ -137,16 +137,16 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                     <p className='text-lg py-5 text-[#a1a1a1]'>{descricao}</p>
                     <div className='grid gap-3'>
                         <div className='flex items-center gap-4 border border-gray-700/20 px-5 py-3 bg-[#0d0d0d]'>
-                            <Mail className='contato-icones' />
+                            <Mail className='contato-icones text-white' />
                             <div className='flex flex-col'>
-                                <h1 className='text-2xl font-bold'>Email</h1>
+                                <h1 className='text-2xl font-bold text-white'>Email</h1>
                                 <p className='text-xl text-[#a1a1a1]'>FelipeDeangelles@hotmail.com</p>
                             </div>
                         </div>
                         <div className='flex items-center gap-4 border border-gray-700/20 px-5 py-3 bg-[#0d0d0d]'>
-                            <Phone className='contato-icones' />
+                            <Phone className='contato-icones text-white' />
                             <div className='flex flex-col'>
-                                <h1 className='text-2xl font-bold'>{telefone}</h1>
+                                <h1 className='text-2xl font-bold text-white'>{telefone}</h1>
                                 <a href="https://api.whatsapp.com/send?phone=5535997631949" className='text-xl text-[#a1a1a1]'>+55 (35) 99763-1949</a>
                             </div>
                         </div>
@@ -159,12 +159,12 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                         </div> */}
                         <div className='flex gap-5 border border-gray-700/20 px-5 py-3 bg-[#0d0d0d]'>
                             <div className='flex items-center gap-4'>
-                                <Linkedin className='contato-icones' />
-                                <a href="https://www.linkedin.com/in/felipe-deangelles-da-silva-lopes/" className='text-2xl font-bold flex items-center gap-3'>Linkedin <ArrowRight /></a>
+                                <Linkedin className='contato-icones text-white' />
+                                <a href="https://www.linkedin.com/in/felipe-deangelles-da-silva-lopes/" target="_blank" className='text-2xl font-bold flex items-center gap-3 text-white'>Linkedin <ArrowRight /></a>
                             </div>
                             <div className='flex items-center gap-4'>
-                                <Github className='contato-icones' />
-                                <a href="https://github.com/DeangellesES" className='text-2xl font-bold flex items-center gap-3'>GitHub <ArrowRight /></a>
+                                <Github className='contato-icones text-white' />
+                                <a href="https://github.com/DeangellesES" target="_blank" className='text-2xl font-bold flex items-center gap-3 text-white'>GitHub <ArrowRight /></a>
                             </div>
                         </div>
 

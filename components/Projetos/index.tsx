@@ -2,7 +2,7 @@ import GradientText from '../GradientText'
 
 function Projetos() {
     return (
-        <section className='h-auto my-20'>
+        <section className='h-auto my-20' id='projetos'>
             <h1 className="text-center text-5xl leading-tight"><GradientText
                 colors={["#160070", "#d1d1d1"]}
                 animationSpeed={4}
