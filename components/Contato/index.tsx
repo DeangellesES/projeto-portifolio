@@ -184,13 +184,13 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                             <input type="text" id="name" name="name" required placeholder='Seu Nome' className='bg-white  text-black p-2 rounded-md border border-gray-700/20' onChange={(e) => setName(e.target.value)} value={name}></input>
 
                             <label className='text-xl font-bold'>Email</label>
-                            <input type="email" id="email" name="email" placeholder='Seu Email' required className='bg-[#fff] text-black p-2 rounded-md border border-gray-700/20' onChange={(e) => setEmail(e.target.value)} value={email}></input>
+                            <input type="email" id="email" name="email" placeholder='Seu Email' required className='bg-white text-black p-2 rounded-md border border-gray-700/20' onChange={(e) => setEmail(e.target.value)} value={email}></input>
 
                             {/* <label className='text-xl font-bold'>{assunto}</label>
                             <input type="text" id="subject" name="subject" required className='bg-[#fff] p-2 rounded-md border border-gray-700/20'></input> */}
 
                             <label className='text-xl font-bold'>{mensagem}</label>
-                            <textarea name="message" id="message" rows="6" placeholder='Escreva uma Mensagem' required className='bg-[#fff] text-black p-2 rounded-md border border-gray-700/20' onChange={(e) => setMessage(e.target.value)} value={message}></textarea>
+                            <textarea name="message" id="message" rows={5} placeholder='Escreva uma Mensagem' required className='bg-white text-black p-2 rounded-md border border-gray-700/20' onChange={(e) => setMessage(e.target.value)} value={message}></textarea>
 
                             <button type="submit" disabled={sending} className='text-center bg-white text-black py-3 text-xl font-bold rounded-md mt-2 border border-gray-900/20 flex items-center justify-center gap-2 hover:bg-black hover:text-white'>{sending ? ('Enviando...') : (
                                 <>

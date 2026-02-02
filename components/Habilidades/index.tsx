@@ -17,12 +17,13 @@ type Props = {
 };
 
 function Habilidades({ t }: Props) {
+    type Translation = Props['t']
 
     const skills = [
         {
             key: 'frontend',
-            title: (t: any) => t.frontend.titulo,
-            description: (t: any) => t.frontend.descricao,
+            title: (t: Translation) => t.frontend.titulo,
+            description: (t: Translation) => t.frontend.descricao,
             icon: PanelsTopLeft,
             iconColor: 'text-blue-500',
             shadowColor: '59,130,246',
@@ -33,8 +34,8 @@ function Habilidades({ t }: Props) {
         },
         {
             key: 'backend',
-            title: (t: any) => t.backend.titulo,
-            description: (t: any) => t.backend.descricao,
+            title: (t: Translation) => t.backend.titulo,
+            description: (t: Translation) => t.backend.descricao,
             icon: CodeXml,
             iconColor: 'text-green-500',
             shadowColor: '34,197,94',
@@ -42,8 +43,8 @@ function Habilidades({ t }: Props) {
         },
         {
             key: 'ferramentas',
-            title: (t: any) => t.ferramentas.titulo,
-            description: (t: any) => t.ferramentas.descricao,
+            title: (t: Translation) => t.ferramentas.titulo,
+            description: (t: Translation) => t.ferramentas.descricao,
             icon: Wrench,
             iconColor: 'text-yellow-500',
             shadowColor: '234,179,8',
@@ -55,8 +56,8 @@ function Habilidades({ t }: Props) {
         },
         {
             key: 'agil',
-            title: (t: any) => t.agil.titulo,
-            description: (t: any) => t.agil.descricao,
+            title: (t: Translation) => t.agil.titulo,
+            description: (t: Translation) => t.agil.descricao,
             icon: BookOpenCheck,
             iconColor: 'text-purple-500',
             shadowColor: '168,85,247',
@@ -64,8 +65,8 @@ function Habilidades({ t }: Props) {
         },
         {
             key: 'mobile',
-            title: (t: any) => t.mobile.titulo,
-            description: (t: any) => t.mobile.descricao,
+            title: (t: Translation) => t.mobile.titulo,
+            description: (t: Translation) => t.mobile.descricao,
             icon: Smartphone,
             iconColor: 'text-red-500',
             shadowColor: '239,68,68',
@@ -73,8 +74,8 @@ function Habilidades({ t }: Props) {
         },
         {
             key: 'desktop',
-            title: (t: any) => t.desktop.titulo,
-            description: (t: any) => t.desktop.descricao,
+            title: (t: Translation) => t.desktop.titulo,
+            description: (t: Translation) => t.desktop.descricao,
             icon: Monitor,
             iconColor: 'text-cyan-500',
             shadowColor: '6,182,212',
