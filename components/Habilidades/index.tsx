@@ -38,7 +38,7 @@ function Habilidades({ t }: Props) {
             icon: CodeXml,
             iconColor: 'text-green-500',
             shadowColor: '34,197,94',
-            items: ['Node.js', 'C#', 'Express', 'Mongoose', 'REST API', 'MySQL', 'MongoDB', 'PostgreSQL'],
+            items: ['Node.js', 'C#', 'Express', 'Mongoose', 'REST API', 'MySQL', 'MongoDB', 'PostgreSQL', 'Prisma ORM'],
         },
         {
             key: 'ferramentas',
@@ -50,7 +50,7 @@ function Habilidades({ t }: Props) {
             items: [
                 'Git', 'GitHub', 'Postman', 'VS Code', 'Visual Studio',
                 'Android Studio', 'MySQL Workbench', 'Oracle VirtualBox',
-                'Trello', 'Astah', 'Docker', 'GPT', 'Lovable',
+                'Trello', 'Astah', 'Docker', 'GPT', 'Lovable', 'Cursor'
             ],
         },
         {
@@ -92,7 +92,7 @@ function Habilidades({ t }: Props) {
             >
                 {t.titulo}
             </GradientText></h1>
-            <p className="text-center text-[#a1a1a1] text-2xl">{t.subtitulo}</p>
+            <p className="text-center text-[#a1a1a1] text-xl">{t.subtitulo}</p>
 
             <div className="grid grid-cols-3 mt-10 justify-center w-full px-10 gap-6">
                 {skills.map((skill) => {

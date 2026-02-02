@@ -9,6 +9,7 @@ import Contato from "@/components/Contato";
 import Habilidades from "@/components/Habilidades";
 import Inicio from "@/components/Inicio";
 import Rodape from "@/components/Rodape";
+import Projetos from '@/components/Projetos';
 // import Sobre from '@/components/Sobre';
 
 
@@ -25,6 +26,7 @@ export default function Home() {
         conversarText={t.inicio.conversar} />
       {/* <Sobre/> */}
       <Habilidades t={t.habilidades} />
+      <Projetos/>
       <Contato titulo={t.contato.titulo}
         subtitulo={t.contato.subtitulo} descricao={t.contato.descricao} telefone={t.contato.telefone}
         localizacao={t.contato.localizacao}

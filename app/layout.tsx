@@ -5,9 +5,11 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Lato } from "next/font/google"
 import SplashCursor from '../components/SplashCursor'
 
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from 'react-toastify'
 
 
-const lato = Lato ({
+const lato = Lato({
   weight: ['400'],
   variable: "--font-lato",
   subsets: ["latin"]
@@ -29,13 +31,14 @@ export default function RootLayout({
         className={`${lato.className} antialiased`}
       ><SplashCursor />
         <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <ToastContainer position="top-right" />
+        </ThemeProvider>
       </body>
     </html>
   )
