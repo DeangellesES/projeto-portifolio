@@ -11,7 +11,7 @@ import { toast } from 'react-toastify'
 
 
 type Props = {
-    titulo: string;
+    titulo: string; 
     subtitulo: string;
     descricao: string;
     telefone: string;
@@ -21,6 +21,7 @@ type Props = {
     assunto: string;
     mensagem: string;
     enviar: string;
+    enviando: string;
     disponivel: string;
     resposta: string;
     horas: string;
@@ -34,7 +35,7 @@ type Props = {
     imediato: string;
 };
 
-function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco, nome, assunto, mensagem, enviar, disponivel, resposta, horas, respondo, pronto, transformar, conversar, envieMe, oportunidades, crescimento, imediato }: Props) {
+function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco, nome, assunto, mensagem, enviar, enviando, disponivel, resposta, horas, respondo, pronto, transformar, conversar, envieMe, oportunidades, crescimento, imediato }: Props) {
     const sectionRef = useRef<HTMLDivElement | null>(null)
     const [isVisible, setIsVisible] = useState(false)
 
@@ -76,8 +77,6 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                 toast.error('Erro ao enviar mensagem 😢')
             })
     }
-
-
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -136,14 +135,14 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                     <h2 className='text-3xl font-bold'>{subtitulo}</h2>
                     <p className='text-lg py-5 text-[#a1a1a1]'>{descricao}</p>
                     <div className='grid gap-3'>
-                        <div className='flex items-center gap-4 border border-gray-700/20 px-5 py-3 bg-[#0d0d0d]'>
+                        <div className='flex items-center gap-4 border border-gray-700/20 px-5 py-3 bg-[#0d0d0d] rounded-sm'>
                             <Mail className='contato-icones text-white' />
                             <div className='flex flex-col'>
                                 <h1 className='text-2xl font-bold text-white'>Email</h1>
                                 <p className='text-xl text-[#a1a1a1]'>FelipeDeangelles@hotmail.com</p>
                             </div>
                         </div>
-                        <div className='flex items-center gap-4 border border-gray-700/20 px-5 py-3 bg-[#0d0d0d]'>
+                        <div className='flex items-center gap-4 border border-gray-700/20 px-5 py-3 bg-[#0d0d0d] rounded-sm'>
                             <Phone className='contato-icones text-white' />
                             <div className='flex flex-col'>
                                 <h1 className='text-2xl font-bold text-white'>{telefone}</h1>
@@ -157,7 +156,7 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                                 <p className='text-xl text-[#a1a1a1]'>{endereco}</p>
                             </div>
                         </div> */}
-                        <div className='flex gap-5 border border-gray-700/20 px-5 py-3 bg-[#0d0d0d]'>
+                        <div className='flex gap-5 border border-gray-700/20 px-5 py-3 bg-[#0d0d0d] rounded-sm'>
                             <div className='flex items-center gap-4'>
                                 <Linkedin className='contato-icones text-white' />
                                 <a href="https://www.linkedin.com/in/felipe-deangelles-da-silva-lopes/" target="_blank" className='text-2xl font-bold flex items-center gap-3 text-white'>Linkedin <ArrowRight /></a>
@@ -192,9 +191,9 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                             <label className='text-xl font-bold'>{mensagem}</label>
                             <textarea name="message" id="message" rows={5} placeholder='Escreva uma Mensagem' required className='bg-white text-black p-2 rounded-md border border-gray-700/20' onChange={(e) => setMessage(e.target.value)} value={message}></textarea>
 
-                            <button type="submit" disabled={sending} className='text-center bg-white text-black py-3 text-xl font-bold rounded-md mt-2 border border-gray-900/20 flex items-center justify-center gap-2 hover:bg-black hover:text-white'>{sending ? ('Enviando...') : (
+                            <button type="submit" disabled={sending} className='text-center bg-white text-black py-3 text-xl font-bold rounded-md mt-2 border border-gray-900/20 flex items-center justify-center gap-2 hover:bg-black hover:text-white transition duration-400 hover:border-white'>{sending ? (enviando) : (
                                 <>
-                                    Enviar Mensagem <Send size={25} />
+                                    {enviar} <Send size={25} />
                                 </>
                             )}</button>
                         </form>

@@ -95,7 +95,7 @@ export default function Inico({ texts, sobre, downloadText, conversarText }: Pro
 
             <div className="mt-10 flex gap-6">
                 <a href="../curriculoportifolio.pdf" target="_blank" className='border border-gray-700/30 px-4 py-3 rounded-sm flex items-center gap-2 hover:bg-white hover:text-black transition duration-400'> <Download /> {downloadText}</a>
-                <a href="#contato" className='border border-gray-300/20 px-4 py-3 rounded-sm bg-[#1b1b1b] flex items-center gap-2 text-white hover:bg-black transition duration-300'><MessageSquare /> {conversarText}</a>
+                <a href="#contato" className='border border-gray-300/20 px-4 py-3 rounded-sm bg-[#1b1b1b] flex items-center gap-2 text-white hover:bg-black transition duration-400'><MessageSquare /> {conversarText}</a>
             </div>
         </section>
     )

@@ -47,6 +47,10 @@ export const translations = {
         descricao: 'Transformando ideias em aplicações desktop sólidas e funcionais.',
       },
     },
+    projetos : {
+      titulo: "Projetos",
+      subtitulo: "Ideias que viraram código, telas que ganham vida e experiências que funcionam de verdade. Aqui você encontra o que gosto de fazer transformar ideias em soluções impactantes.",
+    },
     contato: {
       titulo: 'Vamos Conversar',
       subtitulo: 'Entre em Contato',
@@ -59,6 +63,7 @@ export const translations = {
       assunto: 'Assunto',
       mensagem: "Mensagem",
       enviar: "Enviar Mensagem",
+      enviando: "Enviando ...",
       disponivel: 'Disponível para novos projetos',
       resposta: "Tempo de Resposta",
       horas: "Até 24 horas",
@@ -124,6 +129,10 @@ export const translations = {
         descricao: 'Turning ideas into solid and functional desktop applications.',
       },
     },
+    projetos : {
+      titulo: "Projects",
+      subtitulo: "Ideas turned into code, screens brought to life, and experiences that truly work. Here you'll find what I love to do: transforming ideas into impactful solutions.",
+    },
     contato: {
       titulo: 'Let’s Talk',
       subtitulo: 'Get in touch',
@@ -136,6 +145,7 @@ export const translations = {
       assunto: 'Subject',
       mensagem: "Message",
       enviar: "Send Message",
+      enviando: "Sending ...",
       disponivel: 'Available for new projects',
       resposta: "Response Time",
       horas: "Up to 24 hours",

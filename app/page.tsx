@@ -26,7 +26,9 @@ export default function Home() {
         conversarText={t.inicio.conversar} />
       {/* <Sobre/> */}
       <Habilidades t={t.habilidades} />
-      <Projetos/>
+      <Projetos titulo={t.projetos.titulo}
+        subtitulo={t.projetos.subtitulo}
+      />
       <Contato titulo={t.contato.titulo}
         subtitulo={t.contato.subtitulo} descricao={t.contato.descricao} telefone={t.contato.telefone}
         localizacao={t.contato.localizacao}
@@ -35,6 +37,7 @@ export default function Home() {
         assunto={t.contato.assunto}
         mensagem={t.contato.mensagem}
         enviar={t.contato.enviar}
+        enviando={t.contato.enviando}
         disponivel={t.contato.disponivel}
         resposta={t.contato.resposta}
         horas={t.contato.horas}

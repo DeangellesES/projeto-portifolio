@@ -1,5 +1,4 @@
 import { PanelsTopLeft, CodeXml, BookOpenCheck, Wrench, Smartphone, Monitor } from 'lucide-react';
-import './habilidades.css'
 
 import GradientText from '../GradientText'
 
@@ -51,7 +50,7 @@ function Habilidades({ t }: Props) {
             items: [
                 'Git', 'GitHub', 'Postman', 'VS Code', 'Visual Studio',
                 'Android Studio', 'MySQL Workbench', 'Oracle VirtualBox',
-                'Trello', 'Astah', 'Docker', 'GPT', 'Lovable', 'Cursor'
+                'Trello', 'Astah', 'Docker', 'GPT', 'Lovable', 'Cursor', 'OpenCode'
             ],
         },
         {
@@ -85,7 +84,7 @@ function Habilidades({ t }: Props) {
 
 
     return (
-        <section className='py-4 px-4' id='habilidades'>
+        <section className='-mt-5 px-4' id='habilidades'>
             <h1 className="text-center text-5xl"><GradientText
                 colors={["#160070", "#d1d1d1"]}
                 animationSpeed={4}
