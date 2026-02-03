@@ -10,8 +10,8 @@
 
 <h2>🚀 Tecnologias Utilizadas</h2>
 <ul>
-  <li>Tailwind</li>
-  <li><b>JavaScript</b> - Next - TypeScript - </li>
+  <li>TailwindCSS</li>
+  <li><b>JavaScript</b> - Next - TypeScript</li>
 </ul>
 
 <h2>✨ Funcionalidades</h2>
