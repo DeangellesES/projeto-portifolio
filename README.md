@@ -26,7 +26,8 @@ Portfólio moderno e escalável para apresentar projetos e acompanhar minha evol
   <li>Mostrar Minhas Habilidades</li>
   <li>Mostrar Alguns Projetos Relevantes</li>
   <li>Mostrar Meus Contatos</li>
-  <li>Mostrar Formações e Experiências</li>
+  <li>Mostrar meu currículo</li>
+  <!-- <li>Mostrar Formações e Experiências</li> -->
 </ul>
 
 
