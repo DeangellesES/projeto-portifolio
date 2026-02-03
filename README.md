@@ -8,7 +8,9 @@
 
 A aplicação foi construída com foco em performance, design moderno e boa experiência do usuário, reunindo informações como projetos realizados, tecnologias utilizadas e formas de contato.
 
-O objetivo deste projeto é centralizar meu trabalho profissional em um só lugar e servir como vitrine para oportunidades, estudos e evolução contínua na área de desenvolvimento de software.</p>
+O objetivo deste projeto é centralizar meu trabalho profissional em um só lugar e servir como vitrine para oportunidades, estudos e evolução contínua na área de desenvolvimento de software.
+
+Portfólio moderno e escalável para apresentar projetos e acompanhar minha evolução como desenvolvedor.</p>
 
 <h3>💻<a href="https://portifolio-pessoal-deangelles.vercel.app/"> Acessar Site do Projeto Aqui</a></h3>
 
