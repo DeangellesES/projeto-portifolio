@@ -4,15 +4,14 @@
 
 <h2>📌 Sobre o Projeto</h2>
 
-<p>Este projeto é o meu portifólio pessoal no qual tem todas as informações pertinentes a mim, Onde demonstros minhas habilidades, alguns projetos, formações, experiências e os meus contatos. E uma breve apresentação minha para o mercado.</p>
+<p>Este projeto é o meu portifólio pessoal no qual tem todas as informações pertinentes a mim, onde demonstro minhas habilidades, alguns projetos, formações, experiências e os meus contatos. E uma breve apresentação minha para o mercado.</p>
 
-<h3>💻<a href="https://deangelleses.github.io/portifolio/"> Acessar Site do Projeto Aqui</a></h3>
+<h3>💻<a href="https://portifolio-pessoal-deangelles.vercel.app/"> Acessar Site do Projeto Aqui</a></h3>
 
 <h2>🚀 Tecnologias Utilizadas</h2>
 <ul>
-  <li><b>HTML</b></li>
-  <li><b>CSS</b> - Responsivo - Sass</li>
-  <li><b>JavaScript</b> - vanilla</li>
+  <li>Tailwind</li>
+  <li><b>JavaScript</b> - Next - TypeScript - </li>
 </ul>
 
 <h2>✨ Funcionalidades</h2>
