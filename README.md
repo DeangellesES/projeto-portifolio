@@ -33,7 +33,7 @@ Portfólio moderno e escalável para apresentar projetos e acompanhar minha evol
 <h2>⚙️ Detalhes Técnicos</h2>
 <ul>
   <li>biblioteca de icones lucide.dev</li>
-  <li>font do google fonts</li>
+  <li>font Lato do google fonts</li>
   <li>biblioteca de components prontos shadcn</li>
   <li>temas de fundo com next-themes</li>
   <li>tailwind para estilização</li>
