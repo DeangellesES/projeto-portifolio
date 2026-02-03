@@ -30,4 +30,18 @@ Portfólio moderno e escalável para apresentar projetos e acompanhar minha evol
   <!-- <li>Mostrar Formações e Experiências</li> -->
 </ul>
 
-
+<h2>⚙️ Detalhes Técnicos</h2>
+<ul>
+  <li>biblioteca de icones lucide.dev</li>
+  <li>font do google fonts</li>
+  <li>biblioteca de components prontos shadcn</li>
+  <li>temas de fundo com next-themes</li>
+  <li>tailwind para estilização</li>
+  <li>aplicação toda traduzida para inglês</li>
+  <li>curriculo dentro do projeto na pasta public</li>
+  <li>bordas com efeito de parecer mais fina que 1px</li>
+  <li>habilidades colocadas em um array de objetos e renderizada dinamicamente na tela pelo método map()</li>
+  <li>animações e efeitos nos titulos e bordas</li>
+  <li>efeito no mouse com shadcn</li>
+  <li>funcionalidade de enviar email diretamente em um email com o serviço EmailJs</li>
+</ul>
