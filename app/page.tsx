@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { translations } from '../translations';
-import { LanguageSwitcher } from '../components/LanguageSwitcher';
+// import { LanguageSwitcher } from '../components/LanguageSwitcher';
 
 import Cabecalho from "@/components/Cabecalho";
 import Contato from "@/components/Contato";
@@ -12,9 +12,9 @@ import Rodape from "@/components/Rodape";
 import Projetos from '@/components/Projetos';
 // import Sobre from '@/components/Sobre';
 
-
 export default function Home() {
-  const [lang, setLang] = useState<'pt' | 'en'>('pt'); // idioma inicial
+  // hooks para a tradução
+  const [lang, setLang] = useState<'pt' | 'en'>('pt'); //idioma inicial
   const t = translations[lang];
 
   return (
@@ -34,8 +34,11 @@ export default function Home() {
         localizacao={t.contato.localizacao}
         endereco={t.contato.endereco}
         nome={t.contato.nome}
+        placeholderNome={t.contato.placeholderNome}
+        placeholderEmail={t.contato.placeholderEmail}
         assunto={t.contato.assunto}
         mensagem={t.contato.mensagem}
+        placeholderMensagem={t.contato.placeholderMensagem}
         enviar={t.contato.enviar}
         enviando={t.contato.enviando}
         disponivel={t.contato.disponivel}

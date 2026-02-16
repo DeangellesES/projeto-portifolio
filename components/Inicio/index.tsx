@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Download, MessageSquare } from 'lucide-react';
 
+// tradução
 type Props = {
     texts: string[];
     sobre: string;
@@ -18,6 +19,7 @@ type Props = {
 // ]
 
 export default function Inico({ texts, sobre, downloadText, conversarText }: Props) {
+    // funcao escrevendo e apagando na tela
     const writeTime = 80
     const removeTime = 1000
 
@@ -63,42 +65,89 @@ export default function Inico({ texts, sobre, downloadText, conversarText }: Pro
     }, [texts])
 
     return (
-        <section className="h-[110vh] flex flex-col items-center justify-center mt-10" id='inicio'>
-            <div className="h-[160px] flex items-center justify-center">
-                <h1 className="typewriter  text-[var(--cor-texto)]
-    text-[4rem]
-    w-[80%]
-    mx-auto
-    mt-[-7rem]
+        <section
+            id="inicio"
+            className="
+      min-h-screen
+      flex flex-col items-center justify-center
+      px-4
+      pt-24 sm:pt-28
+      md:pt-32
+    "
+        >
+            {/* TÍTULO */}
+            <div className="flex items-center justify-center">
+                <h1
+                    className="
+          typewriter
+    text-[var(--cor-texto)]
+    text-6xl sm:text-4xl lg:text-6xl
+    max-w-[22ch] sm:max-w-[26ch] md:max-w-[30ch]
     text-center
     font-bold
+    leading-[1.15]
+    mx-auto
     relative
-    leading-[1.2]
+    [text-wrap:balance]
     [text-shadow:0_0_8px_rgba(0,0,0,0.35)]
     dark:[text-shadow:0_0_20px_rgba(255,255,255,0.7)]
-    relative
-
     after:content-['']
     after:inline-block
-    after:w-[5px]
+    after:w-[4px]
     after:h-[1em]
-    after:ml-[6px]
+    after:ml-1
     after:align-bottom
-
     after:bg-gray-400
-    after:animate-[flasher_0.8s_steps(1)_infinite]">{text}</h1>
+    after:animate-[flasher_0.8s_steps(1)_infinite]
+        "
+                >
+                    {text}
+                </h1>
             </div>
 
-            <div className='flex justify-center text-xl'>
-                <p className='w-[70%] text-center text-[#a1a1a1]'>{sobre}</p>
-            </div>
+            {/* SUBTÍTULO */}
+            <div className="mt-6 flex justify-center">
+  <p className="max-w-xl text-center text-base sm:text-lg md:text-xl text-[#a1a1a1]">
+    {sobre}
+  </p>
+</div>
 
-            <div className="mt-10 flex gap-6">
-                <a href="../curriculoportifolio.pdf" target="_blank" className='border border-gray-700/30 px-4 py-3 rounded-sm flex items-center gap-2 hover:bg-white hover:text-black transition duration-400'> <Download /> {downloadText}</a>
-                <a href="#contato" className='border border-gray-300/20 px-4 py-3 rounded-sm bg-[#1b1b1b] flex items-center gap-2 text-white hover:bg-black transition duration-400'><MessageSquare /> {conversarText}</a>
+            {/* BOTÕES */}
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-6">
+                <a
+                    href="../curriculoportifolio.pdf"
+                    target="_blank"
+                    className="
+          border border-gray-700/30
+          px-4 py-3
+          rounded-sm
+          flex items-center justify-center gap-2
+          hover:bg-white hover:text-black
+          transition
+        "
+                >
+                    <Download />
+                    {downloadText}
+                </a>
+
+                <a
+                    href="#contato"
+                    className="
+          border border-gray-300/20
+          px-4 py-3
+          rounded-sm
+          bg-[#1b1b1b]
+          flex items-center justify-center gap-2
+          text-white
+          hover:bg-black
+          transition
+        "
+                >
+                    <MessageSquare />
+                    {conversarText}
+                </a>
             </div>
         </section>
-    )
-
+    );
 
 }

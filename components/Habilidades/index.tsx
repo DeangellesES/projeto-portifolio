@@ -18,6 +18,7 @@ type Props = {
 function Habilidades({ t }: Props) {
     type Translation = Props['t']
 
+    // array de objetos habilidades
     const skills = [
         {
             key: 'frontend',
@@ -28,7 +29,7 @@ function Habilidades({ t }: Props) {
             shadowColor: '59,130,246',
             items: [
                 'HTML5', 'CSS3', 'React.js', 'Next.js', 'Sass', 'Tailwind CSS',
-                'Bootstrap', 'Shadcn', 'JavaScript', 'TypeScript', 'Styled-Compnents'
+                'Bootstrap', 'Shadcn', 'JavaScript', 'TypeScript', 'Styled-Compnents', 'Vite'
             ],
         },
         {
@@ -82,9 +83,8 @@ function Habilidades({ t }: Props) {
         },
     ];
 
-
     return (
-        <section className='-mt-5 px-4' id='habilidades'>
+        <section className='mt-10 px-4' id='habilidades'>
             <h1 className="text-center text-5xl"><GradientText
                 colors={["#160070", "#d1d1d1"]}
                 animationSpeed={4}

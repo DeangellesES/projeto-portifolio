@@ -1,6 +1,9 @@
-import { Linkedin, Github, Sun } from 'lucide-react';
-import ThemeSwitcher from '../theme-switcher';
-import { LanguageSwitcher } from '../LanguageSwitcher';
+"use client";
+
+import { useState } from "react";
+import { Linkedin, Github, Menu, X } from "lucide-react";
+import ThemeSwitcher from "../theme-switcher";
+import { LanguageSwitcher } from "../LanguageSwitcher";
 
 type Props = {
     text: {
@@ -9,33 +12,104 @@ type Props = {
         habilidades: string;
         projetos: string;
         contato: string;
-    }; 
-    lang: 'pt' | 'en';
-    setLang: React.Dispatch<React.SetStateAction<'pt' | 'en'>>;
+    };
+    lang: "pt" | "en";
+    setLang: React.Dispatch<React.SetStateAction<"pt" | "en">>;
 };
 
 function Cabecalho({ text, lang, setLang }: Props) {
+    const [open, setOpen] = useState(false);
+
     return (
-        <header className="border-b border-gray-300/20 fixed top-0 left-0 w-full bg-black/60 backdrop-blur-md z-10 flex items-center justify-between px-20">
-            <div className='flex gap-3'>
-                <a href="https://www.linkedin.com/in/felipe-deangelles-da-silva-lopes/" className='hover:text-[#002080] text-[#a1a1a1] transition duration-300' target="_blank"><Linkedin /></a>
-                <a href="https://github.com/DeangellesES" className='text-[#a1a1a1] hover:text-[#fff] transition duration-300' target="_blank"><Github /></a>
+        <header className="fixed top-0 left-0 w-full z-10 bg-black/60 backdrop-blur-md border-b border-gray-300/20">
+            <div className="flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 h-14 sm:h-16">
+
+                {/* ESQUERDA – linkedin e github */}
+                <div className="flex gap-3">
+                    <a
+                        href="https://www.linkedin.com/in/felipe-deangelles-da-silva-lopes/"
+                        className="text-[#a1a1a1] hover:text-[#002080] transition"
+                        target="_blank"
+                    >
+                        <Linkedin />
+                    </a>
+
+                    <a
+                        href="https://github.com/DeangellesES"
+                        className="text-[#a1a1a1] hover:text-white transition"
+                        target="_blank"
+                    >
+                        <Github />
+                    </a>
+                </div>
+
+                {/* MEIO – links (desktop) */}
+                <nav className="hidden md:flex gap-6 text-white">
+                    <a href="#inicio" className="hover:text-[#acacac] transition">
+                        {text.inicio}
+                    </a>
+                    <a href="#habilidades" className="hover:text-[#acacac] transition">
+                        {text.habilidades}
+                    </a>
+                    <a href="#projetos" className="hover:text-[#acacac] transition">
+                        {text.projetos}
+                    </a>
+                    <a href="#contato" className="hover:text-[#acacac] transition">
+                        {text.contato}
+                    </a>
+                </nav>
+
+                {/* DIREITA – tema, idioma e hamburger */}
+                <div className="flex items-center gap-3">
+                    <ThemeSwitcher />
+                    <LanguageSwitcher lang={lang} setLang={setLang} />
+
+                    {/* botão hamburger (mobile) */}
+                    <button
+                        className="md:hidden text-white"
+                        onClick={() => setOpen(!open)}
+                        aria-label="Abrir menu"
+                    >
+                        {open ? <X /> : <Menu />}
+                    </button>
+                </div>
             </div>
 
-            <nav className="flex justify-center gap-6 py-5 ">
-                <a href="#inicio" className="hover:text-[#acacac] text-white transition duration-300">{text?.inicio ?? "..."}</a>
-                {/* <a href="" className="hover:text-[#acacac] text-white">{text?.sobre ?? "..."}</a> */}
-                <a href="#habilidades" className="hover:text-[#acacac] text-white transition duration-300">{text?.habilidades ?? "..."}</a>
-                <a href="#projetos" className="hover:text-[#acacac] text-white transition duration-300">{text?.projetos ?? "..."}</a>
-                <a href="#contato" className="hover:text-[#acacac] text-white transition duration-300">{text?.contato ?? "..."}</a>
+            {/* MENU MOBILE – apenas links do meio */}
+            <nav
+                className={`
+          md:hidden
+          bg-black/90 backdrop-blur-md
+          border-t border-gray-300/20
+          transition-all duration-300
+          ${open ? "max-h-64 opacity-100" : "max-h-0 opacity-0 overflow-hidden"}
+        `}
+            >
+                <ul className="flex flex-col items-center gap-5 py-6 text-white">
+                    <li>
+                        <a href="#inicio" onClick={() => setOpen(false)}>
+                            {text.inicio}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#habilidades" onClick={() => setOpen(false)}>
+                            {text.habilidades}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#projetos" onClick={() => setOpen(false)}>
+                            {text.projetos}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contato" onClick={() => setOpen(false)}>
+                            {text.contato}
+                        </a>
+                    </li>
+                </ul>
             </nav>
-
-            <div className='flex items-center gap-3'>
-                <ThemeSwitcher />
-                <LanguageSwitcher lang={lang} setLang={setLang} />
-            </div>
         </header>
-    )
+    );
 }
 
-export default Cabecalho
+export default Cabecalho;

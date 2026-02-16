@@ -18,8 +18,11 @@ type Props = {
     localizacao: string;
     endereco: string;
     nome: string;
+    placeholderNome: string;
+    placeholderEmail: string;
     assunto: string;
     mensagem: string;
+    placeholderMensagem: string;
     enviar: string;
     enviando: string;
     disponivel: string;
@@ -35,13 +38,14 @@ type Props = {
     imediato: string;
 };
 
-function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco, nome, assunto, mensagem, enviar, enviando, disponivel, resposta, horas, respondo, pronto, transformar, conversar, envieMe, oportunidades, crescimento, imediato }: Props) {
+function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco, nome, placeholderNome, placeholderEmail, assunto, mensagem, placeholderMensagem, enviar, enviando, disponivel, resposta, horas, respondo, pronto, transformar, conversar, envieMe, oportunidades, crescimento, imediato }: Props) {
     const sectionRef = useRef<HTMLDivElement | null>(null)
     const [isVisible, setIsVisible] = useState(false)
 
     const bottomRef = useRef<HTMLDivElement | null>(null)
     const [showBottom, setShowBottom] = useState(false)
 
+    // função de enviar mensagem por email com EmailJS
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
@@ -78,10 +82,10 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
             })
     }
 
+    // funçao para aparecer e desaparecer da tela
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                // true quando entra, false quando sai
                 setIsVisible(entry.isIntersecting)
             },
             {
@@ -114,22 +118,21 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
 
     return (
         <section className='py-15 px-15 mt-15 overflow-hidden ' id='contato' ref={sectionRef}>
-            <h1 className={`
-    text-center text-5xl mb-15
-    transition-all
-    duration-700
-    ease-out
-    ${isVisible
+
+            <h1 className={`text-center text-5xl mb-15 transition-all duration-700 ease-out
+                ${isVisible
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-20'
                 }
-  `}><GradientText
+                `}><GradientText
                     colors={["#160070", "#d1d1d1"]}
                     animationSpeed={4}
                     showBorder={false}
                 >
                     {titulo}
                 </GradientText></h1>
+            
+            {/* contatos parte esquerda */}
             <div className='grid grid-cols-2 gap-20'>
                 <div className={` w-[80%] transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'} `}>
                     <h2 className='text-3xl font-bold'>{subtitulo}</h2>
@@ -170,6 +173,7 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                     </div>
                 </div>
 
+                {/* formulario contato*/}
                 <div className={`transition-all duration-700 ease-out delay-150 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
                     <ElectricBorder
                         color="#000080"
@@ -180,16 +184,16 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                     >
                         <form action="" className='border border-gray-700/40 p-8 rounded-2xl flex flex-col gap-2' onSubmit={sendEmail}>
                             <label className='text-xl font-bold'>{nome}</label>
-                            <input type="text" id="name" name="name" required placeholder='Seu Nome' className='bg-white  text-black p-2 rounded-md border border-gray-700/20' onChange={(e) => setName(e.target.value)} value={name}></input>
+                            <input type="text" id="name" name="name" required placeholder={placeholderNome} className='bg-white  text-black p-2 rounded-md border border-gray-700/20' onChange={(e) => setName(e.target.value)} value={name}></input>
 
                             <label className='text-xl font-bold'>Email</label>
-                            <input type="email" id="email" name="email" placeholder='Seu Email' required className='bg-white text-black p-2 rounded-md border border-gray-700/20' onChange={(e) => setEmail(e.target.value)} value={email}></input>
+                            <input type="email" id="email" name="email" placeholder={placeholderEmail} required className='bg-white text-black p-2 rounded-md border border-gray-700/20' onChange={(e) => setEmail(e.target.value)} value={email}></input>
 
                             {/* <label className='text-xl font-bold'>{assunto}</label>
                             <input type="text" id="subject" name="subject" required className='bg-[#fff] p-2 rounded-md border border-gray-700/20'></input> */}
 
                             <label className='text-xl font-bold'>{mensagem}</label>
-                            <textarea name="message" id="message" rows={5} placeholder='Escreva uma Mensagem' required className='bg-white text-black p-2 rounded-md border border-gray-700/20' onChange={(e) => setMessage(e.target.value)} value={message}></textarea>
+                            <textarea name="message" id="message" rows={5} placeholder={placeholderMensagem} required className='bg-white text-black p-2 rounded-md border border-gray-700/20' onChange={(e) => setMessage(e.target.value)} value={message}></textarea>
 
                             <button type="submit" disabled={sending} className='text-center bg-white text-black py-3 text-xl font-bold rounded-md mt-2 border border-gray-900/20 flex items-center justify-center gap-2 hover:bg-black hover:text-white transition duration-400 hover:border-white'>{sending ? (enviando) : (
                                 <>
@@ -215,7 +219,8 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                     </form> */}
                 </div>
             </div>
-
+            
+            {/* parte de baixo contatos */}
             <div ref={bottomRef}
                 className={`mt-10 transform transition-all duration-[3400ms] ease-[cubic-bezier(0.22,1,0.36,1)]
                 ${showBottom
