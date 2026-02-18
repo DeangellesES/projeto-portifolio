@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import GradientText from '../GradientText'
 import Image from "next/image"
 import { SquareArrowOutUpRight, Github } from 'lucide-react';
@@ -37,7 +37,7 @@ const projetos = [
             "Site informacional desenvolvido para psicóloga, apresentando áreas de atuação, abordagem terapêutica, horários e formas de contato.",
         categoria: "front",
         imagem: "/psicologia.png",
-        tecnologias: ["React", "Styled-Components","TypeScript", "Vite"],
+        tecnologias: ["React", "Styled-Components", "TypeScript", "Vite"],
         site: "https://site-psicologia-sigma.vercel.app/",
         codigo: "https://github.com/DeangellesES/site_psicologia-React-TypeScript-Vite",
     },
@@ -56,42 +56,82 @@ const projetos = [
 
 
 function Projetos({ titulo, subtitulo }: Props) {
-
+    const sectionRef = useRef<HTMLDivElement | null>(null)
+    const [isVisible, setIsVisible] = useState(false)
     const [categoria, setCategoria] = useState<"front" | "back" | "full">("front")
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting)
+            },
+            { threshold: 0.3 }
+        )
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current)
+        }
+
+        return () => observer.disconnect()
+    }, [])
 
     const projetosFiltrados = projetos.filter(
         (projeto) => projeto.categoria === categoria
     )
 
-    return (
-        <section className='h-auto my-28' id='projetos'>
-            <h1 className="text-center text-5xl leading-tight"><GradientText
-                colors={["#160070", "#d1d1d1"]}
-                animationSpeed={4}
-                showBorder={false}
-            >
-                {titulo}
-            </GradientText></h1>
-            <p className="m-auto text-center text-[#a1a1a1] text-xl w-[60%]">{subtitulo}</p>
 
-            <div className='flex gap-5 pl-40 mt-10'>
+    return (
+        <section
+            ref={sectionRef}
+            className='h-auto my-28 overflow-hidden'
+            id='projetos'
+        >
+            <h1
+                className={`text-center text-5xl leading-tight transition-all duration-700 ease-out
+  ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
+  `}
+            >
+                <GradientText
+                    colors={["#160070", "#d1d1d1"]}
+                    animationSpeed={4}
+                    showBorder={false}
+                >
+                    {titulo}
+                </GradientText>
+            </h1>
+            <p
+                className={`m-auto text-center text-[#a1a1a1] text-xl w-[60%] transition-all duration-700 ease-out delay-150
+  ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+  `}
+            >
+                {subtitulo}
+            </p>
+
+            <div
+                className={`flex gap-5 pl-40 mt-10 transition-all duration-700 ease-out
+  ${isVisible
+                        ? "opacity-100 translate-x-0"
+                        : "opacity-0 -translate-x-20"
+                    }
+  `}
+            >
                 <button
                     onClick={() => setCategoria("front")}
-                    className={`border p-3 ${categoria === "front" ? "bg-white text-black" : "border-gray-300/20"}`}
+                    className={`border px-3 rounded-xl text-sm font-bold cursor-pointer ${categoria === "front" ? "bg-white text-black" : "border-gray-300/20"}`}
                 >
                     Front End
                 </button>
 
                 <button
                     onClick={() => setCategoria("back")}
-                    className={`border p-3 ${categoria === "back" ? "bg-white text-black" : "border-gray-300/20"}`}
+                    className={`border p-3 rounded-xl text-sm font-bold cursor-pointer ${categoria === "back" ? "bg-white text-black" : "border-gray-300/20"}`}
                 >
                     Back End
                 </button>
 
                 <button
                     onClick={() => setCategoria("full")}
-                    className={`border p-3 ${categoria === "full" ? "bg-white text-black" : "border-gray-300/20"}`}
+                    className={`border p-3 rounded-xl text-sm font-bold cursor-pointer ${categoria === "full" ? "bg-white text-black" : "border-gray-300/20"}`}
                 >
                     Full Stack
                 </button>
@@ -101,7 +141,14 @@ function Projetos({ titulo, subtitulo }: Props) {
                 {projetosFiltrados.map((projeto, index) => (
                     <div
                         key={index}
-                        className='border border-gray-300/20 rounded-2xl w-[35%] bg-[#0d0d0d] '
+                        style={{ transitionDelay: `${index * 150}ms` }}
+                        className={`group border border-gray-300/20 rounded-2xl w-[35%] bg-[#0d0d0d]
+transition-all duration-300 ease-out
+${isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "opacity-0 translate-y-20"
+                            }
+`}
                     >
                         <div className='h-57 overflow-hidden rounded-t-2xl'>
                             <Image
@@ -109,12 +156,12 @@ function Projetos({ titulo, subtitulo }: Props) {
                                 alt={projeto.titulo}
                                 width={300}
                                 height={100}
-                                className='w-full h-full object-cover object-top'
+                                className='w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110'
                             />
                         </div>
 
                         <div className='p-3'>
-                            <h1 className='text-2xl'>{projeto.titulo}</h1>
+                            <h1 className='text-2xl text-white'>{projeto.titulo}</h1>
 
                             <p className='py-3 text-[#a1a1a1]'>
                                 {projeto.descricao}
@@ -135,7 +182,7 @@ function Projetos({ titulo, subtitulo }: Props) {
                                 <a
                                     href={projeto.site}
                                     target="_blank"
-                                    className='flex gap-2 items-center'
+                                    className='flex gap-2 items-center text-white'
                                 >
                                     Ver Site <SquareArrowOutUpRight size={15} />
                                 </a>
@@ -143,7 +190,7 @@ function Projetos({ titulo, subtitulo }: Props) {
                                 <a
                                     href={projeto.codigo}
                                     target="_blank"
-                                    className='flex gap-2 items-center'
+                                    className='flex gap-2 items-center text-white'
                                 >
                                     Código <Github size={15} />
                                 </a>
@@ -151,7 +198,15 @@ function Projetos({ titulo, subtitulo }: Props) {
                         </div>
                     </div>
                 ))}
-                <div className="w-full flex justify-center">
+                <div
+                    className={`w-full flex justify-center 
+  transition-all duration-1500 ease-out delay-500
+  ${isVisible
+                            ? "opacity-100 translate-x-0"
+                            : "opacity-0 translate-x-20"
+                        }
+  `}
+                >
                     <a
                         href='https://github.com/DeangellesES'
                         target="_blank"

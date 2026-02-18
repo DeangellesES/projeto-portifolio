@@ -8,10 +8,11 @@ import GradientText from '../GradientText'
 import ElectricBorder from '../ElectricBorder'
 import emailjs from "@emailjs/browser"
 import { toast } from 'react-toastify'
+import DecryptedText from '../DecryptedText'
 
 
 type Props = {
-    titulo: string; 
+    titulo: string;
     subtitulo: string;
     descricao: string;
     telefone: string;
@@ -117,7 +118,7 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
 
 
     return (
-        <section className='py-15 px-15 mt-15 overflow-hidden ' id='contato' ref={sectionRef}>
+        <section className='pb-15 px-15 overflow-hidden -mt-25' id='contato' ref={sectionRef}>
 
             <h1 className={`text-center text-5xl mb-15 transition-all duration-700 ease-out
                 ${isVisible
@@ -131,11 +132,20 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                 >
                     {titulo}
                 </GradientText></h1>
-            
+
             {/* contatos parte esquerda */}
             <div className='grid grid-cols-2 gap-20'>
                 <div className={` w-[80%] transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'} `}>
-                    <h2 className='text-3xl font-bold'>{subtitulo}</h2>
+                    <h2 className='text-3xl font-bold'>
+                        <DecryptedText
+                            text={subtitulo}
+                            animateOn="hover"
+                            revealDirection="start"
+                            speed={80}
+                            maxIterations={15}
+                            className="text-white"
+                        />
+                    </h2>
                     <p className='text-lg py-5 text-[#a1a1a1]'>{descricao}</p>
                     <div className='grid gap-3'>
                         <div className='flex items-center gap-4 border border-gray-700/20 px-5 py-3 bg-[#0d0d0d] rounded-sm'>
@@ -219,7 +229,7 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                     </form> */}
                 </div>
             </div>
-            
+
             {/* parte de baixo contatos */}
             <div ref={bottomRef}
                 className={`mt-10 transform transition-all duration-[3400ms] ease-[cubic-bezier(0.22,1,0.36,1)]
