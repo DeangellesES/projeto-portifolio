@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import GradientText from '../GradientText'
 import Image from "next/image"
 import { SquareArrowOutUpRight, Github } from 'lucide-react';
@@ -7,7 +10,59 @@ type Props = {
     subtitulo: string;
 }
 
+const projetos = [
+    {
+        titulo: "Site para uma Oficina Mecânica",
+        descricao:
+            "Site informacional para oficina mecânica, apresentando serviços, processos, localização, horários, preços e perguntas frequentes.",
+        categoria: "front",
+        imagem: "/oficina-mecanica0.png",
+        tecnologias: ["React", "Styled-Components", "Vite"],
+        site: "https://site-oficina-mecanica.vercel.app/",
+        codigo: "https://github.com/DeangellesES/site_oficina_mecanica-ReactJS-Vite",
+    },
+    {
+        titulo: "Site para uma Clínica Veterinária",
+        descricao:
+            "Aplicação front-end para clínica veterinária, estruturada para exibir serviços, especialidades, horários de atendimento e canais de contato.",
+        categoria: "front",
+        imagem: "/clinica-veterinaria.png",
+        tecnologias: ["React", "Styled-Components", "Vite"],
+        site: "https://clinica-veterinaria-seven.vercel.app/",
+        codigo: "https://github.com/DeangellesES/clinica_veterinaria-ReactJs-Vite",
+    },
+    {
+        titulo: "Site para uma Psicóloga",
+        descricao:
+            "Site informacional desenvolvido para psicóloga, apresentando áreas de atuação, abordagem terapêutica, horários e formas de contato.",
+        categoria: "front",
+        imagem: "/psicologia.png",
+        tecnologias: ["React", "Styled-Components","TypeScript", "Vite"],
+        site: "https://site-psicologia-sigma.vercel.app/",
+        codigo: "https://github.com/DeangellesES/site_psicologia-React-TypeScript-Vite",
+    },
+    {
+        titulo: "Site para uma Academia",
+        descricao:
+            "Aplicação front-end criada para academia, estruturada para exibir planos, equipamentos, treinadores especializados, curiosidades, imagens do ambiente e informações de contato e localização.",
+        categoria: "front",
+        imagem: "/academia.png",
+        tecnologias: ["React", "Styled-Components", "Vite"],
+        site: "https://site-academia-react-js-vite.vercel.app/",
+        codigo: "https://github.com/DeangellesES/site_academia-ReactJS-Vite",
+    },
+]
+
+
+
 function Projetos({ titulo, subtitulo }: Props) {
+
+    const [categoria, setCategoria] = useState<"front" | "back" | "full">("front")
+
+    const projetosFiltrados = projetos.filter(
+        (projeto) => projeto.categoria === categoria
+    )
+
     return (
         <section className='h-auto my-28' id='projetos'>
             <h1 className="text-center text-5xl leading-tight"><GradientText
@@ -20,13 +75,97 @@ function Projetos({ titulo, subtitulo }: Props) {
             <p className="m-auto text-center text-[#a1a1a1] text-xl w-[60%]">{subtitulo}</p>
 
             <div className='flex gap-5 pl-40 mt-10'>
-                <p className='border border-gray-300/20 p-3'>Front End</p>
-                <p className='border border-gray-300/20 p-3'>Back End</p>
-                <p className='border border-gray-300/20 p-3'>Full Stack</p>
+                <button
+                    onClick={() => setCategoria("front")}
+                    className={`border p-3 ${categoria === "front" ? "bg-white text-black" : "border-gray-300/20"}`}
+                >
+                    Front End
+                </button>
+
+                <button
+                    onClick={() => setCategoria("back")}
+                    className={`border p-3 ${categoria === "back" ? "bg-white text-black" : "border-gray-300/20"}`}
+                >
+                    Back End
+                </button>
+
+                <button
+                    onClick={() => setCategoria("full")}
+                    className={`border p-3 ${categoria === "full" ? "bg-white text-black" : "border-gray-300/20"}`}
+                >
+                    Full Stack
+                </button>
             </div>
 
-            <div className='flex justify-center gap-15 mt-15 flex-wrap'>
-                
+            <div className='flex justify-center gap-15 my-15 flex-wrap'>
+                {projetosFiltrados.map((projeto, index) => (
+                    <div
+                        key={index}
+                        className='border border-gray-300/20 rounded-2xl w-[35%] bg-[#0d0d0d] '
+                    >
+                        <div className='h-57 overflow-hidden rounded-t-2xl'>
+                            <Image
+                                src={projeto.imagem}
+                                alt={projeto.titulo}
+                                width={300}
+                                height={100}
+                                className='w-full h-full object-cover object-top'
+                            />
+                        </div>
+
+                        <div className='p-3'>
+                            <h1 className='text-2xl'>{projeto.titulo}</h1>
+
+                            <p className='py-3 text-[#a1a1a1]'>
+                                {projeto.descricao}
+                            </p>
+
+                            <div className='flex gap-3 flex-wrap'>
+                                {projeto.tecnologias.map((tech, i) => (
+                                    <p
+                                        key={i}
+                                        className='rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold'
+                                    >
+                                        {tech}
+                                    </p>
+                                ))}
+                            </div>
+
+                            <div className='flex gap-10 justify-center mt-5'>
+                                <a
+                                    href={projeto.site}
+                                    target="_blank"
+                                    className='flex gap-2 items-center'
+                                >
+                                    Ver Site <SquareArrowOutUpRight size={15} />
+                                </a>
+
+                                <a
+                                    href={projeto.codigo}
+                                    target="_blank"
+                                    className='flex gap-2 items-center'
+                                >
+                                    Código <Github size={15} />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+                <div className="w-full flex justify-center">
+                    <a
+                        href='https://github.com/DeangellesES'
+                        target="_blank"
+                        className='text-xl flex items-center gap-3'
+                    >
+                        Veja mais Projetos em meu GitHub
+                        <SquareArrowOutUpRight size={15} />
+                    </a>
+                </div>
+            </div>
+
+
+            {/* <div className='flex justify-center gap-15 mt-15 flex-wrap'>
+
                 <div className='border border-gray-300/20 rounded-2xl w-[35%] bg-[#0d0d0d]'>
                     <Image
                         src="/oficina-mecanica0.png"
@@ -138,8 +277,8 @@ function Projetos({ titulo, subtitulo }: Props) {
                     </div>
                 </div>
 
-            </div>
-            <a href='https://github.com/DeangellesES' target="_blank" className='flex justify-center mt-10 text-xl items-center gap-3'>Veja mais Projetos em meu GitHub <SquareArrowOutUpRight size={15} /></a>
+            </div> */}
+            {/* <a href='https://github.com/DeangellesES' target="_blank" className='flex justify-center mt-30 text-xl items-center gap-3'>Veja mais Projetos em meu GitHub <SquareArrowOutUpRight size={15} /></a> */}
         </section>
     )
 }
