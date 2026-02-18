@@ -148,15 +148,15 @@ function Projetos({ titulo, subtitulo }: Props) {
                     <div
                         key={index}
                         style={{ transitionDelay: `${index * 150}ms` }}
-                        className={`group border border-gray-300/20 rounded-2xl w-full sm:w-[80%] lg:w-[35%] bg-[#0d0d0d]
-                                    transition-all duration-300 ease-out
-                                    ${isVisible
-                                ? "opacity-100 translate-y-0"
-                                : "opacity-0 translate-y-20"
-                            }
-                        `}>
+                        className={`group border border-gray-300/20 
+h-[445px] 
+flex flex-col 
+rounded-2xl w-full sm:w-[80%] lg:w-[35%] bg-[#0d0d0d]
+transition-all duration-300 ease-out
+${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
+`}>
 
-                        <div className='h-57 overflow-hidden rounded-t-2xl'>
+                        <div className='h-52 flex-shrink-0 overflow-hidden rounded-t-2xl'>
                             <Image
                                 src={projeto.imagem}
                                 alt={projeto.titulo}
@@ -166,7 +166,7 @@ function Projetos({ titulo, subtitulo }: Props) {
                             />
                         </div>
 
-                        <div className='p-3'>
+                        <div className='p-5'>
                             <h1 className='text-2xl text-white'>{projeto.titulo}</h1>
 
                             <p className='py-3 text-[#a1a1a1]'>
@@ -184,7 +184,7 @@ function Projetos({ titulo, subtitulo }: Props) {
                                 ))}
                             </div>
 
-                            <div className='flex gap-10 justify-center mt-5'>
+                            <div className='flex gap-10 justify-center mt-3'>
                                 <a
                                     href={projeto.site}
                                     target="_blank"
@@ -206,8 +206,8 @@ function Projetos({ titulo, subtitulo }: Props) {
                 ))}
                 <div
                     className={`w-full flex justify-center 
-  transition-all duration-1500 ease-out delay-500
-  ${isVisible
+                                transition-all duration-1500 ease-out delay-500
+                                ${isVisible
                             ? "opacity-100 translate-x-0"
                             : "opacity-0 translate-x-20"
                         }
