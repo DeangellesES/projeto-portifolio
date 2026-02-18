@@ -118,7 +118,7 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
 
 
     return (
-        <section className='pb-15 px-15 overflow-hidden -mt-25' id='contato' ref={sectionRef}>
+        <section className='pb-20 px-4 sm:px-8 md:px-15 overflow-hidden' id='contato' ref={sectionRef}>
 
             <h1 className={`text-center text-5xl mb-15 transition-all duration-700 ease-out
                 ${isVisible
@@ -134,8 +134,8 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                 </GradientText></h1>
 
             {/* contatos parte esquerda */}
-            <div className='grid grid-cols-2 gap-20'>
-                <div className={` w-[80%] transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'} `}>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20'>
+                <div className={` w-full md:w-[80%] transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'} `}>
                     <h2 className='text-3xl font-bold'>
                         <DecryptedText
                             text={subtitulo}
@@ -149,14 +149,14 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                     <p className='text-lg py-5 text-[#a1a1a1]'>{descricao}</p>
                     <div className='grid gap-3'>
                         <div className='flex items-center gap-4 border border-gray-700/20 px-5 py-3 bg-[#0d0d0d] rounded-sm'>
-                            <Mail className='contato-icones text-white' />
+                            <Mail className='md:block hidden !hidden md:!block contato-icones text-white' />
                             <div className='flex flex-col'>
                                 <h1 className='text-2xl font-bold text-white'>Email</h1>
                                 <p className='text-xl text-[#a1a1a1]'>FelipeDeangelles@hotmail.com</p>
                             </div>
                         </div>
                         <div className='flex items-center gap-4 border border-gray-700/20 px-5 py-3 bg-[#0d0d0d] rounded-sm'>
-                            <Phone className='contato-icones text-white' />
+                            <Phone className='md:block hidden !hidden md:!block contato-icones text-white' />
                             <div className='flex flex-col'>
                                 <h1 className='text-2xl font-bold text-white'>{telefone}</h1>
                                 <a href="https://api.whatsapp.com/send?phone=5535997631949" className='text-xl text-[#a1a1a1]'>+55 (35) 99763-1949</a>
@@ -171,11 +171,11 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                         </div> */}
                         <div className='flex gap-5 border border-gray-700/20 px-5 py-3 bg-[#0d0d0d] rounded-sm'>
                             <div className='flex items-center gap-4'>
-                                <Linkedin className='contato-icones text-white' />
+                                <Linkedin className='md:block hidden !hidden md:!block contato-icones text-white' />
                                 <a href="https://www.linkedin.com/in/felipe-deangelles-da-silva-lopes/" target="_blank" className='text-2xl font-bold flex items-center gap-3 text-white'>Linkedin <ArrowRight /></a>
                             </div>
                             <div className='flex items-center gap-4'>
-                                <Github className='contato-icones text-white' />
+                                <Github className='md:block hidden !hidden md:!block contato-icones text-white' />
                                 <a href="https://github.com/DeangellesES" target="_blank" className='text-2xl font-bold flex items-center gap-3 text-white'>GitHub <ArrowRight /></a>
                             </div>
                         </div>
@@ -241,7 +241,7 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
 
                 <p className='text-green-600 border border-green-600/30 rounded-3xl w-fit flex items-center mx-auto pr-6'><Dot size={45} className="animate-pulse" />{disponivel}</p>
 
-                <div className='flex gap-5 text-center items-center mt-5 justify-center'>
+                <div className='flex flex-col md:flex-row gap-6 text-center items-center mt-5 justify-center'>
 
                     <StarBorder
                         as="button"

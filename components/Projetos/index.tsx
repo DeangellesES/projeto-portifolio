@@ -83,13 +83,13 @@ function Projetos({ titulo, subtitulo }: Props) {
     return (
         <section
             ref={sectionRef}
-            className='h-auto my-28 overflow-hidden'
+            className='h-auto mt-25 mb-5 overflow-hidden'
             id='projetos'
         >
             <h1
                 className={`text-center text-5xl leading-tight transition-all duration-700 ease-out
-  ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
-  `}
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
+                `}
             >
                 <GradientText
                     colors={["#160070", "#d1d1d1"]}
@@ -101,20 +101,25 @@ function Projetos({ titulo, subtitulo }: Props) {
             </h1>
             <p
                 className={`m-auto text-center text-[#a1a1a1] text-xl w-[60%] transition-all duration-700 ease-out delay-150
-  ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
-  `}
-            >
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+            `}>
                 {subtitulo}
             </p>
 
-            <div
-                className={`flex gap-5 pl-40 mt-10 transition-all duration-700 ease-out
-  ${isVisible
-                        ? "opacity-100 translate-x-0"
-                        : "opacity-0 -translate-x-20"
-                    }
-  `}
-            >
+            <div className={`
+                flex flex-row
+                justify-center
+                flex-wrap
+                gap-4
+                mt-10
+                px-4
+                transition-all duration-700 ease-out
+                ${isVisible
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 -translate-x-20"
+                }
+            `}>
+
                 <button
                     onClick={() => setCategoria("front")}
                     className={`border px-3 rounded-xl text-sm font-bold cursor-pointer ${categoria === "front" ? "bg-white text-black" : "border-gray-300/20"}`}
@@ -137,19 +142,20 @@ function Projetos({ titulo, subtitulo }: Props) {
                 </button>
             </div>
 
-            <div className='flex justify-center gap-15 my-15 flex-wrap'>
+            <div className='flex flex-col items-center gap-8 my-15 lg:flex-row lg:flex-wrap lg:justify-center'>
+
                 {projetosFiltrados.map((projeto, index) => (
                     <div
                         key={index}
                         style={{ transitionDelay: `${index * 150}ms` }}
-                        className={`group border border-gray-300/20 rounded-2xl w-[35%] bg-[#0d0d0d]
-transition-all duration-300 ease-out
-${isVisible
+                        className={`group border border-gray-300/20 rounded-2xl w-full sm:w-[80%] lg:w-[35%] bg-[#0d0d0d]
+                                    transition-all duration-300 ease-out
+                                    ${isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "opacity-0 translate-y-20"
                             }
-`}
-                    >
+                        `}>
+
                         <div className='h-57 overflow-hidden rounded-t-2xl'>
                             <Image
                                 src={projeto.imagem}

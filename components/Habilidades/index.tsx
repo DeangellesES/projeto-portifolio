@@ -94,7 +94,8 @@ function Habilidades({ t }: Props) {
             </GradientText></h1>
             <p className="text-center text-[#a1a1a1] text-xl">{t.subtitulo}</p>
 
-            <div className="grid grid-cols-3 mt-10 justify-center w-full px-10 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-10 w-full px-4 sm:px-6 md:px-10 gap-6">
+
                 {skills.map((skill) => {
                     const Icon = skill.icon
 
