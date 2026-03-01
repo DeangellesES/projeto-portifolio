@@ -31,6 +31,7 @@ export default function Home() {
         categoriaAplicativo={t.projetos.categoriaAplicativo}
         projetosFront={t.projetos.projetosFront}
         verMaisGitHub={t.projetos.verMaisGitHub}
+        projetosAplicativo={t.projetos.projetosAplicativo}
       />
       <Contato titulo={t.contato.titulo}
         subtitulo={t.contato.subtitulo} descricao={t.contato.descricao} telefone={t.contato.telefone}

@@ -20,9 +20,19 @@ type Props = {
         codigoLink: string;
     }[];
     verMaisGitHub: string;
+    projetosAplicativo: {
+        titulo: string;
+        descricao: string;
+        verSite: string;
+        codigo: string;
+        imagem: string;
+        tecnologias: string[];
+        site: string;
+        codigoLink: string;
+    }[];
 }
 
-function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMaisGitHub }: Props) {
+function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMaisGitHub, projetosAplicativo }: Props) {
     const sectionRef = useRef<HTMLDivElement | null>(null)
     const [isVisible, setIsVisible] = useState(false)
     const [categoria, setCategoria] = useState<"front" | "back" | "full" | "aplicativo">("front")
@@ -42,10 +52,12 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
         return () => observer.disconnect()
     }, [])
 
-    const projetosFiltrados = projetosFront.filter(
-        (_, index) => categoria === "front"
-    )
-
+    const projetosFiltrados =
+        categoria === "front"
+            ? projetosFront
+            : categoria === "aplicativo"
+                ? projetosAplicativo
+                : []
 
     return (
         <section
@@ -156,13 +168,16 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                             </div>
 
                             <div className='flex gap-10 justify-center mt-3'>
-                                <a
-                                    href={projeto.site}
-                                    target="_blank"
-                                    className='flex gap-2 items-center text-white'
-                                >
-                                    {projeto.verSite} <SquareArrowOutUpRight size={15} />
-                                </a>
+
+                                {categoria !== "aplicativo" && (
+                                    <a
+                                        href={projeto.site}
+                                        target="_blank"
+                                        className='flex gap-2 items-center text-white'
+                                    >
+                                        {projeto.verSite} <SquareArrowOutUpRight size={15} />
+                                    </a>
+                                )}
 
                                 <a
                                     href={projeto.codigoLink}
@@ -171,6 +186,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                                 >
                                     {projeto.codigo} <Github size={15} />
                                 </a>
+
                             </div>
                         </div>
                     </div>
@@ -196,121 +212,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
             </div>
 
 
-            {/* <div className='flex justify-center gap-15 mt-15 flex-wrap'>
 
-                <div className='border border-gray-300/20 rounded-2xl w-[35%] bg-[#0d0d0d]'>
-                    <Image
-                        src="/oficina-mecanica0.png"
-                        alt="oficina mecanica"
-                        width={300}
-                        height={100}
-                        className='w-full rounded-t-lg '
-                    />
-                    <div className='p-8'>
-                        <h1 className='text-2xl'>Site para uma Oficina Mecânica</h1>
-                        <p className='py-3 text-[#a1a1a1]'>
-                            Site informacional para oficina mecânica, apresentando serviços, processos, localização, horários, preços e perguntas frequentes.                        </p>
-                        <div className='flex gap-3'>
-                            <p className='rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold'>React</p>
-                            <p className='rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold'>Styled-Components</p>
-                            <p className='rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold'>Vite</p>
-
-                        </div>
-                        <div className='flex gap-10 justify-center mt-5'>
-                            <a href="https://site-oficina-mecanica.vercel.app/" className='flex gap-2 items-center' target="_blank">Ver Site <SquareArrowOutUpRight size={15} /></a>
-                            <a href="https://github.com/DeangellesES/site_oficina_mecanica-ReactJS-Vite" className='flex gap-2 items-center' target="_blank">Código <Github size={15} />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='border border-gray-300/20 rounded-2xl w-[35%] bg-[#0d0d0d]'>
-                    <div className='h-57 overflow-hidden rounded-t-2xl'>
-                        <Image
-                            src="/clinica-veterinaria.png"
-                            alt="clinica veterinaria"
-                            width={300}
-                            height={100}
-                            className='w-full h-full object-cover object-top'
-                        />
-                    </div>
-                    <div className='p-5'>
-                        <h1 className='text-2xl'>Site para uma Clínica Veterinária</h1>
-                        <p className='py-3 text-[#a1a1a1]'>
-                            Aplicação front-end para clínica veterinária, estruturada para exibir serviços, especialidades, horários de atendimento e canais de contato de forma clara e acessível.                        </p>
-                        <div className='flex gap-3'>
-                            <p className='rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold'>React</p>
-                            <p className='rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold'>Styled-Components</p>
-                            <p className='rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold'>Vite</p>
-
-                        </div>
-                        <div className='flex gap-10 justify-center mt-5'>
-                            <a href="https://clinica-veterinaria-seven.vercel.app/" className='flex gap-2 items-center' target="_blank">Ver Site <SquareArrowOutUpRight size={15} /></a>
-                            <a href="https://github.com/DeangellesES/clinica_veterinaria-ReactJs-Vite" className='flex gap-2 items-center' target="_blank">Código <Github size={15} />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='border border-gray-300/20 rounded-2xl w-[35%] bg-[#0d0d0d]'>
-                    <div className='h-57 overflow-hidden rounded-t-2xl'>
-                        <Image
-                            src="/psicologia.png"
-                            alt="Clinica de Psicologia"
-                            width={300}
-                            height={100}
-                            className='w-full h-full object-cover object-top'
-                        />
-                    </div>
-                    <div className='p-5'>
-                        <h1 className='text-2xl'>Site para uma Psicóloga</h1>
-                        <p className='py-3 text-[#a1a1a1]'>
-                            Site informacional desenvolvido para psicóloga, apresentando áreas de atuação, abordagem terapêutica, horários e formas de contato.                        </p>
-                        <div className='flex gap-3'>
-                            <p className='rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold'>React</p>
-                            <p className='rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold'>TypeScript</p>
-                            <p className='rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold'>Styled-Components</p>
-                            <p className='rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold'>Vite</p>
-
-                        </div>
-                        <div className='flex gap-10 justify-center mt-5'>
-                            <a href="https://site-psicologia-sigma.vercel.app/" className='flex gap-2 items-center' target="_blank">Ver Site <SquareArrowOutUpRight size={15} /></a>
-                            <a href="https://github.com/DeangellesES/site_psicologia-React-TypeScript-Vite" className='flex gap-2 items-center' target="_blank">Código <Github size={15} />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='border border-gray-300/20 rounded-2xl w-[35%] bg-[#0d0d0d]'>
-                    <div className='h-57 overflow-hidden rounded-t-2xl'>
-                        <Image
-                            src="/academia.png"
-                            alt="oficina mecanica"
-                            width={300}
-                            height={100}
-                            className='w-full h-full object-cover object-top'
-                        />
-                    </div>
-                    <div className='p-5'>
-                        <h1 className='text-2xl'>Site para uma Academia</h1>
-                        <p className='py-3 text-[#a1a1a1]'>
-                            Aplicação front-end criada para academia, estruturada para exibir planos, equipamentos, treinadores especializados, curiosidades, imagens do ambiente e informações de contato e localização.                        </p>
-                        <div className='flex gap-3'>
-                            <p className='rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold'>React</p>
-                            <p className='rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold'>Styled-Components</p>
-                            <p className='rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold'>Vite</p>
-
-                        </div>
-                        <div className='flex gap-10 justify-center mt-5'>
-                            <a href="https://site-academia-react-js-vite.vercel.app/" className='flex gap-2 items-center' target="_blank">Ver Site <SquareArrowOutUpRight size={15} /></a>
-                            <a href="https://github.com/DeangellesES/site_academia-ReactJS-Vite" className='flex gap-2 items-center' target="_blank">Código <Github size={15} />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div> */}
-            {/* <a href='https://github.com/DeangellesES' target="_blank" className='flex justify-center mt-30 text-xl items-center gap-3'>Veja mais Projetos em meu GitHub <SquareArrowOutUpRight size={15} /></a> */}
         </section>
     )
 }
