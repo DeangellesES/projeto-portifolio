@@ -51,6 +51,49 @@ export const translations = {
       titulo: "Projetos",
       subtitulo: "Ideias que viraram código, telas que ganham vida e experiências que funcionam de verdade. Aqui você encontra o que gosto de fazer transformar ideias em soluções impactantes.",
       categoriaAplicativo: "Aplicativos",
+      verMaisGitHub: "Veja mais Projetos em meu GitHub",
+      projetosFront: [
+        {
+          titulo: "Site para uma Oficina Mecânica",
+          descricao: "Site informacional para oficina mecânica, apresentando serviços, processos, localização, horários, preços e perguntas frequentes.",
+          verSite: "Ver Site",
+          codigo: "Código",
+          imagem: "/oficina-mecanica0.png",
+          tecnologias: ["React", "Styled-Components", "Vite"],
+          site: "https://site-oficina-mecanica.vercel.app/",
+          codigoLink: "https://github.com/DeangellesES/site_oficina_mecanica-ReactJS-Vite"
+        },
+        {
+          titulo: "Site para uma Clínica Veterinária",
+          descricao: "Aplicação front-end para clínica veterinária, estruturada para exibir serviços, especialidades, horários de atendimento e canais de contato.",
+          verSite: "Ver Site",
+          codigo: "Código",
+          imagem: "/clinica-veterinaria.png",
+          tecnologias: ["React", "Styled-Components", "Vite"],
+          site: "https://clinica-veterinaria-seven.vercel.app/",
+          codigoLink: "https://github.com/DeangellesES/clinica_veterinaria-ReactJs-Vite"
+        },
+        {
+          titulo: "Site para uma Psicóloga",
+          descricao: "Site informacional desenvolvido para psicólogo, apresentando áreas de atuação, abordagem terapêutica, horários e formas de contato.",
+          verSite: "Ver Site",
+          codigo: "Código",
+          imagem: "/psicologia.png",
+          tecnologias: ["React", "Styled-Components", "TypeScript", "Vite"],
+          site: "https://site-psicologia-sigma.vercel.app/",
+          codigoLink: "https://github.com/DeangellesES/site_psicologia-React-TypeScript-Vite"
+        },
+        {
+          titulo: "Site para uma Academia",
+          descricao: "Aplicação front-end criada para academia, estruturada para exibir planos, equipamentos, treinadores especializados, curiosidades, imagens do ambiente e informações de contato e localização.",
+          verSite: "Ver Site",
+          codigo: "Código",
+          imagem: "/academia.png",
+          tecnologias: ["React", "Styled-Components", "Vite"],
+          site: "https://site-academia-react-js-vite.vercel.app/",
+          codigoLink: "https://github.com/DeangellesES/site_academia-ReactJS-Vite"
+        },
+      ],
     },
     contato: {
       titulo: 'Vamos Conversar',
@@ -137,6 +180,49 @@ export const translations = {
       titulo: "Projects",
       subtitulo: "Ideas turned into code, screens brought to life, and experiences that truly work. Here you'll find what I love to do: transforming ideas into impactful solutions.",
       categoriaAplicativo: "Applications",
+      verMaisGitHub: "See more Projects on my GitHub",
+      projetosFront: [
+        {
+          titulo: "Website for a Mechanical Workshop",
+          descricao: "Informational website for a mechanical workshop, presenting services, processes, location, hours, prices, and frequently asked questions.",
+          verSite: "View Site",
+          codigo: "Code",
+          imagem: "/oficina-mecanica0.png",
+          tecnologias: ["React", "Styled-Components", "Vite"],
+          site: "https://site-oficina-mecanica.vercel.app/",
+          codigoLink: "https://github.com/DeangellesES/site_oficina_mecanica-ReactJS-Vite"
+        },
+        {
+          titulo: "Website for a Veterinary Clinic",
+          descricao: "Front-end application for a veterinary clinic, structured to display services, specialties, operating hours, and contact channels.",
+          verSite: "View Site",
+          codigo: "Code",
+          imagem: "/clinica-veterinaria.png",
+          tecnologias: ["React", "Styled-Components", "Vite"],
+          site: "https://clinica-veterinaria-seven.vercel.app/",
+          codigoLink: "https://github.com/DeangellesES/clinica_veterinaria-ReactJs-Vite"
+        },
+        {
+          titulo: "Website for a Psychologist",
+          descricao: "Informational website developed for a psychologist, presenting areas of expertise, therapeutic approach, hours, and contact methods.",
+          verSite: "View Site",
+          codigo: "Code",
+          imagem: "/psicologia.png",
+          tecnologias: ["React", "Styled-Components", "TypeScript", "Vite"],
+          site: "https://site-psicologia-sigma.vercel.app/",
+          codigoLink: "https://github.com/DeangellesES/site_psicologia-React-TypeScript-Vite"
+        },
+        {
+          titulo: "Website for a Gym",
+          descricao: "Front-end application created for a gym, structured to display plans, equipment, specialized trainers, curiosities, environment images, and contact and location information.",
+          verSite: "View Site",
+          codigo: "Code",
+          imagem: "/academia.png",
+          tecnologias: ["React", "Styled-Components", "Vite"],
+          site: "https://site-academia-react-js-vite.vercel.app/",
+          codigoLink: "https://github.com/DeangellesES/site_academia-ReactJS-Vite"
+        },
+      ],
     },
     contato: {
       titulo: 'Let’s Talk',

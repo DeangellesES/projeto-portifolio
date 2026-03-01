@@ -9,54 +9,20 @@ type Props = {
     titulo: string;
     subtitulo: string;
     categoriaAplicativo: string;
+    projetosFront: {
+        titulo: string;
+        descricao: string;
+        verSite: string;
+        codigo: string;
+        imagem: string;
+        tecnologias: string[];
+        site: string;
+        codigoLink: string;
+    }[];
+    verMaisGitHub: string;
 }
 
-const projetos = [
-    {
-        titulo: "Site para uma Oficina Mecânica",
-        descricao:
-            "Site informacional para oficina mecânica, apresentando serviços, processos, localização, horários, preços e perguntas frequentes.",
-        categoria: "front",
-        imagem: "/oficina-mecanica0.png",
-        tecnologias: ["React", "Styled-Components", "Vite"],
-        site: "https://site-oficina-mecanica.vercel.app/",
-        codigo: "https://github.com/DeangellesES/site_oficina_mecanica-ReactJS-Vite",
-    },
-    {
-        titulo: "Site para uma Clínica Veterinária",
-        descricao:
-            "Aplicação front-end para clínica veterinária, estruturada para exibir serviços, especialidades, horários de atendimento e canais de contato.",
-        categoria: "front",
-        imagem: "/clinica-veterinaria.png",
-        tecnologias: ["React", "Styled-Components", "Vite"],
-        site: "https://clinica-veterinaria-seven.vercel.app/",
-        codigo: "https://github.com/DeangellesES/clinica_veterinaria-ReactJs-Vite",
-    },
-    {
-        titulo: "Site para uma Psicóloga",
-        descricao:
-            "Site informacional desenvolvido para psicóloga, apresentando áreas de atuação, abordagem terapêutica, horários e formas de contato.",
-        categoria: "front",
-        imagem: "/psicologia.png",
-        tecnologias: ["React", "Styled-Components", "TypeScript", "Vite"],
-        site: "https://site-psicologia-sigma.vercel.app/",
-        codigo: "https://github.com/DeangellesES/site_psicologia-React-TypeScript-Vite",
-    },
-    {
-        titulo: "Site para uma Academia",
-        descricao:
-            "Aplicação front-end criada para academia, estruturada para exibir planos, equipamentos, treinadores especializados, curiosidades, imagens do ambiente e informações de contato e localização.",
-        categoria: "front",
-        imagem: "/academia.png",
-        tecnologias: ["React", "Styled-Components", "Vite"],
-        site: "https://site-academia-react-js-vite.vercel.app/",
-        codigo: "https://github.com/DeangellesES/site_academia-ReactJS-Vite",
-    },
-]
-
-
-
-function Projetos({ titulo, subtitulo, categoriaAplicativo }: Props) {
+function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMaisGitHub }: Props) {
     const sectionRef = useRef<HTMLDivElement | null>(null)
     const [isVisible, setIsVisible] = useState(false)
     const [categoria, setCategoria] = useState<"front" | "back" | "full" | "aplicativo">("front")
@@ -76,8 +42,8 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo }: Props) {
         return () => observer.disconnect()
     }, [])
 
-    const projetosFiltrados = projetos.filter(
-        (projeto) => projeto.categoria === categoria
+    const projetosFiltrados = projetosFront.filter(
+        (_, index) => categoria === "front"
     )
 
 
@@ -195,15 +161,15 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo }: Props) {
                                     target="_blank"
                                     className='flex gap-2 items-center text-white'
                                 >
-                                    Ver Site <SquareArrowOutUpRight size={15} />
+                                    {projeto.verSite} <SquareArrowOutUpRight size={15} />
                                 </a>
 
                                 <a
-                                    href={projeto.codigo}
+                                    href={projeto.codigoLink}
                                     target="_blank"
                                     className='flex gap-2 items-center text-white'
                                 >
-                                    Código <Github size={15} />
+                                    {projeto.codigo} <Github size={15} />
                                 </a>
                             </div>
                         </div>
@@ -223,7 +189,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo }: Props) {
                         target="_blank"
                         className='text-xl flex items-center gap-3'
                     >
-                        Veja mais Projetos em meu GitHub
+                        {verMaisGitHub}
                         <SquareArrowOutUpRight size={15} />
                     </a>
                 </div>
