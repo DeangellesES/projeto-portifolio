@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react"
 import { PanelsTopLeft, CodeXml, BookOpenCheck, Wrench, Smartphone, Monitor } from 'lucide-react';
 
 import GradientText from '../GradientText'
@@ -17,6 +18,24 @@ type Props = {
 
 function Habilidades({ t }: Props) {
     type Translation = Props['t']
+
+    const sectionRef = useRef<HTMLDivElement | null>(null)
+    const [isVisible, setIsVisible] = useState(false)
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting)
+            },
+            { threshold: 0.3 }
+        )
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current)
+        }
+
+        return () => observer.disconnect()
+    }, [])
 
     // array de objetos habilidades
     const skills = [
@@ -84,19 +103,35 @@ function Habilidades({ t }: Props) {
     ];
 
     return (
-        <section className='mt-10 px-4' id='habilidades'>
-            <h1 className="text-center text-5xl"><GradientText
-                colors={["#160070", "#d1d1d1"]}
-                animationSpeed={4}
-                showBorder={false}
+        <section ref={sectionRef} className='mt-10 px-4' id='habilidades'>
+            <h1
+                className={`
+    text-center text-5xl
+    transition-all duration-700 ease-out
+    ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
+  `}
             >
-                {t.titulo}
-            </GradientText></h1>
-            <p className="text-center text-[#a1a1a1] text-xl">{t.subtitulo}</p>
+                <GradientText
+                    colors={["#160070", "#d1d1d1"]}
+                    animationSpeed={4}
+                    showBorder={false}
+                >
+                    {t.titulo}
+                </GradientText>
+            </h1>
+            <p
+                className={`
+    text-center text-[#a1a1a1] text-xl
+    transition-all duration-700 ease-out delay-150
+    ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}
+  `}
+            >
+                {t.subtitulo}
+            </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-10 w-full px-4 sm:px-6 md:px-10 gap-6">
 
-                {skills.map((skill) => {
+                {skills.map((skill, index) => {
                     const Icon = skill.icon
 
                     return (
@@ -104,9 +139,14 @@ function Habilidades({ t }: Props) {
                             key={skill.key}
                             style={{
                                 '--shadow-color': skill.shadowColor,
+                                transitionDelay: `${index * 150}ms`
                             } as React.CSSProperties}
-
-                            className="border border-gray-300/20 p-8 rounded-2xl bg-[#0d0d0d] group transition-shadow duration-300 hover:shadow-[0_0_35px_rgba(var(--shadow-color),0.35)]"
+                            className={`
+    border border-gray-300/20 p-8 rounded-2xl bg-[#0d0d0d] group
+    transition-all duration-2000 ease-out
+    hover:shadow-[0_0_35px_rgba(var(--shadow-color),0.35)]
+    ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
+  `}
                         >
                             <h1 className="flex items-center gap-3 font-bold text-2xl text-white">
                                 <span
