@@ -32,6 +32,7 @@ export default function Home() {
         projetosFront={t.projetos.projetosFront}
         verMaisGitHub={t.projetos.verMaisGitHub}
         projetosAplicativo={t.projetos.projetosAplicativo}
+        projetosBack={t.projetos.projetosBack}
       />
       <Contato titulo={t.contato.titulo}
         subtitulo={t.contato.subtitulo} descricao={t.contato.descricao} telefone={t.contato.telefone}

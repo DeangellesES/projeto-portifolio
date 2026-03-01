@@ -94,6 +94,18 @@ export const translations = {
           codigoLink: "https://github.com/DeangellesES/site_academia-ReactJS-Vite"
         },
       ],
+      projetosBack: [
+        {
+          titulo: "API para buscar CEP",
+          descricao: "Projeto Back-End para buscar informações atravéz do CEP.",
+          verSite: "Ver App",
+          codigo: "View Code",
+          imagem: "/apiCEP.png",
+          tecnologias: ["Node.Js", "express"],
+          site: "#",
+          codigoLink: "https://github.com/DeangellesES/api_busca_CEP-NodeJs-express-axios"
+        },
+      ],
       projetosAplicativo: [
         {
           titulo: "App da Técnica Pomodoro e Lista de Tarefas",
@@ -233,6 +245,18 @@ export const translations = {
           tecnologias: ["React", "Styled-Components", "Vite"],
           site: "https://site-academia-react-js-vite.vercel.app/",
           codigoLink: "https://github.com/DeangellesES/site_academia-ReactJS-Vite"
+        },
+      ],
+      projetosBack: [
+        {
+          titulo: "Pomodoro Technique App and To-Do List",
+          descricao: "Mobile app for using the Pomodoro Technique to improve focus and manage tasks.",
+          verSite: "Ver App",
+          codigo: "View Code",
+          imagem: "/focus.png",
+          tecnologias: ["React Native", "Expo"],
+          site: "#",
+          codigoLink: "https://github.com/DeangellesES/aplicativo_pomodoro_fokus-ReactNative"
         },
       ],
       projetosAplicativo: [

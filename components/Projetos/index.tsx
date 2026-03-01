@@ -20,6 +20,16 @@ type Props = {
         codigoLink: string;
     }[];
     verMaisGitHub: string;
+    projetosBack: {
+        titulo: string;
+        descricao: string;
+        verSite: string;
+        codigo: string;
+        imagem: string;
+        tecnologias: string[];
+        site: string;
+        codigoLink: string;
+    }[];
     projetosAplicativo: {
         titulo: string;
         descricao: string;
@@ -32,7 +42,7 @@ type Props = {
     }[];
 }
 
-function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMaisGitHub, projetosAplicativo }: Props) {
+function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMaisGitHub, projetosBack, projetosAplicativo }: Props) {
     const sectionRef = useRef<HTMLDivElement | null>(null)
     const [isVisible, setIsVisible] = useState(false)
     const [categoria, setCategoria] = useState<"front" | "back" | "full" | "aplicativo">("front")
@@ -55,9 +65,11 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
     const projetosFiltrados =
         categoria === "front"
             ? projetosFront
-            : categoria === "aplicativo"
-                ? projetosAplicativo
-                : []
+            : categoria === "back"
+                ? projetosBack
+                : categoria === "aplicativo"
+                    ? projetosAplicativo
+                    : []
 
     return (
         <section
@@ -169,7 +181,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
 
                             <div className='flex gap-10 justify-center mt-3'>
 
-                                {categoria !== "aplicativo" && (
+                                {categoria !== "aplicativo" && categoria !== "back" &&(
                                     <a
                                         href={projeto.site}
                                         target="_blank"
@@ -210,8 +222,6 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                     </a>
                 </div>
             </div>
-
-
 
         </section>
     )
