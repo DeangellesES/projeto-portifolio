@@ -28,6 +28,7 @@ export default function Home() {
       <Habilidades t={t.habilidades} />
       <Projetos titulo={t.projetos.titulo}
         subtitulo={t.projetos.subtitulo}
+        categoriaAplicativo={t.projetos.categoriaAplicativo}
       />
       <Contato titulo={t.contato.titulo}
         subtitulo={t.contato.subtitulo} descricao={t.contato.descricao} telefone={t.contato.telefone}

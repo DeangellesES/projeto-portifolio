@@ -50,6 +50,7 @@ export const translations = {
     projetos : {
       titulo: "Projetos",
       subtitulo: "Ideias que viraram código, telas que ganham vida e experiências que funcionam de verdade. Aqui você encontra o que gosto de fazer transformar ideias em soluções impactantes.",
+      categoriaAplicativo: "Aplicativos",
     },
     contato: {
       titulo: 'Vamos Conversar',
@@ -135,6 +136,7 @@ export const translations = {
     projetos : {
       titulo: "Projects",
       subtitulo: "Ideas turned into code, screens brought to life, and experiences that truly work. Here you'll find what I love to do: transforming ideas into impactful solutions.",
+      categoriaAplicativo: "Applications",
     },
     contato: {
       titulo: 'Let’s Talk',

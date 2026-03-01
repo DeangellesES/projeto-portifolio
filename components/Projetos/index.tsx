@@ -8,6 +8,7 @@ import { SquareArrowOutUpRight, Github } from 'lucide-react';
 type Props = {
     titulo: string;
     subtitulo: string;
+    categoriaAplicativo: string;
 }
 
 const projetos = [
@@ -55,10 +56,10 @@ const projetos = [
 
 
 
-function Projetos({ titulo, subtitulo }: Props) {
+function Projetos({ titulo, subtitulo, categoriaAplicativo }: Props) {
     const sectionRef = useRef<HTMLDivElement | null>(null)
     const [isVisible, setIsVisible] = useState(false)
-    const [categoria, setCategoria] = useState<"front" | "back" | "full">("front")
+    const [categoria, setCategoria] = useState<"front" | "back" | "full" | "aplicativo">("front")
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -140,6 +141,14 @@ function Projetos({ titulo, subtitulo }: Props) {
                 >
                     Full Stack
                 </button>
+
+                <button
+                    onClick={() => setCategoria("aplicativo")}
+                    className={`border p-3 rounded-xl text-sm font-bold cursor-pointer ${categoria === "aplicativo" ? "bg-white text-black" : "border-gray-300/20"}`}
+                >
+                    {categoriaAplicativo}
+                </button>
+
             </div>
 
             <div className='flex flex-col items-center gap-8 my-15 lg:flex-row lg:flex-wrap lg:justify-center'>
@@ -148,13 +157,9 @@ function Projetos({ titulo, subtitulo }: Props) {
                     <div
                         key={index}
                         style={{ transitionDelay: `${index * 150}ms` }}
-                        className={`group border border-gray-300/20 
-h-[445px] 
-flex flex-col 
-rounded-2xl w-full sm:w-[80%] lg:w-[35%] bg-[#0d0d0d]
-transition-all duration-300 ease-out
-${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
-`}>
+                        className={`group border border-gray-300/20 h-[445px] flex flex-col rounded-2xl w-full sm:w-[80%] lg:w-[35%] bg-[#0d0d0d]
+                                    transition-all duration-300 ease-out
+                                    ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}>
 
                         <div className='h-52 flex-shrink-0 overflow-hidden rounded-t-2xl'>
                             <Image
