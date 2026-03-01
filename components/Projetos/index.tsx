@@ -50,7 +50,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
     return (
         <section
             ref={sectionRef}
-            className='h-auto mt-25 mb-5 overflow-hidden'
+            className='h-auto mt-5 mb-5 overflow-hidden'
             id='projetos'
         >
             <h1

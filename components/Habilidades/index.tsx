@@ -143,7 +143,8 @@ function Habilidades({ t }: Props) {
                             } as React.CSSProperties}
                             className={`
     border border-gray-300/20 p-8 rounded-2xl bg-[#0d0d0d] group
-    transition-all duration-2000 ease-out
+    transition-transform transition-opacity duration-2000 ease-out
+transition-shadow duration-300
     hover:shadow-[0_0_35px_rgba(var(--shadow-color),0.35)]
     ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
   `}
