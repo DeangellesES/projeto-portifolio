@@ -215,7 +215,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                     <a
                         href='https://github.com/DeangellesES'
                         target="_blank"
-                        className='text-xl flex items-center gap-3'
+                        className='text-xl flex items-center gap-3 hover:text-[#acacac] transition'
                     >
                         {verMaisGitHub}
                         <SquareArrowOutUpRight size={15} />
