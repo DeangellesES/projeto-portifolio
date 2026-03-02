@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+//icones
 import { Download, MessageSquare } from 'lucide-react';
 
 // tradução
@@ -30,6 +31,7 @@ export default function Inico({ texts, sobre, downloadText, conversarText }: Pro
     const isDeleting = useRef(false)
     const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
+    // efeito escrever e descrever textos
     useEffect(() => {
         const type = () => {
             const currentText = texts[sentenceIndex.current]
@@ -64,85 +66,42 @@ export default function Inico({ texts, sobre, downloadText, conversarText }: Pro
         }
     }, [texts])
 
+    // inicio return
     return (
-        <section
-            id="inicio"
-            className="
-      min-h-screen
-      flex flex-col items-center justify-center
-      px-4
-      pt-24 sm:pt-28
-      md:pt-32
-    "
-        >
-            {/* TÍTULO */}
+        <section id="inicio" className="min-h-screen flex flex-col items-center justify-center px-4 pt-24 sm:pt-28 md:pt-32">
+            {/* TÍTULO PRINCIPAL TOPO*/}
             <div className="flex items-center justify-center">
-                <h1
-                    className="
-          typewriter
-    text-[var(--cor-texto)]
-    text-6xl sm:text-4xl lg:text-6xl
-    max-w-[22ch] sm:max-w-[26ch] md:max-w-[30ch]
-    text-center
-    font-bold
-    leading-[1.15]
-    mx-auto
-    relative
-    [text-wrap:balance]
-    [text-shadow:0_0_8px_rgba(0,0,0,0.35)]
-    dark:[text-shadow:0_0_20px_rgba(255,255,255,0.7)]
-    after:content-['']
-    after:inline-block
-    after:w-[4px]
-    after:h-[1em]
-    after:ml-1
-    after:align-bottom
-    after:bg-gray-400
-    after:animate-[flasher_0.8s_steps(1)_infinite]
-        "
-                >
+                <h1 className="typewriter text-[var(--cor-texto)] text-6xl sm:text-4xl lg:text-6xl
+                               max-w-[22ch] sm:max-w-[26ch] md:max-w-[30ch] text-center font-bold
+                               leading-[1.15] mx-auto relative [text-wrap:balance]
+                               [text-shadow:0_0_8px_rgba(0,0,0,0.35)]
+                               dark:[text-shadow:0_0_20px_rgba(255,255,255,0.7)] after:content-['']
+                               after:inline-block after:w-[4px] after:h-[1em] after:ml-1 after:align-bottom
+                             after:bg-gray-400 after:animate-[flasher_0.8s_steps(1)_infinite]">
                     {text}
                 </h1>
             </div>
 
-            {/* SUBTÍTULO */}
+            {/* SUBTÍTULO TOPO */}
             <div className="mt-6 flex justify-center">
-  <p className="max-w-xl text-center text-base sm:text-lg md:text-xl text-[#a1a1a1]">
-    {sobre}
-  </p>
-</div>
+                <p className="max-w-xl text-center text-base sm:text-lg md:text-xl text-[#a1a1a1]">
+                    {sobre}
+                </p>
+            </div>
 
-            {/* BOTÕES */}
+            {/* BOTÕES PRINCIPAL TOPO*/}
             <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-6">
-                <a
-                    href="../curriculoportifolio.pdf"
-                    target="_blank"
-                    className="
-          border border-gray-700/30
-          px-4 py-3
-          rounded-sm
-          flex items-center justify-center gap-2
-          hover:bg-white hover:text-black
-          transition
-        "
-                >
+                <a href="../curriculoportifolio.pdf"
+                   target="_blank"
+                   className="border border-gray-700/30 px-4 py-3 rounded-sm flex items-center justify-center 
+                              gap-2 hover:bg-white hover:text-black transition">
                     <Download />
                     {downloadText}
                 </a>
 
-                <a
-                    href="#contato"
-                    className="
-          border border-gray-300/20
-          px-4 py-3
-          rounded-sm
-          bg-[#1b1b1b]
-          flex items-center justify-center gap-2
-          text-white
-          hover:bg-black
-          transition
-        "
-                >
+                <a href="#contato"
+                   className="border border-gray-300/20 px-4 py-3 rounded-sm bg-[#1b1b1b]
+                              flex items-center justify-center gap-2 text-white hover:bg-black transition">
                     <MessageSquare />
                     {conversarText}
                 </a>

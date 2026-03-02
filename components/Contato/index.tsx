@@ -2,15 +2,22 @@
 import { useEffect, useRef, useState } from 'react'
 
 import './index.css'
+//icones lucide
 import { Mail, Phone, MapPin, Linkedin, Github, ArrowRight, Dot, Clock4, SquareCode, BriefcaseBusiness, SquareArrowOutUpRight, Send } from 'lucide-react';
+// efeito borda rotacionando
 import StarBorder from '../StarBorder'
+//efeito gradient titulo
 import GradientText from '../GradientText'
+//efeito borda com eletrecidade
 import ElectricBorder from '../ElectricBorder'
+//servico emailjs para email
 import emailjs from "@emailjs/browser"
+//mensagem de sucesso ou falha
 import { toast } from 'react-toastify'
+//efeito texto encriptografando
 import DecryptedText from '../DecryptedText'
 
-
+//traduzindo textos
 type Props = {
     titulo: string;
     subtitulo: string;
@@ -40,9 +47,9 @@ type Props = {
 };
 
 function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco, nome, placeholderNome, placeholderEmail, assunto, mensagem, placeholderMensagem, enviar, enviando, disponivel, resposta, horas, respondo, pronto, transformar, conversar, envieMe, oportunidades, crescimento, imediato }: Props) {
+    // efeito aparecendo e sumindo conteudo
     const sectionRef = useRef<HTMLDivElement | null>(null)
     const [isVisible, setIsVisible] = useState(false)
-
     const bottomRef = useRef<HTMLDivElement | null>(null)
     const [showBottom, setShowBottom] = useState(false)
 
@@ -143,7 +150,7 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                             revealDirection="start"
                             speed={80}
                             maxIterations={15}
-                            className="text-white"
+                            
                         />
                     </h2>
                     <p className='text-lg py-5 text-[#a1a1a1]'>{descricao}</p>
@@ -185,6 +192,7 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
 
                 {/* formulario contato*/}
                 <div className={`transition-all duration-700 ease-out delay-150 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
+                    {/* efeito eletrecidade */}
                     <ElectricBorder
                         color="#000080"
                         speed={1}
@@ -212,6 +220,7 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                             )}</button>
                         </form>
                     </ElectricBorder>
+                    {/* form sem borda com eletrecidade */}
                     {/* <form action="" className='border border-gray-700/40 p-8 rounded-2xl flex flex-col gap-2'>
                         <label for="name" data-i18n="nome" className='text-xl font-bold'>{nome}</label>
                         <input type="text" id="name" name="name" required className='bg-white p-2 rounded-md border border-gray-700/20'></input>
@@ -236,13 +245,13 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                 ${showBottom
                         ? 'opacity-100 translate-y-0'
                         : 'opacity-0 translate-y-24'
-                    }
-                `}>
+                    }`}
+                >
 
                 <p className='text-green-600 border border-green-600/30 rounded-3xl w-fit flex items-center mx-auto pr-6'><Dot size={45} className="animate-pulse" />{disponivel}</p>
 
                 <div className='flex flex-col md:flex-row gap-6 text-center items-center mt-5 justify-center'>
-
+                    
                     <StarBorder
                         as="button"
                         color="white"

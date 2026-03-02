@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { translations } from '../translations';
 // import { LanguageSwitcher } from '../components/LanguageSwitcher';
 
+// components
 import Cabecalho from "@/components/Cabecalho";
 import Contato from "@/components/Contato";
 import Habilidades from "@/components/Habilidades";
@@ -19,21 +20,27 @@ export default function Home() {
 
   return (
     <>
+      {/* components trazidos dos components traduzidos*/}
+      {/* botoes para alterar a lingua */}
       <Cabecalho text={t.cabecalho} lang={lang} setLang={setLang} />
+
       <Inicio texts={t.inicio.textos}
         sobre={t.inicio.sobre}
         downloadText={t.inicio.download}
         conversarText={t.inicio.conversar} />
+
       {/* <Sobre/> */}
+
       <Habilidades t={t.habilidades} />
+
       <Projetos titulo={t.projetos.titulo}
         subtitulo={t.projetos.subtitulo}
         categoriaAplicativo={t.projetos.categoriaAplicativo}
         projetosFront={t.projetos.projetosFront}
         verMaisGitHub={t.projetos.verMaisGitHub}
         projetosAplicativo={t.projetos.projetosAplicativo}
-        projetosBack={t.projetos.projetosBack}
-      />
+        projetosBack={t.projetos.projetosBack} />
+
       <Contato titulo={t.contato.titulo}
         subtitulo={t.contato.subtitulo} descricao={t.contato.descricao} telefone={t.contato.telefone}
         localizacao={t.contato.localizacao}
@@ -57,6 +64,7 @@ export default function Home() {
         oportunidades={t.contato.oportunidades}
         crescimento={t.contato.crescimento}
         imediato={t.contato.imediato} />
+
       <Rodape desenvolvido={t.rodape.desenvolvido} />
     </>
   )

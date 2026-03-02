@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+//icones
 import { Linkedin, Github, Menu, X } from "lucide-react";
+//mudar cor tema
 import ThemeSwitcher from "../theme-switcher";
+//raduzir linguas
 import { LanguageSwitcher } from "../LanguageSwitcher";
 
 type Props = {
@@ -18,6 +21,7 @@ type Props = {
 };
 
 function Cabecalho({ text, lang, setLang }: Props) {
+    // botao menu da responsividade
     const [open, setOpen] = useState(false);
 
     return (
@@ -61,7 +65,9 @@ function Cabecalho({ text, lang, setLang }: Props) {
 
                 {/* DIREITA – tema, idioma e hamburger */}
                 <div className="flex items-center gap-3">
+                    {/* botao mudar tema */}
                     <ThemeSwitcher />
+                    {/* botoes mudar lingua */}
                     <LanguageSwitcher lang={lang} setLang={setLang} />
 
                     {/* botão hamburger (mobile) */}
@@ -75,16 +81,13 @@ function Cabecalho({ text, lang, setLang }: Props) {
                 </div>
             </div>
 
-            {/* MENU MOBILE – apenas links do meio */}
-            <nav
-                className={`
-          md:hidden
-          bg-black/90 backdrop-blur-md
-          border-t border-gray-300/20
-          transition-all duration-300
-          ${open ? "max-h-64 opacity-100" : "max-h-0 opacity-0 overflow-hidden"}
-        `}
+            {/* responsividade MENU MOBILE – apenas links do meio */}
+            <nav className={`md:hidden bg-black/90 backdrop-blur-md border-t border-gray-300/20
+                             transition-all duration-300
+                             ${open ? "max-h-64 opacity-100" : "max-h-0 opacity-0 overflow-hidden"}
+                            `}
             >
+                {/* lista links cabecalho navegacao */}
                 <ul className="flex flex-col items-center gap-5 py-6 text-white">
                     <li>
                         <a href="#inicio" onClick={() => setOpen(false)}>

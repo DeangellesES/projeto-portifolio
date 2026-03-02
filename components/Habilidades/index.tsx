@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react"
+//icones
 import { PanelsTopLeft, CodeXml, BookOpenCheck, Wrench, Smartphone, Monitor } from 'lucide-react';
-
+// efeito encriptografando
 import GradientText from '../GradientText'
 
+// tradução
 type Props = {
     t: {
         titulo: string;
@@ -20,6 +22,7 @@ function Habilidades({ t }: Props) {
     type Translation = Props['t']
 
     const sectionRef = useRef<HTMLDivElement | null>(null)
+    // aparecer e sumir na tela
     const [isVisible, setIsVisible] = useState(false)
 
     useEffect(() => {
@@ -104,12 +107,8 @@ function Habilidades({ t }: Props) {
 
     return (
         <section ref={sectionRef} className='mt-10 px-4' id='habilidades'>
-            <h1
-                className={`
-    text-center text-5xl
-    transition-all duration-700 ease-out
-    ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
-  `}
+            <h1 className={`text-center text-5xl transition-all duration-700 ease-out
+                         ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
             >
                 <GradientText
                     colors={["#160070", "#d1d1d1"]}
@@ -119,18 +118,15 @@ function Habilidades({ t }: Props) {
                     {t.titulo}
                 </GradientText>
             </h1>
-            <p
-                className={`
-    text-center text-[#a1a1a1] text-xl
-    transition-all duration-700 ease-out delay-150
-    ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}
-  `}
+
+            <p className={`text-center text-[#a1a1a1] text-xl transition-all duration-700 ease-out delay-150
+                        ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
             >
                 {t.subtitulo}
             </p>
 
+            {/* renderizando array habilidades na tela organizado */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-10 w-full px-4 sm:px-6 md:px-10 gap-6">
-
                 {skills.map((skill, index) => {
                     const Icon = skill.icon
 

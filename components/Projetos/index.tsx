@@ -1,10 +1,14 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+//titulo em gradient
 import GradientText from '../GradientText'
+//image em nextjs
 import Image from "next/image"
+//icones lucide
 import { SquareArrowOutUpRight, Github } from 'lucide-react';
 
+// tradução
 type Props = {
     titulo: string;
     subtitulo: string;
@@ -47,6 +51,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
     const [isVisible, setIsVisible] = useState(false)
     const [categoria, setCategoria] = useState<"front" | "back" | "full" | "aplicativo">("front")
 
+    // aparecer e sumir na tela
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
@@ -62,6 +67,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
         return () => observer.disconnect()
     }, [])
 
+    // projetos nas categorias
     const projetosFiltrados =
         categoria === "front"
             ? projetosFront
@@ -71,6 +77,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                     ? projetosAplicativo
                     : []
 
+    // inicio return projetos          
     return (
         <section
             ref={sectionRef}
@@ -79,8 +86,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
         >
             <h1
                 className={`text-center text-5xl leading-tight transition-all duration-700 ease-out
-                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
-                `}
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
             >
                 <GradientText
                     colors={["#160070", "#d1d1d1"]}
@@ -90,27 +96,20 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                     {titulo}
                 </GradientText>
             </h1>
+            
             <p
                 className={`m-auto text-center text-[#a1a1a1] text-xl w-[60%] transition-all duration-700 ease-out delay-150
-                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
-            `}>
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+            >
                 {subtitulo}
             </p>
 
-            <div className={`
-                flex flex-row
-                justify-center
-                flex-wrap
-                gap-4
-                mt-10
-                px-4
-                transition-all duration-700 ease-out
-                ${isVisible
-                    ? "opacity-100 translate-x-0"
-                    : "opacity-0 -translate-x-20"
-                }
-            `}>
-
+            <div className={`flex flex-row justify-center flex-wrap gap-4 mt-10 px-4
+                             transition-all duration-700 ease-out
+                          ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
+                >
+                
+                {/* botoes categoria projeto */}
                 <button
                     onClick={() => setCategoria("front")}
                     className={`border px-3 rounded-xl text-sm font-bold cursor-pointer ${categoria === "front" ? "bg-white text-black" : "border-gray-300/20"}`}
@@ -162,12 +161,15 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                         </div>
 
                         <div className='p-5'>
+                            {/* Titulo projeto */}
                             <h1 className='text-2xl text-white'>{projeto.titulo}</h1>
 
+                            {/* descricao projeto */}
                             <p className='py-3 text-[#a1a1a1]'>
                                 {projeto.descricao}
                             </p>
 
+                            {/* tecnologias utilizadas */}
                             <div className='flex gap-3 flex-wrap'>
                                 {projeto.tecnologias.map((tech, i) => (
                                     <p
@@ -179,9 +181,10 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                                 ))}
                             </div>
 
+                            {/* botoes ver site e ver codigo */}
                             <div className='flex gap-10 justify-center mt-3'>
 
-                                {categoria !== "aplicativo" && categoria !== "back" &&(
+                                {categoria !== "aplicativo" && categoria !== "back" && (
                                     <a
                                         href={projeto.site}
                                         target="_blank"
@@ -203,14 +206,11 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                         </div>
                     </div>
                 ))}
+
+                {/* ver projetos no GitHub */}
                 <div
-                    className={`w-full flex justify-center 
-                                transition-all duration-1500 ease-out delay-500
-                                ${isVisible
-                            ? "opacity-100 translate-x-0"
-                            : "opacity-0 translate-x-20"
-                        }
-  `}
+                    className={`w-full flex justify-center transition-all duration-1500 ease-out delay-500
+                                ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"}`}
                 >
                     <a
                         href='https://github.com/DeangellesES'
