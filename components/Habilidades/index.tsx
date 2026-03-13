@@ -107,7 +107,7 @@ function Habilidades({ t }: Props) {
 
     return (
         <section ref={sectionRef} className='mt-10 px-4' id='habilidades'>
-            <h1 className={`text-center text-5xl transition-all duration-700 ease-out
+            <h1 className={`text-center text-5xl transition-all duration-2000 ease-out
                          ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
             >
                 <GradientText
@@ -119,7 +119,7 @@ function Habilidades({ t }: Props) {
                 </GradientText>
             </h1>
 
-            <p className={`text-center text-[#a1a1a1] text-xl transition-all duration-700 ease-out delay-150
+            <p className={`text-center text-[#a1a1a1] text-xl transition-all duration-2000 ease-out delay-150
                         ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
             >
                 {t.subtitulo}

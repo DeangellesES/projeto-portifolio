@@ -85,7 +85,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
             id='projetos'
         >
             <h1
-                className={`text-center text-5xl leading-tight transition-all duration-700 ease-out
+                className={`text-center text-5xl leading-tight transition-all duration-2000 ease-out
                 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
             >
                 <GradientText
@@ -98,14 +98,14 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
             </h1>
             
             <p
-                className={`m-auto text-center text-[#a1a1a1] text-xl w-[60%] transition-all duration-700 ease-out delay-150
+                className={`m-auto text-center text-[#a1a1a1] text-xl w-[60%] transition-all duration-2000 ease-out delay-150
                 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
             >
                 {subtitulo}
             </p>
 
             <div className={`flex flex-row justify-center flex-wrap gap-4 mt-10 px-4
-                             transition-all duration-700 ease-out
+                             transition-all duration-2000 ease-out
                           ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
                 >
                 
@@ -156,7 +156,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                                 alt={projeto.titulo}
                                 width={300}
                                 height={100}
-                                className='w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110'
+                                className='w-full h-full object-cover object-top transition-transform duration-2000 ease-out group-hover:scale-110'
                             />
                         </div>
 
@@ -209,7 +209,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
 
                 {/* ver projetos no GitHub */}
                 <div
-                    className={`w-full flex justify-center transition-all duration-1500 ease-out delay-500
+                    className={`w-full flex justify-center transition-all duration-2000 ease-out delay-500
                                 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"}`}
                 >
                     <a

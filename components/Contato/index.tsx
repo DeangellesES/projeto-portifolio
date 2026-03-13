@@ -127,7 +127,7 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
     return (
         <section className='pb-20 px-4 sm:px-8 md:px-15 overflow-hidden' id='contato' ref={sectionRef}>
 
-            <h1 className={`text-center text-5xl mb-15 transition-all duration-700 ease-out
+            <h1 className={`text-center text-5xl mb-15 transition-all duration-2000 ease-out
                 ${isVisible
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-20'
@@ -142,7 +142,7 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
 
             {/* contatos parte esquerda */}
             <div className='grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20'>
-                <div className={` w-full md:w-[80%] transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'} `}>
+                <div className={` w-full md:w-[80%] transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'} `}>
                     <h2 className='text-3xl font-bold'>
                         <DecryptedText
                             text={subtitulo}
@@ -191,7 +191,7 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                 </div>
 
                 {/* formulario contato*/}
-                <div className={`transition-all duration-700 ease-out delay-150 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
+                <div className={`transition-all duration-1000 ease-out delay-150 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
                     {/* efeito eletrecidade */}
                     <ElectricBorder
                         color="#000080"
