@@ -27,7 +27,7 @@ type Props = {
     projetosBack: {
         titulo: string;
         descricao: string;
-        verSite: string;
+        // verSite: string;
         codigo: string;
         imagem: string;
         tecnologias: string[];

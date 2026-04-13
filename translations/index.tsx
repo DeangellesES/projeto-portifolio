@@ -98,7 +98,7 @@ export const translations = {
         {
           titulo: "API para buscar CEP",
           descricao: "Projeto Back-End para buscar informações atravéz do CEP.",
-          verSite: "Ver App",
+          // verSite: "Ver App",
           codigo: "View Code",
           imagem: "/apiCEP.png",
           tecnologias: ["Node.Js", "express"],
@@ -123,7 +123,7 @@ export const translations = {
           // verSite: "Ver App",
           codigo: "View Code",
           imagem: "/entretenimento.png",
-          tecnologias: ["React", "Vite", "TailwindCSS", "TypeScript",  "Node.Js", "express", "MongoDB"],
+          tecnologias: ["React", "Vite", "TailwindCSS", "TypeScript", "Node.Js", "express", "MongoDB"],
           site: "#",
           codigoLink: "https://github.com/DeangellesES/guardar_entretenimento-Vite-React.Js-TailwindCSS-TypeScript-Node.Js-MongoDB"
         },
@@ -281,26 +281,36 @@ export const translations = {
       ],
       projetosBack: [
         {
-          titulo: "Pomodoro Technique App and To-Do List",
-          descricao: "Mobile app for using the Pomodoro Technique to improve focus and manage tasks.",
-          verSite: "Ver App",
+          titulo: "API for searching ZIP codes",
+          descricao: "Back-end project for retrieving information using ZIP codes.",
+          // verSite: "Ver App",
           codigo: "View Code",
-          imagem: "/focus.png",
-          tecnologias: ["React Native", "Expo"],
+          imagem: "/apiCEP.png",
+          tecnologias: ["Node.Js", "express"],
           site: "#",
-          codigoLink: "https://github.com/DeangellesES/aplicativo_pomodoro_fokus-ReactNative"
+          codigoLink: "https://github.com/DeangellesES/api_busca_CEP-NodeJs-express-axios"
         },
       ],
       projetosFull: [
         {
-          titulo: "Pomodoro Technique App and To-Do List",
-          descricao: "Mobile app for using the Pomodoro Technique to improve focus and manage tasks.",
-          verSite: "Ver App",
+          titulo: "System for automating a pizzeria.",
+          descricao: "Full-stack project with a complete application to improve the customer ordering process. Registration and login system for the kitchen and waiters for orders placed, and to create as many login and registration accounts as necessary for anyone who wants to use them.",
+          // verSite: "Ver App",
           codigo: "View Code",
-          imagem: "/focus.png",
-          tecnologias: ["React Native", "Expo"],
+          imagem: "/pizza.png",
+          tecnologias: ["Next.Js", "TailwindCSS", "TypeScript", "Node.Js", "express", "PostgreSQL", "PrismaORM", "ReactNative"],
           site: "#",
-          codigoLink: "https://github.com/DeangellesES/aplicativo_pomodoro_fokus-ReactNative"
+          codigoLink: "https://github.com/DeangellesES/automatizar_pizzaria-TypeScript-Next.JS-TailwindCSS-Node.JS-Express-PostgreSQL-PrismaORM-ReactNative"
+        },
+        {
+          titulo: "System for organizing entertainment",
+          descricao: "Full-stack project for organizing entertainment. Save and keep track of where you left off watching something, and also organize what you intend to watch. Registration and login system so that each user saves only their own items.",
+          // verSite: "Ver App",
+          codigo: "View Code",
+          imagem: "/entretenimento.png",
+          tecnologias: ["React", "Vite", "TailwindCSS", "TypeScript", "Node.Js", "express", "MongoDB"],
+          site: "#",
+          codigoLink: "https://github.com/DeangellesES/guardar_entretenimento-Vite-React.Js-TailwindCSS-TypeScript-Node.Js-MongoDB"
         },
       ],
       projetosAplicativo: [
@@ -315,8 +325,8 @@ export const translations = {
           codigoLink: "https://github.com/DeangellesES/aplicativo_pomodoro_fokus-ReactNative"
         },
         {
-          titulo: "App de Pedir Comida",
-          descricao: "Projeto FrontEnd e Fictício de Aplicativo que entrega pedido de comidas.",
+          titulo: "Food Ordering App",
+          descricao: "Fictional Front-End Project for a food delivery app.",
           verSite: "Ver App",
           codigo: "Ver Código",
           imagem: "/app-food-delivery.png",
