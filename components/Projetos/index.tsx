@@ -34,6 +34,16 @@ type Props = {
         site: string;
         codigoLink: string;
     }[];
+    projetosFull: {
+        titulo: string;
+        descricao: string;
+        // verSite: string;
+        codigo: string;
+        imagem: string;
+        tecnologias: string[];
+        site: string;
+        codigoLink: string;
+    }[];
     projetosAplicativo: {
         titulo: string;
         descricao: string;
@@ -43,10 +53,10 @@ type Props = {
         tecnologias: string[];
         site: string;
         codigoLink: string;
-    }[];
+    }[]; 
 }
 
-function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMaisGitHub, projetosBack, projetosAplicativo }: Props) {
+function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMaisGitHub, projetosBack, projetosFull, projetosAplicativo  }: Props) {
     const sectionRef = useRef<HTMLDivElement | null>(null)
     const [isVisible, setIsVisible] = useState(false)
     const [categoria, setCategoria] = useState<"front" | "back" | "full" | "aplicativo">("front")
@@ -68,20 +78,21 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
     }, [])
 
     // projetos nas categorias
-    const projetosFiltrados =
-        categoria === "front"
-            ? projetosFront
-            : categoria === "back"
-                ? projetosBack
-                : categoria === "aplicativo"
-                    ? projetosAplicativo
-                    : []
+    const projetosPorCategoria = {
+        front: projetosFront,
+        back: projetosBack,
+        full: projetosFull,
+        aplicativo: projetosAplicativo
+    }
+
+    const projetosFiltrados = projetosPorCategoria[categoria] ?? []
+
 
     // inicio return projetos          
     return (
         <section
             ref={sectionRef}
-            className='h-auto mt-5 mb-5 overflow-hidden'
+            className='h-auto mt-25 mb-5 overflow-hidden'
             id='projetos'
         >
             <h1
@@ -96,7 +107,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                     {titulo}
                 </GradientText>
             </h1>
-            
+
             <p
                 className={`m-auto text-center text-[#a1a1a1] text-xl w-[60%] transition-all duration-2000 ease-out delay-150
                 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -107,8 +118,8 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
             <div className={`flex flex-row justify-center flex-wrap gap-4 mt-10 px-4
                              transition-all duration-2000 ease-out
                           ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
-                >
-                
+            >
+
                 {/* botoes categoria projeto */}
                 <button
                     onClick={() => setCategoria("front")}
@@ -146,7 +157,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                     <div
                         key={index}
                         style={{ transitionDelay: `${index * 150}ms` }}
-                        className={`group border border-gray-300/20 h-[445px] flex flex-col rounded-2xl w-full sm:w-[80%] lg:w-[35%] bg-[#0d0d0d]
+                        className={`group border border-gray-300/20 h-[530px] flex flex-col rounded-2xl w-full sm:w-[80%] lg:w-[35%] bg-[#0d0d0d]
                                     transition-all duration-300 ease-out
                                     ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}>
 
@@ -160,7 +171,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                             />
                         </div>
 
-                        <div className='p-5'>
+                        <div className='p-5 flex flex-col flex-1'>
                             {/* Titulo projeto */}
                             <h1 className='text-2xl text-white'>{projeto.titulo}</h1>
 
@@ -182,13 +193,13 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                             </div>
 
                             {/* botoes ver site e ver codigo */}
-                            <div className='flex gap-10 justify-center mt-3'>
+                            <div className='flex gap-10 justify-center mt-auto'>
 
-                                {categoria !== "aplicativo" && categoria !== "back" && (
+                                {categoria !== "aplicativo" && categoria !== "back" && categoria !== "full" && (
                                     <a
                                         href={projeto.site}
                                         target="_blank"
-                                        className='flex gap-2 items-center text-white'
+                                        className='flex gap-2 items-center text-white lg:text-sm'
                                     >
                                         {projeto.verSite} <SquareArrowOutUpRight size={15} />
                                     </a>
@@ -197,7 +208,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                                 <a
                                     href={projeto.codigoLink}
                                     target="_blank"
-                                    className='flex gap-2 items-center text-white'
+                                    className='flex gap-2 items-center text-white lg:text-sm'
                                 >
                                     {projeto.codigo} <Github size={15} />
                                 </a>

@@ -106,6 +106,28 @@ export const translations = {
           codigoLink: "https://github.com/DeangellesES/api_busca_CEP-NodeJs-express-axios"
         },
       ],
+      projetosFull: [
+        {
+          titulo: "Sistema para automatizar pizzaria",
+          descricao: "Projeto Full-Stack e com Aplicativo, completo, para melhorar processo de pedidos dos clientes. Sistema de Registro e Login para a cozinha e para garçom para os pedidos feitos, e para criar o quanto login e registro for necessario e para quem quiser usar.",
+          // verSite: "Ver App",
+          codigo: "View Code",
+          imagem: "/pizza.png",
+          tecnologias: ["Next.Js", "TailwindCSS", "TypeScript", "Node.Js", "express", "PostgreSQL", "PrismaORM", "ReactNative"],
+          site: "#",
+          codigoLink: "https://github.com/DeangellesES/automatizar_pizzaria-TypeScript-Next.JS-TailwindCSS-Node.JS-Express-PostgreSQL-PrismaORM-ReactNative"
+        },
+        {
+          titulo: "Sistema para organizar entretenimento",
+          descricao: "Projeto Full-Stack para organizar entretenimento. Guarde e salve de onde voçê parou de assistir algo, e tambem organize o que voce pretende assistir. Sistema de registro e login para que cada um salve o seus proprios items apenas.",
+          // verSite: "Ver App",
+          codigo: "View Code",
+          imagem: "/entretenimento.png",
+          tecnologias: ["React", "Vite", "TailwindCSS", "TypeScript",  "Node.Js", "express", "MongoDB"],
+          site: "#",
+          codigoLink: "https://github.com/DeangellesES/guardar_entretenimento-Vite-React.Js-TailwindCSS-TypeScript-Node.Js-MongoDB"
+        },
+      ],
       projetosAplicativo: [
         {
           titulo: "App da Técnica Pomodoro e Lista de Tarefas",
@@ -116,6 +138,16 @@ export const translations = {
           tecnologias: ["React Native", "Expo"],
           site: "#",
           codigoLink: "https://github.com/DeangellesES/aplicativo_pomodoro_fokus-ReactNative"
+        },
+        {
+          titulo: "App de Pedir Comida",
+          descricao: "Projeto FrontEnd e Fictício de Aplicativo que entrega pedido de comidas.",
+          verSite: "Ver App",
+          codigo: "Ver Código",
+          imagem: "/app-food-delivery.png",
+          tecnologias: ["React Native", "Expo"],
+          site: "#",
+          codigoLink: "https://github.com/DeangellesES/aplicativo_delivery-ReactNative"
         }
       ]
     },
@@ -259,6 +291,18 @@ export const translations = {
           codigoLink: "https://github.com/DeangellesES/aplicativo_pomodoro_fokus-ReactNative"
         },
       ],
+      projetosFull: [
+        {
+          titulo: "Pomodoro Technique App and To-Do List",
+          descricao: "Mobile app for using the Pomodoro Technique to improve focus and manage tasks.",
+          verSite: "Ver App",
+          codigo: "View Code",
+          imagem: "/focus.png",
+          tecnologias: ["React Native", "Expo"],
+          site: "#",
+          codigoLink: "https://github.com/DeangellesES/aplicativo_pomodoro_fokus-ReactNative"
+        },
+      ],
       projetosAplicativo: [
         {
           titulo: "Pomodoro Technique App and To-Do List",
@@ -269,6 +313,16 @@ export const translations = {
           tecnologias: ["React Native", "Expo"],
           site: "#",
           codigoLink: "https://github.com/DeangellesES/aplicativo_pomodoro_fokus-ReactNative"
+        },
+        {
+          titulo: "App de Pedir Comida",
+          descricao: "Projeto FrontEnd e Fictício de Aplicativo que entrega pedido de comidas.",
+          verSite: "Ver App",
+          codigo: "Ver Código",
+          imagem: "/app-food-delivery.png",
+          tecnologias: ["React Native", "Expo"],
+          site: "#",
+          codigoLink: "https://github.com/DeangellesES/aplicativo_delivery-ReactNative"
         }
       ]
     },
