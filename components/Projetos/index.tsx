@@ -16,7 +16,7 @@ type Props = {
     projetosFront: {
         titulo: string;
         descricao: string;
-        verSite: string;
+        verSite?: string;
         codigo: string;
         imagem: string;
         tecnologias: string[];
@@ -27,7 +27,7 @@ type Props = {
     projetosBack: {
         titulo: string;
         descricao: string;
-        // verSite: string;
+        verSite?: string;
         codigo: string;
         imagem: string;
         tecnologias: string[];
@@ -37,7 +37,7 @@ type Props = {
     projetosFull: {
         titulo: string;
         descricao: string;
-        // verSite: string;
+        verSite?: string;
         codigo: string;
         imagem: string;
         tecnologias: string[];
