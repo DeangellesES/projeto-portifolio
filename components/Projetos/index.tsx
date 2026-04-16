@@ -47,7 +47,7 @@ type Props = {
     projetosAplicativo: {
         titulo: string;
         descricao: string;
-        verSite: string;
+        verSite?: string;
         codigo: string;
         imagem: string;
         tecnologias: string[];
