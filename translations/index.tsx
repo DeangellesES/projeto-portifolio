@@ -131,7 +131,7 @@ export const translations = {
       projetosAplicativo: [
         {
           titulo: "App da Técnica Pomodoro e Lista de Tarefas",
-          descricao: "Aplicativo mobile para utilizar a tecnica pomodoro para melhorar o focu e para gerenciamento de tarefas.",
+          descricao: "Aplicativo de produtividade baseado na técnica Pomodoro para auxiliar no controle do tempo, foco e organização das atividades. Possui temporizador para ciclos de estudo ou trabalho e funcionalidade de criação de listas de tarefas para melhorar a produtividade e o gerenciamento da rotina.",
           verSite: "Ver App",
           codigo: "Ver Código",
           imagem: "/focus.png",
@@ -141,13 +141,23 @@ export const translations = {
         },
         {
           titulo: "App de Pedir Comida",
-          descricao: "Projeto FrontEnd e Fictício de Aplicativo que entrega pedido de comidas.",
+          descricao: "Aplicativo frontend de delivery desenvolvido para exibição de comidas, categorias e localização de restaurantes em uma interface simples e intuitiva. O projeto possui navegação entre categorias, listagem de produtos e visualização de informações de localização",
           verSite: "Ver App",
           codigo: "Ver Código",
           imagem: "/app-food-delivery.png",
           tecnologias: ["React Native", "Expo"],
           site: "#",
           codigoLink: "https://github.com/DeangellesES/aplicativo_delivery-ReactNative"
+        },
+        {
+          titulo: "App de Dietas",
+          descricao: "Aplicativo de dietas com inteligência artificial onde o usuário informa seus dados e objetivos, seleciona opções de acordo com seu perfil e, a partir dessas informações, a IA gera uma dieta personalizada. ",
+          verSite: "Ver App",
+          codigo: "Ver Código",
+          imagem: "/appdieta.png",
+          tecnologias: ["React Native", "Expo", "TypeScript", "Node.js", "Fastify", "GeminiAPI"],
+          site: "#",
+          codigoLink: "https://github.com/DeangellesES/aplicativo_dieta_com_IA_fullstack-ReactNative-Expo-NodeJS-Fastify-TypeScript-GeminiAPI"
         }
       ]
     },
