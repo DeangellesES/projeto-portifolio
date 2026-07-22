@@ -158,6 +158,16 @@ export const translations = {
           tecnologias: ["React Native", "Expo", "TypeScript", "Node.js", "Fastify", "GeminiAPI"],
           site: "#",
           codigoLink: "https://github.com/DeangellesES/aplicativo_dieta_com_IA_fullstack-ReactNative-Expo-NodeJS-Fastify-TypeScript-GeminiAPI"
+        },
+        {
+          titulo: "Aplicativo para Organizar Entretenimento",
+          descricao: "Aplicativo desenvolvido para auxiliar no gerenciamento de filmes, séries, animes e documentários. Permite organizar conteúdos, acompanhar o progresso de episódios e temporadas, registrar o ponto onde o usuário parou e criar uma lista do que deseja assistir.",
+          verSite: "Ver App",
+          codigo: "Ver Código",
+          imagem: "/app-entretenimento.png",
+          tecnologias: ["React Native", "Expo", "TypeScript", "Node.js", "express.js", "PostgreSQL"],
+          site: "#",
+          codigoLink: "https://github.com/DeangellesES/aplicativo_dieta_com_IA_fullstack-ReactNative-Expo-NodeJS-Fastify-TypeScript-GeminiAPI"
         }
       ]
     },
