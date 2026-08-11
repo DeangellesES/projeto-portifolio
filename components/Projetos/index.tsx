@@ -7,6 +7,7 @@ import GradientText from '../GradientText'
 import Image from "next/image"
 //icones lucide
 import { SquareArrowOutUpRight, Github } from 'lucide-react';
+import TiltedCard from "@/components/TiltedCard";
 
 // tradução
 type Props = {
@@ -53,10 +54,10 @@ type Props = {
         tecnologias: string[];
         site: string;
         codigoLink: string;
-    }[]; 
+    }[];
 }
 
-function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMaisGitHub, projetosBack, projetosFull, projetosAplicativo  }: Props) {
+function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMaisGitHub, projetosBack, projetosFull, projetosAplicativo }: Props) {
     const sectionRef = useRef<HTMLDivElement | null>(null)
     const [isVisible, setIsVisible] = useState(false)
     const [categoria, setCategoria] = useState<"front" | "back" | "full" | "aplicativo">("front")
@@ -67,7 +68,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
             ([entry]) => {
                 setIsVisible(entry.isIntersecting)
             },
-            { threshold: 0.3 }
+            { threshold: 0.05 }
         )
 
         if (sectionRef.current) {
@@ -85,7 +86,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
         aplicativo: projetosAplicativo
     }
 
-    const projetosFiltrados = (projetosPorCategoria[categoria] ?? []).slice(0,6)
+    const projetosFiltrados = (projetosPorCategoria[categoria] ?? []).slice(0, 6)
 
 
     // inicio return projetos          
@@ -151,87 +152,144 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
 
             </div>
 
-            <div className='flex flex-col items-center gap-8 my-15 lg:flex-row lg:flex-wrap lg:justify-center'>
+            <div className="flex flex-col items-center gap-8 my-15 lg:flex-row lg:flex-wrap lg:justify-center">
 
                 {projetosFiltrados.map((projeto, index) => (
-                    <div
+
+                    <TiltedCard
                         key={index}
-                        style={{ transitionDelay: `${index * 150}ms` }}
-                        className={`group border border-gray-300/20 h-auto flex flex-col rounded-2xl w-full sm:w-[80%] lg:w-[30%] bg-[#0d0d0d]
-                                    transition-all duration-300 ease-out
-                                    ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}>
+                        rotateAmplitude={12}
+                        scaleOnHover={1.05}
+                        showMobileWarning={false}
+                        showTooltip={false}
+                        className={`w-full sm:w-[80%] lg:w-[30%]`}
+                    >
 
-                        <div className='h-52 flex-shrink-0 overflow-hidden rounded-t-2xl'>
-                            <Image
-                                src={projeto.imagem}
-                                alt={projeto.titulo}
-                                width={300}
-                                height={100}
-                                className='w-full h-full object-cover object-top transition-transform duration-2000 ease-out group-hover:scale-110'
-                            />
-                        </div>
+                        <div
+                            style={{
+                                transitionDelay: `${index * 150}ms`,
+                            }}
+                            className={`group border border-gray-300/20 h-auto flex flex-col rounded-2xl w-full bg-[#0d0d0d]
+          transition-all duration-300 ease-out
+          ${isVisible
+                                    ? "opacity-100 translate-y-0"
+                                    : "opacity-0 translate-y-20"
+                                }`}
+                        >
 
-                        <div className='p-5 flex flex-col flex-1'>
-                            {/* Titulo projeto */}
-                            <h1 className='text-2xl text-white'>{projeto.titulo}</h1>
+                            {/* IMAGEM */}
+                            <div className="h-52 flex-shrink-0 overflow-hidden rounded-t-2xl">
 
-                            {/* descricao projeto */}
-                            <p className='py-3 text-[#a1a1a1]'>
-                                {projeto.descricao}
-                            </p>
+                                <Image
+                                    src={projeto.imagem}
+                                    alt={projeto.titulo}
+                                    width={300}
+                                    height={100}
+                                    className="w-full h-full object-cover object-top transition-transform duration-2000 ease-out group-hover:scale-110"
+                                />
 
-                            {/* tecnologias utilizadas */}
-                            <div className='flex gap-3 flex-wrap'>
-                                {projeto.tecnologias.map((tech, i) => (
-                                    <p
-                                        key={i}
-                                        className='rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold'
-                                    >
-                                        {tech}
-                                    </p>
-                                ))}
                             </div>
 
-                            {/* botoes ver site e ver codigo */}
-                            <div className='flex gap-10 justify-center mt-auto lg:mt-5'>
 
-                                {categoria !== "aplicativo" && categoria !== "back" && categoria !== "full" && (
+                            {/* CONTEÚDO */}
+                            <div className="p-5 flex flex-col flex-1">
+
+                                {/* TÍTULO */}
+                                <h1 className="text-2xl text-white">
+                                    {projeto.titulo}
+                                </h1>
+
+
+                                {/* DESCRIÇÃO */}
+                                <p className="py-3 text-[#a1a1a1]">
+                                    {projeto.descricao}
+                                </p>
+
+
+                                {/* TECNOLOGIAS */}
+                                <div className="flex gap-3 flex-wrap">
+
+                                    {projeto.tecnologias.map((tech, i) => (
+
+                                        <p
+                                            key={i}
+                                            className="rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold"
+                                        >
+                                            {tech}
+                                        </p>
+
+                                    ))}
+
+                                </div>
+
+
+                                {/* BOTÕES */}
+                                <div className="flex gap-10 justify-center mt-auto lg:mt-5">
+
+                                    {categoria !== "aplicativo" &&
+                                        categoria !== "back" &&
+                                        categoria !== "full" && (
+
+                                            <a
+                                                href={projeto.site}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex gap-2 items-center text-white lg:text-sm"
+                                            >
+                                                {projeto.verSite}
+
+                                                <SquareArrowOutUpRight size={15} />
+                                            </a>
+
+                                        )}
+
+
                                     <a
-                                        href={projeto.site}
+                                        href={projeto.codigoLink}
                                         target="_blank"
-                                        className='flex gap-2 items-center text-white lg:text-sm'
+                                        rel="noopener noreferrer"
+                                        className="flex gap-2 items-center text-white lg:text-sm"
                                     >
-                                        {projeto.verSite} <SquareArrowOutUpRight size={15} />
-                                    </a>
-                                )}
+                                        {projeto.codigo}
 
-                                <a
-                                    href={projeto.codigoLink}
-                                    target="_blank"
-                                    className='flex gap-2 items-center text-white lg:text-sm'
-                                >
-                                    {projeto.codigo} <Github size={15} />
-                                </a>
+                                        <Github size={15} />
+                                    </a>
+
+                                </div>
 
                             </div>
+
                         </div>
-                    </div>
+
+                    </TiltedCard>
+
                 ))}
 
-                {/* ver projetos no GitHub */}
+
+                {/* VER MAIS PROJETOS NO GITHUB */}
                 <div
                     className={`w-full flex justify-center transition-all duration-2000 ease-out delay-500
-                                ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"}`}
+      ${isVisible
+                            ? "opacity-100 translate-x-0"
+                            : "opacity-0 translate-x-20"
+                        }`}
                 >
+
                     <a
-                        href='https://github.com/DeangellesES'
+                        href="https://github.com/DeangellesES"
                         target="_blank"
-                        className='text-xl flex items-center gap-3 hover:text-[#acacac] transition'
+                        rel="noopener noreferrer"
+                        className="text-xl flex items-center gap-3 hover:text-[#acacac] transition"
                     >
+
                         {verMaisGitHub}
+
                         <SquareArrowOutUpRight size={15} />
+
                     </a>
+
                 </div>
+
             </div>
 
         </section>
