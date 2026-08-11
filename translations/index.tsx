@@ -93,6 +93,26 @@ export const translations = {
           site: "https://site-academia-react-js-vite.vercel.app/",
           codigoLink: "https://github.com/DeangellesES/site_academia-ReactJS-Vite"
         },
+        {
+          titulo: "Site para uma Academia",
+          descricao: "Aplicação front-end criada para academia, estruturada para exibir planos, equipamentos, treinadores especializados, curiosidades, imagens do ambiente e informações de contato e localização.",
+          verSite: "Ver Site",
+          codigo: "Ver Código",
+          imagem: "/academia.png",
+          tecnologias: ["React", "Styled-Components", "Vite"],
+          site: "https://site-academia-react-js-vite.vercel.app/",
+          codigoLink: "https://github.com/DeangellesES/site_academia-ReactJS-Vite"
+        },
+        {
+          titulo: "Site para uma Academia",
+          descricao: "Aplicação front-end criada para academia, estruturada para exibir planos, equipamentos, treinadores especializados, curiosidades, imagens do ambiente e informações de contato e localização.",
+          verSite: "Ver Site",
+          codigo: "Ver Código",
+          imagem: "/academia.png",
+          tecnologias: ["React", "Styled-Components", "Vite"],
+          site: "https://site-academia-react-js-vite.vercel.app/",
+          codigoLink: "https://github.com/DeangellesES/site_academia-ReactJS-Vite"
+        },
       ],
       projetosBack: [
         {

@@ -85,7 +85,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
         aplicativo: projetosAplicativo
     }
 
-    const projetosFiltrados = projetosPorCategoria[categoria] ?? []
+    const projetosFiltrados = (projetosPorCategoria[categoria] ?? []).slice(0,6)
 
 
     // inicio return projetos          
@@ -157,7 +157,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                     <div
                         key={index}
                         style={{ transitionDelay: `${index * 150}ms` }}
-                        className={`group border border-gray-300/20 h-[530px] flex flex-col rounded-2xl w-full sm:w-[80%] lg:w-[35%] bg-[#0d0d0d]
+                        className={`group border border-gray-300/20 h-auto flex flex-col rounded-2xl w-full sm:w-[80%] lg:w-[30%] bg-[#0d0d0d]
                                     transition-all duration-300 ease-out
                                     ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}>
 
@@ -193,7 +193,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                             </div>
 
                             {/* botoes ver site e ver codigo */}
-                            <div className='flex gap-10 justify-center mt-auto'>
+                            <div className='flex gap-10 justify-center mt-auto lg:mt-5'>
 
                                 {categoria !== "aplicativo" && categoria !== "back" && categoria !== "full" && (
                                     <a
