@@ -94,25 +94,25 @@ export const translations = {
           codigoLink: "https://github.com/DeangellesES/site_academia-ReactJS-Vite"
         },
         {
-          titulo: "Site para uma Academia",
-          descricao: "Aplicação front-end criada para academia, estruturada para exibir planos, equipamentos, treinadores especializados, curiosidades, imagens do ambiente e informações de contato e localização.",
+          titulo: "Site para uma Lanchonete",
+          descricao: "Landing Page fictícia para uma Lanchonete, o site possui informações sobra a lanchonete, mostra o cardápio, informações de endereço e endereço com mapa, horário de funcionamente, perguntas frequentes, contatos e redes sociais.",
           verSite: "Ver Site",
           codigo: "Ver Código",
-          imagem: "/academia.png",
-          tecnologias: ["React", "Styled-Components", "Vite"],
-          site: "https://site-academia-react-js-vite.vercel.app/",
-          codigoLink: "https://github.com/DeangellesES/site_academia-ReactJS-Vite"
+          imagem: "/lanchonete.png",
+          tecnologias: ["HTML", "CSS", "JavaScript"],
+          site: "https://deangelleses.github.io/site_lanchonete_landing_page-HTML-CSS-JavaScript/",
+          codigoLink: "https://github.com/DeangellesES/site_lanchonete_landing_page-HTML-CSS-JavaScript"
         },
-        {
-          titulo: "Site para uma Academia",
-          descricao: "Aplicação front-end criada para academia, estruturada para exibir planos, equipamentos, treinadores especializados, curiosidades, imagens do ambiente e informações de contato e localização.",
-          verSite: "Ver Site",
-          codigo: "Ver Código",
-          imagem: "/academia.png",
-          tecnologias: ["React", "Styled-Components", "Vite"],
-          site: "https://site-academia-react-js-vite.vercel.app/",
-          codigoLink: "https://github.com/DeangellesES/site_academia-ReactJS-Vite"
-        },
+        // {
+        //   titulo: "Site para uma Academia",
+        //   descricao: "Aplicação front-end criada para academia, estruturada para exibir planos, equipamentos, treinadores especializados, curiosidades, imagens do ambiente e informações de contato e localização.",
+        //   verSite: "Ver Site",
+        //   codigo: "Ver Código",
+        //   imagem: "/academia.png",
+        //   tecnologias: ["React", "Styled-Components", "Vite"],
+        //   site: "https://site-academia-react-js-vite.vercel.app/",
+        //   codigoLink: "https://github.com/DeangellesES/site_academia-ReactJS-Vite"
+        // },
       ],
       projetosBack: [
         {
