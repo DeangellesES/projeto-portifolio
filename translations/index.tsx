@@ -318,6 +318,16 @@ export const translations = {
           site: "https://site-academia-react-js-vite.vercel.app/",
           codigoLink: "https://github.com/DeangellesES/site_academia-ReactJS-Vite"
         },
+        {
+          titulo: "Website for a Snack Bar",
+          descricao: "A fictional landing page for a snack bar; the site features information about the establishment, the menu, address details (including a map), opening hours, FAQs, contact information, and social media links.",
+          verSite: "View Site",
+          codigo: "View Code",
+          imagem: "/lanchonete.png",
+          tecnologias: ["HTML", "CSS", "JavaScript"],
+          site: "https://deangelleses.github.io/site_lanchonete_landing_page-HTML-CSS-JavaScript/",
+          codigoLink: "https://github.com/DeangellesES/site_lanchonete_landing_page-HTML-CSS-JavaScript"
+        },
       ],
       projetosBack: [
         {

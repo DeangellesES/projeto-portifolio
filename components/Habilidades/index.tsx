@@ -92,7 +92,7 @@ function Habilidades({ t }: Props) {
             icon: Smartphone,
             iconColor: 'text-red-500',
             shadowColor: '239,68,68',
-            items: ['React Native'],
+            items: ['React Native', 'Expo'],
         },
         {
             key: 'desktop',
