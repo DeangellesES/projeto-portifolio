@@ -78,18 +78,29 @@ function CardProjeto({ projeto, index, isVisible, categoria, verMais, verMenos, 
 
 
                 {/* DESCRIÇÃO */}
-                <p
-                    ref={textoRef}
-                    className={`py-3 text-[#a1a1a1] ${expandido ? "" : "line-clamp-3"}`}
-                >
-                    {projeto.descricao}
-                </p>
+                <div className={`relative ${expandido ? "" : "overflow-hidden"}`}>
+                    <p
+                        ref={textoRef}
+                        className={`py-3 text-[#a1a1a1] ${expandido ? "" : "line-clamp-3"}`}
+                    >
+                        {projeto.descricao}
+                    </p>
+
+                    {/* leve escurecida debaixo para cima quando o texto está escondido */}
+                    {!expandido && temMais && (
+                        <div
+                            aria-hidden
+                            className="pointer-events-none absolute inset-x-0 bottom-0 h-10
+                                       bg-gradient-to-t from-[#0d0d0d] to-transparent"
+                        />
+                    )}
+                </div>
 
                 {/* VER MAIS / VER MENOS */}
                 {temMais && (
                     <button
                         onClick={onToggle}
-                        className="self-end text-xs font-bold text-[#a1a1a1] hover:text-white cursor-pointer transition-colors mb-5 mt-2 mb-1 pr-5"
+                        className="self-end text-xs font-bold text-[#a1a1a1] hover:text-white cursor-pointer transition-colors mb-4 mt-1 mb-1 pr-5"
                     >
                         {expandido ? verMenos : `${verMais}...`}
                     </button>

@@ -176,7 +176,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                         href="https://github.com/DeangellesES"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xl flex items-center gap-3 hover:text-[#acacac] transition mt-15"
+                        className="text-xl flex items-center gap-3 hover:text-[#acacac] transition mt-10"
                     >
 
                         {verMaisGitHub}
