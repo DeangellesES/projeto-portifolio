@@ -102,7 +102,7 @@ function CardProjeto({ projeto, index, isVisible, categoria, verMais, verMenos, 
                         onClick={onToggle}
                         className="self-end text-xs font-bold text-[#a1a1a1] hover:text-white cursor-pointer transition-colors mb-4 mt-1 mb-1 pr-5"
                     >
-                        {expandido ? verMenos : `${verMais}...`}
+                        {expandido ? verMenos : verMais}
                     </button>
                 )}
 
