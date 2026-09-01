@@ -52,6 +52,8 @@ export const translations = {
       subtitulo: "Ideias que viraram código, telas que ganham vida e experiências que funcionam de verdade. Aqui você encontra o que gosto de fazer transformar ideias em soluções impactantes.",
       categoriaAplicativo: "Aplicativos",
       verMaisGitHub: "Veja mais Projetos em meu GitHub",
+      verMais: "Ver Mais",
+      verMenos: "Ver Menos",
       projetosFront: [
         {
           titulo: "Site para uma Oficina Mecânica",
@@ -277,6 +279,8 @@ export const translations = {
       subtitulo: "Ideas turned into code, screens brought to life, and experiences that truly work. Here you'll find what I love to do: transforming ideas into impactful solutions.",
       categoriaAplicativo: "Applications",
       verMaisGitHub: "See more Projects on my GitHub",
+      verMais: "View More",
+      verMenos: "View Less",
       projetosFront: [
         {
           titulo: "Website for a Mechanical Workshop",

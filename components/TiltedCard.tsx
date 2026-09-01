@@ -97,10 +97,10 @@ export default function TiltedCard({
   return (
     <figure
       ref={ref}
-      className={`tilted-card-figure ${className}`}
+      className={`tilted-card-figure ${hasChildren ? "tilted-card-figure--content" : ""} ${className}`}
       style={
         hasChildren
-          ? { height: 'auto' }
+          ? { height: '100%' }
           : { height: containerHeight, width: containerWidth }
       }
       onMouseMove={handleMouse}

@@ -7,6 +7,15 @@
   justify-content: center;
 }
 
+.tilted-card-figure--content {
+  align-items: stretch;
+}
+
+.tilted-card-figure--content > .tilted-card-inner {
+  width: 100%;
+  height: 100%;
+}
+
 .tilted-card-mobile-alert {
   position: absolute;
   top: 1rem;

@@ -39,6 +39,8 @@ export default function Home() {
         categoriaAplicativo={t.projetos.categoriaAplicativo}
         projetosFront={t.projetos.projetosFront}
         verMaisGitHub={t.projetos.verMaisGitHub}
+        verMais={t.projetos.verMais}
+        verMenos={t.projetos.verMenos}
         projetosAplicativo={t.projetos.projetosAplicativo}
         projetosBack={t.projetos.projetosBack} 
         projetosFull={t.projetos.projetosFull}
