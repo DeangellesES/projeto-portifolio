@@ -213,7 +213,7 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                             <label className='text-xl font-bold'>{mensagem}</label>
                             <textarea name="message" id="message" rows={5} placeholder={placeholderMensagem} required className='bg-white text-black p-2 rounded-md border border-gray-700/20' onChange={(e) => setMessage(e.target.value)} value={message}></textarea>
 
-                            <button type="submit" disabled={sending} className='text-center bg-white text-black py-3 text-xl font-bold rounded-md mt-2 border border-gray-900/20 flex items-center justify-center gap-2 hover:bg-black hover:text-white transition duration-400 hover:border-white'>{sending ? (enviando) : (
+                            <button type="submit" disabled={sending} className='text-center bg-white text-black py-3 text-xl font-bold rounded-md mt-2 border border-gray-900/20 flex items-center justify-center gap-2 hover:bg-black hover:text-white transition duration-400 hover:border-white cursor-pointer'>{sending ? (enviando) : (
                                 <>
                                     {enviar} <Send size={25} />
                                 </>

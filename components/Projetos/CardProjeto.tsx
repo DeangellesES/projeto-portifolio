@@ -45,7 +45,7 @@ function CardProjeto({ projeto, index, isVisible, categoria, verMais, verMenos, 
             className={`group border border-gray-300/20 rounded-2xl w-full bg-[#0d0d0d]
           flex flex-col transition-all duration-300 ease-out
           ${expandido
-                    ? "absolute inset-x-0 top-0 z-50 shadow-2xl"
+                    ? "relative z-10 shadow-2xl"
                     : "relative h-full"
                 }
           ${isVisible

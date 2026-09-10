@@ -36,6 +36,7 @@ type Props = {
 function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMaisGitHub, verMais, verMenos, projetosBack, projetosFull, projetosAplicativo }: Props) {
     const sectionRef = useRef<HTMLDivElement | null>(null)
     const [isVisible, setIsVisible] = useState(false)
+    const [contatoVisivel, setContatoVisivel] = useState(false)
     const [categoria, setCategoria] = useState<"front" | "back" | "full" | "aplicativo">("front")
     const [cardExpandido, setCardExpandido] = useState<number | null>(null)
 
@@ -60,6 +61,23 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
         return () => observer.disconnect()
     }, [])
 
+    // esconder a section quando a contato entrar na tela
+    useEffect(() => {
+        const contatoEl = document.getElementById('contato')
+        if (!contatoEl) return
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setContatoVisivel(entry.isIntersecting)
+            },
+            { threshold: 0.05 }
+        )
+
+        observer.observe(contatoEl)
+
+        return () => observer.disconnect()
+    }, [])
+
     // projetos nas categorias
     const projetosPorCategoria = {
         front: projetosFront,
@@ -75,7 +93,8 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
     return (
         <section
             ref={sectionRef}
-            className='h-auto mt-25 mb-5 px-15'
+            className={`h-auto mt-25 mb-5 px-15 transition-all duration-1000 ease-out
+                ${contatoVisivel ? "opacity-0 -translate-y-10 pointer-events-none" : "opacity-100 translate-y-0"}`}
             id='projetos'
         >
             <h1
@@ -134,7 +153,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
 
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-15">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-15 items-start">
 
                 {projetosFiltrados.map((projeto, index) => (
 
