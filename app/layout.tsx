@@ -1,17 +1,24 @@
 import type { Metadata } from "next"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Lato } from "next/font/google"
+// import { Lato } from "next/font/google"
+import { Share_Tech_Mono } from "next/font/google";
 import SplashCursor from '../components/SplashCursor'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 
 // fonte utilizada no projeto como um todo
-const lato = Lato({
-  weight: ['400'],
-  variable: "--font-lato",
-  subsets: ["latin"]
-})
+// const lato = Lato({
+//   weight: ['400'],
+//   variable: "--font-lato",
+//   subsets: ["latin"]
+// })
+
+const shareTechMono = Share_Tech_Mono({
+  variable: "--font-share-tech-mono",
+  subsets: ["latin"],
+  weight: "400",
+});
 
 // nome e icone na aba
 export const metadata: Metadata = {
@@ -29,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={`${lato.className} antialiased`}
+        className={`${shareTechMono.className} antialiased`}
       > 
         {/* cursor com efeito */}
         <SplashCursor />
