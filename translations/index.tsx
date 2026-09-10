@@ -382,11 +382,31 @@ export const translations = {
           titulo: "Food Ordering App",
           descricao: "Fictional Front-End Project for a food delivery app.",
           verSite: "Ver App",
-          codigo: "Ver Código",
+          codigo: "View Code",
           imagem: "/app-food-delivery.png",
           tecnologias: ["React Native", "Expo"],
           site: "#",
           codigoLink: "https://github.com/DeangellesES/aplicativo_delivery-ReactNative"
+        },
+        {
+          titulo: "Diet app",
+          descricao: "An AI-powered diet app where the user enters their details and goals, selects options based on their profile, and the AI ​​generates a personalized diet plan from that information.",
+          verSite: "Ver App",
+          codigo: "View Code",
+          imagem: "/appdieta.png",
+          tecnologias: ["React Native", "Expo", "TypeScript", "Node.js", "Fastify", "GeminiAPI"],
+          site: "#",
+          codigoLink: "https://github.com/DeangellesES/aplicativo_dieta_com_IA_fullstack-ReactNative-Expo-NodeJS-Fastify-TypeScript-GeminiAPI"
+        },
+        {
+          titulo: "App for Organizing Entertainment",
+          descricao: "An app designed to help manage movies, series, anime, and documentaries. It allows you to organize content, track progress on episodes and seasons, save your stopping point, and create a watchlist.",
+          verSite: "Ver App",
+          codigo: "View Code",
+          imagem: "/app-entretenimento.png",
+          tecnologias: ["React Native", "Expo", "TypeScript", "Node.js", "express.js", "PostgreSQL"],
+          site: "#",
+          codigoLink: "https://github.com/DeangellesES/aplicativo_dieta_com_IA_fullstack-ReactNative-Expo-NodeJS-Fastify-TypeScript-GeminiAPI"
         }
       ]
     },
