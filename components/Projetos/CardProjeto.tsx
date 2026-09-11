@@ -108,7 +108,7 @@ function CardProjeto({ projeto, index, isVisible, categoria, verMais, verMenos, 
 
 
                 {/* TECNOLOGIAS */}
-                <div className="flex gap-3 flex-wrap">
+                <div className="flex gap-3 flex-wrap mb-5">
 
                     {projeto.tecnologias.map((tech, i) => (
 
@@ -125,7 +125,7 @@ function CardProjeto({ projeto, index, isVisible, categoria, verMais, verMenos, 
 
 
                 {/* BOTÕES */}
-                <div className="flex gap-10 justify-center mt-auto lg:mt-5">
+                <div className="flex gap-10 justify-center mt-auto">
 
                     {categoria !== "aplicativo" &&
                         categoria !== "back" &&
