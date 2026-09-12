@@ -23,10 +23,11 @@ type Props = {
     verMais: string;
     verMenos: string;
     expandido: boolean;
+    alturaRecolhida: number | null;
     onToggle: () => void;
 }
 
-function CardProjeto({ projeto, index, isVisible, categoria, verMais, verMenos, expandido, onToggle }: Props) {
+function CardProjeto({ projeto, index, isVisible, categoria, verMais, verMenos, expandido, alturaRecolhida, onToggle }: Props) {
     const [temMais, setTemMais] = useState(false)
     const textoRef = useRef<HTMLParagraphElement | null>(null)
 
@@ -41,12 +42,14 @@ function CardProjeto({ projeto, index, isVisible, categoria, verMais, verMenos, 
         <div
             style={{
                 transitionDelay: `${index * 150}ms`,
+                height: !expandido && alturaRecolhida != null ? alturaRecolhida : undefined,
             }}
-            className={`group border border-gray-300/20 rounded-2xl w-full bg-[#0d0d0d]
+            className={`group relative border border-gray-300/20 rounded-2xl w-full bg-[#0d0d0d]
           flex flex-col transition-all duration-300 ease-out
+          ${!expandido && alturaRecolhida == null ? "h-full" : ""}
           ${expandido
-                    ? "relative z-10 shadow-2xl"
-                    : "relative h-full"
+                    ? "z-10 shadow-2xl"
+                    : ""
                 }
           ${isVisible
                     ? "opacity-100 translate-y-0"
@@ -81,7 +84,11 @@ function CardProjeto({ projeto, index, isVisible, categoria, verMais, verMenos, 
                 <div className={`relative ${expandido ? "" : "overflow-hidden"}`}>
                     <p
                         ref={textoRef}
-                        className={`py-3 text-[#a1a1a1] ${expandido ? "" : "line-clamp-3"}`}
+                        className={`py-3 text-[#a1a1a1] overflow-hidden transition-[max-height] duration-500 ease-out
+                          ${expandido
+                                ? "max-h-[40rem]"
+                                : "line-clamp-3 max-h-[6rem]"
+                            }`}
                     >
                         {projeto.descricao}
                     </p>

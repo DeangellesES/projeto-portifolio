@@ -35,15 +35,30 @@ type Props = {
 
 function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMaisGitHub, verMais, verMenos, projetosBack, projetosFull, projetosAplicativo }: Props) {
     const sectionRef = useRef<HTMLDivElement | null>(null)
+    const gridRef = useRef<HTMLDivElement | null>(null)
     const [isVisible, setIsVisible] = useState(false)
     const [contatoVisivel, setContatoVisivel] = useState(false)
     const [categoria, setCategoria] = useState<"front" | "back" | "full" | "aplicativo">("front")
     const [cardExpandido, setCardExpandido] = useState<number | null>(null)
+    const [alturaRecolhida, setAlturaRecolhida] = useState<number | null>(null)
 
     // recolher o card expandido ao trocar de categoria
     useEffect(() => {
         setCardExpandido(null)
+        setAlturaRecolhida(null)
     }, [categoria])
+
+    // expandir apenas o card clicado, fixando a altura dos demais
+    function handleToggle(index: number) {
+        if (cardExpandido === index) {
+            setCardExpandido(null)
+            setAlturaRecolhida(null)
+        } else {
+            const el = gridRef.current?.children[index] as HTMLElement | undefined
+            setAlturaRecolhida(el?.offsetHeight ?? null)
+            setCardExpandido(index)
+        }
+    }
 
     // aparecer e sumir na tela
     useEffect(() => {
@@ -153,7 +168,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
 
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-15 items-start">
+            <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-15 items-start">
 
                 {projetosFiltrados.map((projeto, index) => (
 
@@ -174,7 +189,8 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                             verMais={verMais}
                             verMenos={verMenos}
                             expandido={cardExpandido === index}
-                            onToggle={() => setCardExpandido((atual) => (atual === index ? null : index))}
+                            alturaRecolhida={alturaRecolhida}
+                            onToggle={() => handleToggle(index)}
                         />
 
                     </TiltedCard>
