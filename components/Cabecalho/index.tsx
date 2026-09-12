@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 //icones
 import { Linkedin, Github, Menu, X } from "lucide-react";
 //mudar cor tema
@@ -23,10 +23,18 @@ type Props = {
 function Cabecalho({ text, lang, setLang }: Props) {
     // botao menu da responsividade
     const [open, setOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 0);
+        handleScroll();
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+ 
     return (
-        <header className="fixed top-0 left-0 w-full z-10 bg-black/60 backdrop-blur-md border-b border-gray-300/20">
-            <div className="flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 h-14 sm:h-16">
+        <header className={`fixed top-0 left-0 w-full z-10 bg-transparent transition-all duration-300 ${scrolled ? "bg-background/70 backdrop-blur-md border-b border-gray-300/20" : ""}`}>
+            <div className="relative flex items-center justify-between sm:py-7 px-4 sm:px-8 md:px-12 lg:px-20 h-14 sm:h-16">
 
                 {/* ESQUERDA – linkedin e github */}
                 <div className="flex gap-3">
@@ -48,7 +56,7 @@ function Cabecalho({ text, lang, setLang }: Props) {
                 </div>
 
                 {/* MEIO – links (desktop) */}
-                <nav className="hidden md:flex gap-6 text-white">
+                <nav className="hidden md:flex gap-6 text-white absolute left-1/2 -translate-x-1/2">
                     <a href="#inicio" className="hover:text-[#acacac] transition">
                         {text.inicio}
                     </a>
