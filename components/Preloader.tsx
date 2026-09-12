@@ -1,12 +1,42 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import type { IconType } from "react-icons";
+import {
+    SiJavascript,
+    SiNodedotjs,
+    SiReact,
+    SiNextdotjs,
+    SiCss,
+    SiMysql,
+    SiMongodb,
+} from "react-icons/si";
 import {
     Code2,
     Zap,
     Monitor,
     LockKeyhole,
 } from "lucide-react";
+
+type TechIcon = {
+    Icon: IconType;
+    color: string;
+    top: string;
+    left: string;
+    size: number;
+    delay: number;
+    duration: number;
+};
+
+const techIcons: TechIcon[] = [
+    { Icon: SiJavascript, color: "#f7df1e", top: "10%", left: "7%", size: 38, delay: 0, duration: 9 },
+    { Icon: SiNodedotjs, color: "#68a063", top: "24%", left: "86%", size: 44, delay: 1.2, duration: 11 },
+    { Icon: SiNextdotjs, color: "#ffffff", top: "12%", left: "72%", size: 34, delay: 2, duration: 12 },
+    { Icon: SiReact, color: "#61dafb", top: "64%", left: "8%", size: 42, delay: 0.6, duration: 10 },
+    { Icon: SiCss, color: "#2965f1", top: "78%", left: "20%", size: 36, delay: 2.4, duration: 11.5 },
+    { Icon: SiMysql, color: "#00758f", top: "38%", left: "93%", size: 36, delay: 0.9, duration: 10.5 },
+    { Icon: SiMongodb, color: "#4db33d", top: "82%", left: "62%", size: 40, delay: 1.6, duration: 9.5 },
+];
 
 export default function Preloader() {
     const [progress, setProgress] = useState(0);
@@ -56,6 +86,25 @@ export default function Preloader() {
                     : "opacity-100"
                 }`}
         >
+            {/* ÍCONES FLUTUANTES DE TECNOLOGIAS */}
+            <div className="pointer-events-none absolute inset-0 overflow-hidden select-none">
+                {techIcons.map(({ Icon, color, top, left, size, delay, duration }, i) => (
+                    <span
+                        key={i}
+                        className="animate-float-icon absolute opacity-15"
+                        style={{
+                            top,
+                            left,
+                            color,
+                            animationDelay: `${delay}s`,
+                            animationDuration: `${duration}s`,
+                        }}
+                    >
+                        <Icon style={{ width: size, height: size }} />
+                    </span>
+                ))}
+            </div>
+
             {/* CARD */}
             <div
                 className="

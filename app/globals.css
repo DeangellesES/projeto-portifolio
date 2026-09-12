@@ -238,3 +238,16 @@ body {
 .custom-rays {
   pointer-events: none;
 }
+
+@keyframes float-icon {
+  0%, 100% {
+    transform: translateY(0px) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-26px) rotate(6deg);
+  }
+}
+
+.animate-float-icon {
+  animation: float-icon 10s ease-in-out infinite;
+}
