@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 // import { Lato } from "next/font/google"
 import { Share_Tech_Mono } from "next/font/google";
 import SplashCursor from '../components/SplashCursor'
+import Preloader from '../components/Preloader'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 
@@ -51,6 +52,8 @@ export default function RootLayout({
           {/* mensagem de sucesso ou falha com toastify */}
           <ToastContainer position="top-right" />
         </ThemeProvider>
+        {/* tela de carregamento ao abrir o site */}
+        <Preloader />
       </body>
     </html>
   )
