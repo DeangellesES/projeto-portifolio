@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import type { CSSProperties, ComponentType } from "react";
 import type { IconType } from "react-icons";
 import {
     SiJavascript,
@@ -10,6 +11,11 @@ import {
     SiCss,
     SiMysql,
     SiMongodb,
+    SiTypescript,
+    SiHtml5,
+    SiAndroidstudio,
+    SiVite,
+    SiExpo,
 } from "react-icons/si";
 import {
     Code2,
@@ -18,24 +24,51 @@ import {
     LockKeyhole,
 } from "lucide-react";
 
+function VSCodeIcon({ style }: { style?: CSSProperties }) {
+    return (
+        <svg
+            viewBox="0 0 128 128"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            style={style}
+        >
+            <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M90.767 127.126a7.968 7.968 0 0 0 6.35-.244l26.353-12.681a8 8 0 0 0 4.53-7.209V21.009a8 8 0 0 0-4.53-7.21L97.117 1.12a7.97 7.97 0 0 0-9.093 1.548l-50.45 46.026L15.6 32.013a5.328 5.328 0 0 0-6.807.302l-7.048 6.411a5.335 5.335 0 0 0-.006 7.888L20.796 64 1.74 81.387a5.336 5.336 0 0 0 .006 7.887l7.048 6.411a5.327 5.327 0 0 0 6.807.303l21.974-16.68 50.45 46.025a7.96 7.96 0 0 0 2.743 1.793Zm5.252-92.183L57.74 64l38.28 29.058V34.943Z"
+            />
+        </svg>
+    );
+}
+
+type AnyIcon = ComponentType<{ style?: CSSProperties }>;
+
 type TechIcon = {
-    Icon: IconType;
+    Icon: AnyIcon;
     color: string;
     top: string;
     left: string;
     size: number;
     delay: number;
     duration: number;
+    variant: string;
 };
 
 const techIcons: TechIcon[] = [
-    { Icon: SiJavascript, color: "#f7df1e", top: "10%", left: "7%", size: 38, delay: 0, duration: 9 },
-    { Icon: SiNodedotjs, color: "#68a063", top: "24%", left: "86%", size: 44, delay: 1.2, duration: 11 },
-    { Icon: SiNextdotjs, color: "#ffffff", top: "12%", left: "72%", size: 34, delay: 2, duration: 12 },
-    { Icon: SiReact, color: "#61dafb", top: "64%", left: "8%", size: 42, delay: 0.6, duration: 10 },
-    { Icon: SiCss, color: "#2965f1", top: "78%", left: "20%", size: 36, delay: 2.4, duration: 11.5 },
-    { Icon: SiMysql, color: "#00758f", top: "38%", left: "93%", size: 36, delay: 0.9, duration: 10.5 },
-    { Icon: SiMongodb, color: "#4db33d", top: "82%", left: "62%", size: 40, delay: 1.6, duration: 9.5 },
+    { Icon: SiJavascript, color: "#f7df1e", top: "10%", left: "7%", size: 38, delay: -3, duration: 14, variant: "drift-a" },
+    { Icon: SiNodedotjs, color: "#68a063", top: "20%", left: "88%", size: 44, delay: -7, duration: 16, variant: "drift-b" },
+    { Icon: SiNextdotjs, color: "#ffffff", top: "8%", left: "52%", size: 34, delay: -11, duration: 15, variant: "drift-c" },
+    { Icon: SiReact, color: "#61dafb", top: "60%", left: "6%", size: 42, delay: -5, duration: 14, variant: "drift-c" },
+    { Icon: SiCss, color: "#2965f1", top: "78%", left: "18%", size: 36, delay: -9, duration: 17, variant: "drift-b" },
+    { Icon: SiMysql, color: "#00758f", top: "42%", left: "95%", size: 36, delay: -13, duration: 15, variant: "drift-a" },
+    { Icon: SiMongodb, color: "#4db33d", top: "84%", left: "64%", size: 40, delay: -2, duration: 16, variant: "drift-b" },
+    { Icon: SiTypescript, color: "#3178c6", top: "32%", left: "18%", size: 40, delay: -6, duration: 15, variant: "drift-a" },
+    { Icon: SiHtml5, color: "#e34f26", top: "58%", left: "78%", size: 40, delay: -10, duration: 14, variant: "drift-c" },
+    { Icon: VSCodeIcon, color: "#007acc", top: "88%", left: "86%", size: 44, delay: -4, duration: 17, variant: "drift-b" },
+    { Icon: SiReact, color: "#00d8ff", top: "12%", left: "30%", size: 30, delay: -8, duration: 16, variant: "drift-a" },
+    { Icon: SiAndroidstudio, color: "#3ddc84", top: "50%", left: "42%", size: 40, delay: -12, duration: 15, variant: "drift-c" },
+    { Icon: SiVite, color: "#646cff", top: "74%", left: "40%", size: 38, delay: -1, duration: 14, variant: "drift-a" },
+    { Icon: SiExpo, color: "#ffffff", top: "26%", left: "68%", size: 38, delay: -6, duration: 16, variant: "drift-b" },
 ];
 
 export default function Preloader() {
@@ -88,7 +121,7 @@ export default function Preloader() {
         >
             {/* ÍCONES FLUTUANTES DE TECNOLOGIAS */}
             <div className="pointer-events-none absolute inset-0 overflow-hidden select-none">
-                {techIcons.map(({ Icon, color, top, left, size, delay, duration }, i) => (
+                {techIcons.map(({ Icon, color, top, left, size, delay, duration, variant }, i) => (
                     <span
                         key={i}
                         className="animate-float-icon absolute opacity-15"
@@ -96,6 +129,7 @@ export default function Preloader() {
                             top,
                             left,
                             color,
+                            animationName: variant,
                             animationDelay: `${delay}s`,
                             animationDuration: `${duration}s`,
                         }}

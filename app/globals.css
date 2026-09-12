@@ -239,15 +239,49 @@ body {
   pointer-events: none;
 }
 
-@keyframes float-icon {
+@keyframes drift-a {
   0%, 100% {
-    transform: translateY(0px) rotate(-6deg);
+    transform: translate(0, 0) rotate(-8deg);
+  }
+  25% {
+    transform: translate(28vw, -18vh) rotate(6deg);
   }
   50% {
-    transform: translateY(-26px) rotate(6deg);
+    transform: translate(0, -30vh) rotate(-6deg);
+  }
+  75% {
+    transform: translate(-26vw, 12vh) rotate(8deg);
+  }
+}
+
+@keyframes drift-b {
+  0%, 100% {
+    transform: translate(0, 0) rotate(8deg);
+  }
+  30% {
+    transform: translate(-30vw, 14vh) rotate(-6deg);
+  }
+  60% {
+    transform: translate(-8vw, 32vh) rotate(6deg);
+  }
+  80% {
+    transform: translate(24vw, 10vh) rotate(-8deg);
+  }
+}
+
+@keyframes drift-c {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(-5deg);
+  }
+  33% {
+    transform: translate(26vw, 22vh) scale(1.1) rotate(6deg);
+  }
+  66% {
+    transform: translate(-22vw, -18vh) scale(0.92) rotate(-7deg);
   }
 }
 
 .animate-float-icon {
-  animation: float-icon 10s ease-in-out infinite;
+  display: block;
+  animation: drift-a 14s ease-in-out infinite;
 }
