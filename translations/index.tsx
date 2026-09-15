@@ -131,7 +131,7 @@ export const translations = {
       projetosFull: [
         {
           titulo: "Sistema para automatizar pizzaria",
-          descricao: "Projeto Full-Stack e com Aplicativo, completo, para melhorar processo de pedidos dos clientes. Sistema de Registro e Login para a cozinha e para garçom para os pedidos feitos, e para criar o quanto login e registro for necessario e para quem quiser usar.",
+          descricao: "Projeto Full-Stack e com aplicativo, para automatizar o processo de atendimento e preparo dos pedidos feitos tanto na cozinha quanto no aplicativo do garçom. O garçom anota os pedidos dos clientes pelo aplicativo e envia direto para o sistema na cozinha, que ao estar pronto, envia a notificação para o garçom, que entrega o pedido pronto para o cliente.",
           // verSite: "Ver App",
           codigo: "View Code",
           imagem: "/pizza.png",
@@ -348,7 +348,7 @@ export const translations = {
       projetosFull: [
         {
           titulo: "System for automating a pizzeria.",
-          descricao: "Full-stack project with a complete application to improve the customer ordering process. Registration and login system for the kitchen and waiters for orders placed, and to create as many login and registration accounts as necessary for anyone who wants to use them.",
+          descricao: "A full-stack project featuring an app designed to automate the service and preparation process for orders placed either in the kitchen or via the waiter's app. Waiters take customer orders using the app and send them directly to the kitchen system; once the order is ready, the system notifies the waiter, who then delivers the completed order to the customer.",
           // verSite: "Ver App",
           codigo: "View Code",
           imagem: "/pizza.png",
