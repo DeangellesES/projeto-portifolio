@@ -72,7 +72,7 @@ function CardProjeto({ projeto, index, isVisible, categoria, verMais, verMenos, 
 
 
             {/* CONTEÚDO */}
-            <div className="p-5 flex flex-col flex-1">
+            <div className="p-5 flex flex-col flex-1 min-h-0">
 
                 {/* TÍTULO */}
                 <h1 className="text-2xl text-white">
@@ -81,7 +81,7 @@ function CardProjeto({ projeto, index, isVisible, categoria, verMais, verMenos, 
 
 
                 {/* DESCRIÇÃO */}
-                <div className={`relative ${expandido ? "" : "overflow-hidden"}`}>
+                <div className={`relative ${expandido ? "" : "flex-1 min-h-0 overflow-hidden"}`}>
                     <p
                         ref={textoRef}
                         className={`py-3 text-[#a1a1a1] overflow-hidden transition-[max-height] duration-500 ease-out

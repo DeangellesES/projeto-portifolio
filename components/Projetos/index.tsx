@@ -54,8 +54,9 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
             setCardExpandido(null)
             setAlturaRecolhida(null)
         } else {
-            const el = gridRef.current?.children[index] as HTMLElement | undefined
-            setAlturaRecolhida(el?.offsetHeight ?? null)
+            const cards = Array.from(gridRef.current?.children ?? []).slice(0, projetosFiltrados.length) as HTMLElement[]
+            const maxAltura = cards.reduce((max, card) => Math.max(max, card.offsetHeight), 0)
+            setAlturaRecolhida(maxAltura || null)
             setCardExpandido(index)
         }
     }
