@@ -81,26 +81,28 @@ function CardProjeto({ projeto, index, isVisible, categoria, verMais, verMenos, 
 
 
                 {/* DESCRIÇÃO */}
-                <div className={`relative ${expandido ? "" : "flex-1 min-h-0 overflow-hidden"}`}>
-                    <p
-                        ref={textoRef}
-                        className={`py-3 text-[#a1a1a1] overflow-hidden transition-[max-height] duration-500 ease-out
-                          ${expandido
-                                ? "max-h-[40rem]"
-                                : "line-clamp-3 max-h-[6rem]"
-                            }`}
-                    >
-                        {projeto.descricao}
-                    </p>
+                <div className={`${expandido ? "" : "flex-1 min-h-0"}`}>
+                    <div className="relative">
+                        <p
+                            ref={textoRef}
+                            className={`py-3 text-[#a1a1a1] overflow-hidden transition-[max-height] duration-500 ease-out
+                              ${expandido
+                                    ? "max-h-[40rem]"
+                                    : "line-clamp-3 max-h-[6rem]"
+                                }`}
+                        >
+                            {projeto.descricao}
+                        </p>
 
-                    {/* leve escurecida debaixo para cima quando o texto está escondido */}
-                    {!expandido && temMais && (
-                        <div
-                            aria-hidden
-                            className="pointer-events-none absolute inset-x-0 bottom-0 h-10
-                                       bg-gradient-to-t from-[#0d0d0d] to-transparent"
-                        />
-                    )}
+                        {/* leve escurecida debaixo para cima quando o texto está escondido */}
+                        {!expandido && temMais && (
+                            <div
+                                aria-hidden
+                                className="pointer-events-none absolute inset-x-0 bottom-0 h-10
+                                           bg-gradient-to-t from-[#0d0d0d] to-transparent"
+                            />
+                        )}
+                    </div>
                 </div>
 
                 {/* VER MAIS / VER MENOS */}
