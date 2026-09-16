@@ -71,10 +71,10 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
 
         emailjs
             .send(
-                "service_e7tqike",
-                "template_io2asrt",
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
                 templateParams,
-                "6GcWAv-A2crYJ7gHh"
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
             )
             .then(() => {
                 setName('')
