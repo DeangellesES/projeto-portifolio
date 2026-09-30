@@ -73,7 +73,7 @@ function Habilidades({ t }: Props) {
             items: [
                 'Git', 'GitHub', 'Postman', 'VS Code', 'Visual Studio',
                 'Android Studio', 'MySQL Workbench', 'Oracle VirtualBox',
-                'Trello', 'Figma', 'Docker', 'GPT', 'Lovable', 'Cursor', 'OpenCode'
+                'Trello', 'Figma', 'Docker', 'GPT', 'Lovable', 'Cursor', 'OpenCode', 'Stitch'
             ],
         },
         {

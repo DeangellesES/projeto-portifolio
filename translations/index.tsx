@@ -11,7 +11,7 @@ export const translations = {
       textos: [
         "Olá, Meu Nome é Felipe Deangelles",
         "Sou Desenvolvedor de Software",
-        "Estou Graduando Engenharia de Software",
+        "Sou Formado em Engenharia de Software",
         "Seja Bem-Vindo ao Meu Portfólio!",
       ],
       sobre: 'Sou um desenvolvedor Full-Stack apaixonado em criar soluções digitais eficientes, escaláveis e com excelente experiência de uso.',
@@ -133,7 +133,7 @@ export const translations = {
           titulo: "Sistema para automatizar pizzaria",
           descricao: "Projeto Full-Stack e com aplicativo, para automatizar o processo de atendimento e preparo dos pedidos feitos tanto na cozinha quanto no aplicativo do garçom. O garçom anota os pedidos dos clientes pelo aplicativo e envia direto para o sistema na cozinha, que ao estar pronto, envia a notificação para o garçom, que entrega o pedido pronto para o cliente.",
           // verSite: "Ver App",
-          codigo: "View Code",
+          codigo: "Ver Código",
           imagem: "/pizza.png",
           tecnologias: ["Next.Js", "TailwindCSS", "TypeScript", "Node.Js", "express", "PostgreSQL", "PrismaORM", "ReactNative"],
           site: "#",
@@ -143,11 +143,21 @@ export const translations = {
           titulo: "Sistema para organizar entretenimento",
           descricao: "Projeto Full-Stack para organizar entretenimento. Guarde e salve de onde voçê parou de assistir algo, e tambem organize o que voce pretende assistir. Sistema de registro e login para que cada um salve o seus proprios items apenas.",
           // verSite: "Ver App",
-          codigo: "View Code",
+          codigo: "Ver Código",
           imagem: "/entretenimento.png",
           tecnologias: ["React", "Vite", "TailwindCSS", "TypeScript", "Node.Js", "express", "MongoDB"],
           site: "#",
           codigoLink: "https://github.com/DeangellesES/guardar_entretenimento-Vite-React.Js-TailwindCSS-TypeScript-Node.Js-MongoDB"
+        },
+        {
+          titulo: "Sistema para agendamento e gestão para Clínica Odontológica",
+          descricao: "Sistema web fullstack com site landingpage com informações da clínica e consultório e sistema de agendamento pelo site, e também dashboard para auxiliar na gestão dos pacientes, agendamentos, serviços, datas e horários.",
+          // verSite: "Ver App",
+          codigo: "Ver Código",
+          imagem: "/clinica-odontologica.png",
+          tecnologias: ["Next.js", "TailwindCSS", "TypeScript", "Node.Js", "PrismaORM", "PostgreSQL"],
+          site: "#",
+          codigoLink: "https://github.com/DeangellesES/projeto_clinica_odontologica_completo-Next.js-TailwindCSS-TypeScript-Node.js-PrismaORM-PostgreSQL"
         },
       ],
       projetosAplicativo: [
@@ -238,7 +248,7 @@ export const translations = {
       textos: [
         "Hi, my name is Felipe Deangelles",
         "I am a Software Developer",
-        "I am studying Software Engineering",
+        "I hold a degree in Software Engineering",
         "Welcome to my Portfolio!",
       ],
       sobre: 'I am a Full-Stack developer passionate about creating efficient, scalable digital solutions with an excellent user experience.',
@@ -365,6 +375,16 @@ export const translations = {
           tecnologias: ["React", "Vite", "TailwindCSS", "TypeScript", "Node.Js", "express", "MongoDB"],
           site: "#",
           codigoLink: "https://github.com/DeangellesES/guardar_entretenimento-Vite-React.Js-TailwindCSS-TypeScript-Node.Js-MongoDB"
+        },
+        {
+          titulo: "Scheduling and management system for dental clinics",
+          descricao: "A full-stack web system featuring a landing page with clinic and practice details and an online appointment scheduling system, as well as a dashboard to assist in managing patients, appointments, services, dates, and times.",
+          // verSite: "Ver App",
+          codigo: "View Code",
+          imagem: "/clinica-odontologica.png",
+          tecnologias: ["Next.js", "TailwindCSS", "TypeScript", "Node.Js", "PrismaORM", "PostgreSQL"],
+          site: "#",
+          codigoLink: "https://github.com/DeangellesES/projeto_clinica_odontologica_completo-Next.js-TailwindCSS-TypeScript-Node.js-PrismaORM-PostgreSQL"
         },
       ],
       projetosAplicativo: [
