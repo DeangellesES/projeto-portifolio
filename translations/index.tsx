@@ -9,9 +9,8 @@ export const translations = {
     },
     inicio: {
       textos: [
-        "Olá, Meu Nome é Felipe Deangelles",
-        "Sou Desenvolvedor de Software",
-        "Sou Formado em Engenharia de Software",
+        "Desenvolvedor de Software",
+        "Formado em Engenharia de Software",
         "Seja Bem-Vindo ao Meu Portfólio!",
       ],
       sobre: 'Sou um desenvolvedor Full-Stack apaixonado em criar soluções digitais eficientes, escaláveis e com excelente experiência de uso.',

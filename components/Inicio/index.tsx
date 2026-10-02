@@ -1,10 +1,8 @@
-'use client'
+"use client";
 
-import { useEffect, useRef, useState } from 'react'
-//icones
-import { Download, MessageSquare } from 'lucide-react';
+import { useEffect, useState } from "react";
+import { Download, MessageSquare } from "lucide-react";
 
-// tradução
 type Props = {
     texts: string[];
     sobre: string;
@@ -12,116 +10,134 @@ type Props = {
     conversarText: string;
 };
 
-// const texts = [
-//     'Olá, Meu Nome é Felipe Deangelles',
-//     'Sou Desenvolvedor de Software',
-//     'Estou Graduando Engenharia de Software',
-//     'Seja Bem-Vindo ao Meu Portifólio!'
-// ]
+export default function Inico({
+    texts,
+    sobre,
+    downloadText,
+    conversarText,
+}: Props) {
 
-export default function Inico({ texts, sobre, downloadText, conversarText }: Props) {
-    // funcao escrevendo e apagando na tela
-    const writeTime = 80
-    const removeTime = 1000
+    const [texto, setTexto] = useState("");
+    const [indice, setIndice] = useState(0);
+    const [apagando, setApagando] = useState(false);
 
-    const [text, setText] = useState('')
-
-    const sentenceIndex = useRef(0)
-    const charIndex = useRef(0)
-    const isDeleting = useRef(false)
-    const timeoutRef = useRef<NodeJS.Timeout | null>(null)
-
-    // efeito escrever e descrever textos
     useEffect(() => {
-        const type = () => {
-            const currentText = texts[sentenceIndex.current]
+        if (!texts.length) return;
 
-            if (!isDeleting.current) {
-                charIndex.current++
-                setText(currentText.substring(0, charIndex.current))
+        const fraseAtual = texts[indice];
 
-                if (charIndex.current === currentText.length) {
-                    isDeleting.current = true
-                    timeoutRef.current = setTimeout(type, removeTime)
-                    return
-                }
-            } else {
-                charIndex.current--
-                setText(currentText.substring(0, charIndex.current))
+        const velocidade = apagando ? 50 : 100;
 
-                if (charIndex.current === 0) {
-                    isDeleting.current = false
-                    sentenceIndex.current =
-                        (sentenceIndex.current + 1) % texts.length
+        const timer = setTimeout(() => {
+
+            // ESCREVENDO
+            if (!apagando) {
+                setTexto(fraseAtual.substring(0, texto.length + 1));
+
+                // terminou de escrever
+                if (texto.length === fraseAtual.length) {
+                    setTimeout(() => {
+                        setApagando(true);
+                    }, 2000);
                 }
             }
 
-            timeoutRef.current = setTimeout(type, writeTime)
-        }
+            // APAGANDO
+            else {
+                setTexto(fraseAtual.substring(0, texto.length - 1));
 
-        timeoutRef.current = setTimeout(type, writeTime)
+                // terminou de apagar
+                if (texto.length === 0) {
+                    setApagando(false);
 
-        return () => {
-            if (timeoutRef.current) clearTimeout(timeoutRef.current)
-        }
-    }, [texts])
+                    setIndice((prev) =>
+                        (prev + 1) % texts.length
+                    );
+                }
+            }
 
-    // inicio return
+        }, velocidade);
+
+        return () => clearTimeout(timer);
+
+    }, [texto, indice, apagando, texts]);
+
     return (
-        <section id="inicio" className="min-h-screen grid-cols-2 px-4 pt-24 sm:pt-28 md:pt-32">
-            <div className='w-[50%] px-20'>
-                {/* TÍTULO PRINCIPAL TOPO*/}
-                {/* <div className="flex items-center justify-center">
-                <h1 className="typewriter text-[var(--cor-texto)] text-6xl sm:text-4xl lg:text-6xl
-                               max-w-[22ch] sm:max-w-[26ch] md:max-w-[30ch] text-center font-bold
-                               leading-[1.15] mx-auto relative [text-wrap:balance]
-                               [text-shadow:0_0_8px_rgba(0,0,0,0.35)]
-                               dark:[text-shadow:0_0_20px_rgba(255,255,255,0.7)] after:content-['']
-                               after:inline-block after:w-[4px] after:h-[1em] after:ml-1 after:align-bottom
-                             after:bg-gray-400 after:animate-[flasher_0.8s_steps(1)_infinite]">
-                    {text}
-                </h1>
-            </div> */}
+        <section
+            id="inicio"
+            className="min-h-screen grid-cols-2 px-4 pt-24 sm:pt-28 md:pt-32"
+        >
+
+            <div className="w-[50%] px-20">
+
                 <div>
-                    <h1 className='text-7xl font-black' style={{
-                        WebkitTextStroke: "2px #fff",
-                    }}>Felipe</h1>
-                    <h1 className='text-7xl font-black tracking-tight' style={{
-                        WebkitTextStroke: "1px #fff",
-                    }}>Deangelles</h1>
+                    <h1
+                        className="text-7xl font-black"
+                        style={{
+                            WebkitTextStroke: "2px #fff",
+                        }}
+                    >
+                        Felipe
+                    </h1>
+
+                    <h1
+                        className="text-7xl font-black tracking-tight"
+                        style={{
+                            WebkitTextStroke: "1px #fff",
+                        }}
+                    >
+                        Deangelles
+                    </h1>
                 </div>
 
 
-                {/* SUBTÍTULO TOPO */}
-                <div className="mt-6 flex justify-center">
-                    <p className="max-w-xl text-center text-base sm:text-lg md:text-xl text-[#a1a1a1]">
+                {/* TEXTO ANIMADO */}
+                <div className="mt-6 flex items-center">
+                    <p className="text-base text-[#a1a1a1] sm:text-lg md:text-xl">
+                        {texto}
+                    </p>
+
+                    {/* CURSOR */}
+                    <span className="ml-1 h-6 w-[2px] animate-pulse bg-white md:h-7" />
+                </div>
+
+
+                {/* SUBTÍTULO */}
+                <div className="mt-3">
+                    <p className="max-w-xl text-base text-[#a1a1a1] sm:text-lg md:text-xl">
                         {sobre}
                     </p>
                 </div>
 
-                {/* BOTÕES PRINCIPAL TOPO*/}
-                <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-6">
-                    <a href="../curriculoportifolio.pdf"
+
+                {/* BOTÕES PRINCIPAIS */}
+                <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6">
+
+                    <a
+                        href="../curriculoportifolio.pdf"
                         target="_blank"
-                        className="border border-gray-700/30 px-4 py-3 rounded-sm flex items-center justify-center 
-                              gap-2 hover:bg-white hover:text-black transition">
+                        className="flex items-center justify-center gap-2 rounded-sm border border-gray-700/30 px-4 py-3 transition hover:bg-white hover:text-black"
+                    >
                         <Download />
                         {downloadText}
                     </a>
 
-                    <a href="#contato"
-                        className="border border-gray-300/20 px-4 py-3 rounded-sm bg-[#1b1b1b]
-                              flex items-center justify-center gap-2 text-white hover:bg-black transition">
+                    <a
+                        href="#contato"
+                        className="flex items-center justify-center gap-2 rounded-sm border border-gray-300/20 bg-[#1b1b1b] px-4 py-3 text-white transition hover:bg-black"
+                    >
                         <MessageSquare />
                         {conversarText}
                     </a>
+
                 </div>
-            </div>
-
-            <div className='w-[50%]'>
 
             </div>
+
+
+            <div className="w-[50%]">
+            </div>
+
         </section>
     );
-
 }
