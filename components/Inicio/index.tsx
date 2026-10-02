@@ -68,9 +68,10 @@ export default function Inico({ texts, sobre, downloadText, conversarText }: Pro
 
     // inicio return
     return (
-        <section id="inicio" className="min-h-screen flex flex-col items-center justify-center px-4 pt-24 sm:pt-28 md:pt-32">
-            {/* TÍTULO PRINCIPAL TOPO*/}
-            <div className="flex items-center justify-center">
+        <section id="inicio" className="min-h-screen grid-cols-2 px-4 pt-24 sm:pt-28 md:pt-32">
+            <div className='w-[50%] px-20'>
+                {/* TÍTULO PRINCIPAL TOPO*/}
+                {/* <div className="flex items-center justify-center">
                 <h1 className="typewriter text-[var(--cor-texto)] text-6xl sm:text-4xl lg:text-6xl
                                max-w-[22ch] sm:max-w-[26ch] md:max-w-[30ch] text-center font-bold
                                leading-[1.15] mx-auto relative [text-wrap:balance]
@@ -80,31 +81,45 @@ export default function Inico({ texts, sobre, downloadText, conversarText }: Pro
                              after:bg-gray-400 after:animate-[flasher_0.8s_steps(1)_infinite]">
                     {text}
                 </h1>
-            </div>
+            </div> */}
+                <div>
+                    <h1 className='text-7xl font-black' style={{
+                        WebkitTextStroke: "2px #fff",
+                    }}>Felipe</h1>
+                    <h1 className='text-7xl font-black tracking-tight' style={{
+                        WebkitTextStroke: "1px #fff",
+                    }}>Deangelles</h1>
+                </div>
 
-            {/* SUBTÍTULO TOPO */}
-            <div className="mt-6 flex justify-center">
-                <p className="max-w-xl text-center text-base sm:text-lg md:text-xl text-[#a1a1a1]">
-                    {sobre}
-                </p>
-            </div>
 
-            {/* BOTÕES PRINCIPAL TOPO*/}
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-6">
-                <a href="../curriculoportifolio.pdf"
-                   target="_blank"
-                   className="border border-gray-700/30 px-4 py-3 rounded-sm flex items-center justify-center 
+                {/* SUBTÍTULO TOPO */}
+                <div className="mt-6 flex justify-center">
+                    <p className="max-w-xl text-center text-base sm:text-lg md:text-xl text-[#a1a1a1]">
+                        {sobre}
+                    </p>
+                </div>
+
+                {/* BOTÕES PRINCIPAL TOPO*/}
+                <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-6">
+                    <a href="../curriculoportifolio.pdf"
+                        target="_blank"
+                        className="border border-gray-700/30 px-4 py-3 rounded-sm flex items-center justify-center 
                               gap-2 hover:bg-white hover:text-black transition">
-                    <Download />
-                    {downloadText}
-                </a>
+                        <Download />
+                        {downloadText}
+                    </a>
 
-                <a href="#contato"
-                   className="border border-gray-300/20 px-4 py-3 rounded-sm bg-[#1b1b1b]
+                    <a href="#contato"
+                        className="border border-gray-300/20 px-4 py-3 rounded-sm bg-[#1b1b1b]
                               flex items-center justify-center gap-2 text-white hover:bg-black transition">
-                    <MessageSquare />
-                    {conversarText}
-                </a>
+                        <MessageSquare />
+                        {conversarText}
+                    </a>
+                </div>
+            </div>
+
+            <div className='w-[50%]'>
+
             </div>
         </section>
     );

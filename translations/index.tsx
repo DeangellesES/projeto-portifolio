@@ -123,7 +123,7 @@ export const translations = {
           // verSite: "Ver App",
           codigo: "View Code",
           imagem: "/apiCEP.png",
-          tecnologias: ["Node.Js", "express"],
+          tecnologias: ["Node.Js", "express", "API REST"],
           site: "#",
           codigoLink: "https://github.com/DeangellesES/api_busca_CEP-NodeJs-express-axios"
         },
@@ -135,7 +135,7 @@ export const translations = {
           // verSite: "Ver App",
           codigo: "Ver Código",
           imagem: "/pizza.png",
-          tecnologias: ["Next.Js", "TailwindCSS", "TypeScript", "Node.Js", "express", "PostgreSQL", "PrismaORM", "ReactNative"],
+          tecnologias: ["Next.Js", "TailwindCSS", "TypeScript", "Node.Js", "express", "API REST", "PostgreSQL", "PrismaORM", "ReactNative"],
           site: "#",
           codigoLink: "https://github.com/DeangellesES/automatizar_pizzaria-TypeScript-Next.JS-TailwindCSS-Node.JS-Express-PostgreSQL-PrismaORM-ReactNative"
         },
@@ -155,7 +155,7 @@ export const translations = {
           // verSite: "Ver App",
           codigo: "Ver Código",
           imagem: "/clinica-odontologica.png",
-          tecnologias: ["Next.js", "TailwindCSS", "TypeScript", "Node.Js", "PrismaORM", "PostgreSQL"],
+          tecnologias: ["Next.js", "TailwindCSS", "TypeScript", "Node.Js", "express", "API REST", "PrismaORM", "PostgreSQL"],
           site: "#",
           codigoLink: "https://github.com/DeangellesES/projeto_clinica_odontologica_completo-Next.js-TailwindCSS-TypeScript-Node.js-PrismaORM-PostgreSQL"
         },
@@ -232,7 +232,7 @@ export const translations = {
       imediato: 'Disponível para início imediato (remoto, presencial ou híbrido).',
     },
     rodape: {
-      desenvolvido: '© 2026 Felipe Deangelles. Desenvolvido com Next.js e Tailwind CSS.',
+      desenvolvido: '© 2026 Felipe Deangelles. Desenvolvedor de Software',
     }
   },
 
@@ -350,7 +350,7 @@ export const translations = {
           // verSite: "Ver App",
           codigo: "View Code",
           imagem: "/apiCEP.png",
-          tecnologias: ["Node.Js", "express"],
+          tecnologias: ["Node.Js", "express", "API REST"],
           site: "#",
           codigoLink: "https://github.com/DeangellesES/api_busca_CEP-NodeJs-express-axios"
         },
@@ -362,7 +362,7 @@ export const translations = {
           // verSite: "Ver App",
           codigo: "View Code",
           imagem: "/pizza.png",
-          tecnologias: ["Next.Js", "TailwindCSS", "TypeScript", "Node.Js", "express", "PostgreSQL", "PrismaORM", "ReactNative"],
+          tecnologias: ["Next.Js", "TailwindCSS", "TypeScript", "Node.Js", "express", "API REST", "PostgreSQL", "PrismaORM", "ReactNative"],
           site: "#",
           codigoLink: "https://github.com/DeangellesES/automatizar_pizzaria-TypeScript-Next.JS-TailwindCSS-Node.JS-Express-PostgreSQL-PrismaORM-ReactNative"
         },
@@ -382,7 +382,7 @@ export const translations = {
           // verSite: "Ver App",
           codigo: "View Code",
           imagem: "/clinica-odontologica.png",
-          tecnologias: ["Next.js", "TailwindCSS", "TypeScript", "Node.Js", "PrismaORM", "PostgreSQL"],
+          tecnologias: ["Next.js", "TailwindCSS", "TypeScript", "Node.Js", "express", "API REST","PrismaORM", "PostgreSQL"],
           site: "#",
           codigoLink: "https://github.com/DeangellesES/projeto_clinica_odontologica_completo-Next.js-TailwindCSS-TypeScript-Node.js-PrismaORM-PostgreSQL"
         },
@@ -459,7 +459,7 @@ export const translations = {
       imediato: 'Available for immediate start (remote, in-person, or hybrid).'
     },
     rodape: {
-      desenvolvido: '© 2026 Felipe Deangelles. Developed with Next.js and Tailwind CSS.',
+      desenvolvido: '© 2026 Felipe Deangelles. Software Developer',
     },
   },
 };
