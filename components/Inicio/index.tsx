@@ -192,7 +192,7 @@ export default function Inico({
                             {"  "}
                             <span className="text-purple-400">status</span>:{" "}
                             <span className="text-green-400">
-                                'Aprendizado Continuo'
+                                'Aprendizado Contínuo'
                             </span>
                             {"\n"}
 
