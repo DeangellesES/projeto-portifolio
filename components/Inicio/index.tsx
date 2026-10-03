@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { Download, MessageSquare } from "lucide-react";
 
+import Image from "next/image";
+
 type Props = {
     texts: string[];
     sobre: string;
@@ -65,10 +67,10 @@ export default function Inico({
     return (
         <section
             id="inicio"
-            className="min-h-screen grid-cols-2 px-4 pt-24 sm:pt-28 md:pt-32"
+            className="min-h-screen flex px-4 pt-24 sm:pt-28 md:pt-32"
         >
 
-            <div className="w-[50%] px-20">
+            <div className="w-[55%] px-20">
 
                 <div>
                     <h1
@@ -138,7 +140,68 @@ export default function Inico({
             </div>
 
 
-            <div className="w-[50%]">
+            <div className="relative w-[45%] pl-40">
+
+                <Image
+                    src="/foto-animacao.png"
+                    alt="Foto de perfil"
+                    width={260}
+                    height={100}
+                    className="object-cover"
+                />
+
+                {/* QUADRO DE CÓDIGO */}
+                <div className="absolute bottom-3 left-1 z-10 w-[335px] rounded-lg border border-white/10 bg-[#0d1117] p-3 shadow-2xl">
+
+                    <pre className="font-mono text-xs leading-6">
+                        <code>
+                            <span className="text-blue-400">const</span>{" "}
+                            <span className="text-yellow-300">desenvolvedor</span>{" "}
+                            = {"{"}{"\n"}
+
+                            {"  "}
+                            <span className="text-purple-400">nome</span>:{" "}
+                            <span className="text-green-400">
+                                'FullStack Developer'
+                            </span>,
+                            {"\n"}
+
+                            {"  "}
+                            <span className="text-purple-400">paixao</span>: [
+                            <span className="text-green-400">
+                                'Código', 'Tecnologia', 'Inovação'
+                            </span>
+                            ],
+                            {"\n"}
+
+                            {/* {"  "}
+                <span className="text-purple-400">skills</span>: [
+                <span className="text-green-400">
+                    'React', 'Node.js', 'PHP', 'MySQL'
+                </span>
+                ],
+                {"\n"} */}
+
+                            {"  "}
+                            <span className="text-purple-400">foco</span>:{" "}
+                            <span className="text-green-400">
+                                'Criar soluções que fazem a diferença!'
+                            </span>
+                            {"\n"}
+
+                            {"  "}
+                            <span className="text-purple-400">status</span>:{" "}
+                            <span className="text-green-400">
+                                'Aprendizado Continuo'
+                            </span>
+                            {"\n"}
+
+                            {"};"}
+                        </code>
+                    </pre>
+
+                </div>
+
             </div>
 
         </section>
