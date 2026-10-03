@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 //icones
-import { PanelsTopLeft, CodeXml, BookOpenCheck, Wrench, Smartphone, Monitor } from 'lucide-react';
+import { PanelsTopLeft, CodeXml, BookOpenCheck, Wrench, Smartphone, Monitor, Database  } from 'lucide-react';
 // efeito encriptografando
 import GradientText from '../GradientText'
 
@@ -12,7 +12,7 @@ type Props = {
         frontend: { titulo: string; descricao: string };
         backend: { titulo: string; descricao: string };
         ferramentas: { titulo: string; descricao: string };
-        agil: { titulo: string; descricao: string };
+        dados: { titulo: string; descricao: string };
         mobile: { titulo: string; descricao: string };
         desktop: { titulo: string; descricao: string };
     };
@@ -61,7 +61,7 @@ function Habilidades({ t }: Props) {
             icon: CodeXml,
             iconColor: 'text-green-500',
             shadowColor: '34,197,94',
-            items: ['Node.js', 'C#', 'Express', 'Mongoose', 'REST API', 'MySQL', 'MongoDB', 'PostgreSQL', 'Prisma ORM'],
+            items: ['Node.js', 'C#', 'Express', 'Mongoose', 'REST API', 'Prisma ORM'],
         },
         {
             key: 'ferramentas',
@@ -77,13 +77,13 @@ function Habilidades({ t }: Props) {
             ],
         },
         {
-            key: 'agil',
-            title: (t: Translation) => t.agil.titulo,
-            description: (t: Translation) => t.agil.descricao,
-            icon: BookOpenCheck,
+            key: 'dados',
+            title: (t: Translation) => t.dados.titulo,
+            description: (t: Translation) => t.dados.descricao,
+            icon: Database,
             iconColor: 'text-purple-500',
             shadowColor: '168,85,247',
-            items: ['Srum', 'Kanban'],
+            items: ['SQL', 'MySQL', 'MongoDB', 'PostgreSQL'],
         },
         {
             key: 'mobile',

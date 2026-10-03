@@ -33,9 +33,9 @@ export const translations = {
         titulo: 'Ferramentas',
         descricao: 'O essencial para criar, evoluir e entregar soluções digitais.',
       },
-      agil: {
-        titulo: 'Metodologias Ágeis',
-        descricao: 'Desenvolvimento iterativo com foco em entrega e adaptação.',
+      dados: {
+        titulo: 'Dados',
+        descricao: 'Organização e gerenciamento de dados para soluções eficientes e confiáveis.',
       },
       mobile: {
         titulo: 'Mobile',
@@ -270,9 +270,9 @@ export const translations = {
         titulo: 'Tools',
         descricao: 'Essential tools to build, evolve and deliver digital solutions.',
       },
-      agil: {
-        titulo: 'Agile Methodologies',
-        descricao: 'Iterative development focused on delivery and adaptation.',
+      dados: {
+        titulo: 'Data',
+        descricao: 'Data organization and management for efficient and reliable solutions.',
       },
       mobile: {
         titulo: 'Mobile',

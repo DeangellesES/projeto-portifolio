@@ -141,19 +141,19 @@ export default function Inico({
 
 
             <div className="relative w-[45%] pl-40">
-
+                            
                 <Image
                     src="/foto-animacao.png"
                     alt="Foto de perfil"
                     width={260}
                     height={100}
-                    className="object-cover"
+                    className="object-cover rounded-xl transition-transform duration-500 hover:scale-105"
                 />
 
                 {/* QUADRO DE CÓDIGO */}
-                <div className="absolute bottom-3 left-1 z-10 w-[335px] rounded-lg border border-white/10 bg-[#0d1117] p-3 shadow-2xl">
+                <div className="absolute bottom-5 left-1 z-10 w-[335px] rounded-lg border border-white/10 bg-[#0d1117] p-3 shadow-2xl">
 
-                    <pre className="font-mono text-xs leading-6">
+                    <pre className="font-mono text-xs leading-5">
                         <code>
                             <span className="text-blue-400">const</span>{" "}
                             <span className="text-yellow-300">desenvolvedor</span>{" "}
@@ -162,7 +162,7 @@ export default function Inico({
                             {"  "}
                             <span className="text-purple-400">nome</span>:{" "}
                             <span className="text-green-400">
-                                'FullStack Developer'
+                                'Felipe Deangelles'
                             </span>,
                             {"\n"}
 

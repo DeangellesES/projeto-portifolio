@@ -33,7 +33,7 @@ function Cabecalho({ text, lang, setLang }: Props) {
     }, []);
  
     return (
-        <header className={`fixed top-0 left-0 w-full z-10 bg-transparent transition-all duration-300 ${scrolled ? "bg-background/70 backdrop-blur-md border-b border-gray-300/20" : ""}`}>
+        <header className={`fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300 ${scrolled ? "bg-background/70 backdrop-blur-md border-b border-gray-300/20" : ""}`}>
             <div className="relative flex items-center justify-between sm:py-8 px-4 sm:px-8 md:px-12 lg:px-20 h-14 sm:h-16">
 
                 {/* ESQUERDA – linkedin e github */}
