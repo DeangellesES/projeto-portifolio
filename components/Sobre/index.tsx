@@ -5,7 +5,7 @@ import GhostFibers from '../GhostFibers';
 
 function Sobre() {
     return (
-        <section className="h-screen py-15 px-15">
+        <section className="h-screen py-15 px-15" id='sobre'>
 
             <h1 className="text-center text-5xl"><GradientText
                 colors={["#160070", "#d1d1d1"]}

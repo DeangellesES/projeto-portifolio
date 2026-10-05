@@ -60,6 +60,9 @@ function Cabecalho({ text, lang, setLang }: Props) {
                     <a href="#inicio" className="hover:text-[#acacac] transition">
                         {text.inicio}
                     </a>
+                    <a href="#sobre" className="hover:text-[#acacac] transition">
+                        {text.sobre}
+                    </a>
                     <a href="#habilidades" className="hover:text-[#acacac] transition">
                         {text.habilidades}
                     </a>
