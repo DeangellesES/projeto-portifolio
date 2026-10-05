@@ -19,6 +19,17 @@ export const translations = {
       download: "Download Currículo",
       conversar: "Vamos Conversar",
     },
+    sobre: {
+      titulo: "Sobre Mim",
+      subtitulo: "Apresentação Pessoal",
+      descricao:
+        "Meu nome é Felipe Deangelles, sou formado em Engenharia de Software, desde muito novo eu sempre gostei e ficava adimirado e encantado por tecnologia e computadores, com o passar do tempo minha curiosidade e interesse foi só aumentando, cada vez mais eu ficava mais facinado e queria saber como tudo isso funcionava, a ponto de quere ser a pessoa por tras disso, desenvolvendo toda essa tecnologia, tenho muita vontade de aprender e estou sempre estudando, me aperfeiçoando, evoluindo e buscando ser cada vez melhor para conseguir dominar e desenvolver sistemas complexos, desenvolver soluções, experiências incríveis, ajudar pessoas alcancarem seus objetivos atravez do meu trabalho que gosto tanto e fazer o que mais gosto.",
+      formacao: {
+        titulo: "Formação",
+        curso: "Engenharia de Software",
+        status: "Concluído",
+      },
+    },
     habilidades: {
       titulo: 'Minhas Habilidades',
       subtitulo: 'Tecnologias e ferramentas que domino para criar experiências incríveis',
@@ -232,6 +243,17 @@ export const translations = {
       crescimento: 'Crescimento profissional',
       imediato: 'Disponível para início imediato (remoto, presencial ou híbrido).',
     },
+    sobre: {
+      titulo: "Sobre Mim",
+      subtitulo: "Apresentação Pessoal",
+      descricao:
+        "Meu nome é Felipe Deangelles, sou formado em Engenharia de Software, desde muito novo eu sempre gostei e ficava adimirado e encantado por tecnologia e computadores, com o passar do tempo minha curiosidade e interesse foi só aumentando, cada vez mais eu ficava mais facinado e queria saber como tudo isso funcionava, a ponto de quere ser a pessoa por tras disso, desenvolvendo toda essa tecnologia, tenho muita vontade de aprender e estou sempre estudando, me aperfeiçoando, evoluindo e buscando ser cada vez melhor para conseguir dominar e desenvolver sistemas complexos, desenvolver soluções, experiências incríveis, ajudar pessoas alcancarem seus objetivos atravez do meu trabalho que gosto tanto e fazer o que mais gosto.",
+      formacao: {
+        titulo: "Formação",
+        curso: "Engenharia de Software",
+        status: "Concluído",
+      },
+    },
     rodape: {
       desenvolvido: '© 2026 Felipe Deangelles. Desenvolvedor de Software',
     }
@@ -256,6 +278,17 @@ export const translations = {
       sobre: 'I am a Full-Stack developer passionate about creating efficient, scalable digital solutions with an excellent user experience.',
       download: "Download Resume",
       conversar: "Let's Talk",
+    },
+    sobre: {
+      titulo: "About Me",
+      subtitulo: "Personal Introduction",
+      descricao:
+        "My name is Felipe Deangelles, and I hold a degree in Software Engineering. Since I was very young, I've always been fascinated by technology and computers. Over time, that curiosity and interest only grew—I became increasingly amazed and eager to understand how everything worked, to the point where I wanted to be the one behind it, developing that technology. I'm eager to learn and constantly study, improve, and evolve, striving to get better every day so I can master and develop complex systems, create solutions and incredible experiences, help people achieve their goals through work I truly enjoy, and do what I love most.",
+      formacao: {
+        titulo: "Education",
+        curso: "Software Engineering",
+        status: "Completed",
+      },
     },
     habilidades: {
       titulo: 'My Skills',
