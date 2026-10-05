@@ -1,5 +1,6 @@
 import GradientText from '../GradientText'
 import Image from "next/image";
+import { GraduationCap } from 'lucide-react';
 
 function Sobre() {
     return (
@@ -12,7 +13,7 @@ function Sobre() {
             >
                 Sobre Mim
             </GradientText></h1>
-            <div className="flex justify-around gap-10 px-10 items-center h-full">
+            <div className="flex justify-around gap-20 px-10 items-center h-full">
                 <div className="w-[30%]">
                     <Image
                         src="/sobre-portifolio.jpeg"
@@ -24,12 +25,16 @@ function Sobre() {
                 </div>
                 <div className="w-[70%]">
 
-                    <p>Sou um desenvolvedor Full-Stack focado em criar soluções digitais eficientes, escaláveis e com excelente experiência de uso. Trabalho com tecnologias modernas no front e no back-end e tenho experiência entregando melhorias reais, desde otimizações de performance até a construção de sistemas completos do zero.</p>
-                    <div className='border border-gray-300/20 w-fit p-7 mt-4'>
-                        <h2>Formação</h2>
+                    <p></p>
+                    <div className='border border-gray-300/20 w-fit [box-shadow:0_0_10px_rgba(255,255,255,0.8)] py-3 px-5 mt-6 text-center rounded-3xl bg-[#0d0d0d]'>
+                        <h2 className='text-lg font-bold'>Formação</h2>
+                        <div className="flex justify-center my-2">
+                            <GraduationCap size={35}/>
+                        </div>
                         <p>Engenharia de Software</p>
-
+                        <p className='text-sm text-[#a1a1a1]'>Concluído</p>
                     </div>
+                    
                 </div>
             </div>
         </section>

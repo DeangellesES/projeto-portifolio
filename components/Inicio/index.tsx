@@ -5,6 +5,8 @@ import { Download, MessageSquare } from "lucide-react";
 
 import Image from "next/image";
 
+import FlipCard from '../FlipCard';
+
 type Props = {
     texts: string[];
     sobre: string;
@@ -141,13 +143,41 @@ export default function Inico({
 
 
             <div className="relative w-[45%] pl-40">
-                            
-                <Image
+
+                {/* <Image
                     src="/foto-animacao.png"
                     alt="Foto de perfil"
                     width={260}
                     height={100}
                     className="object-cover rounded-xl transition-transform duration-500 hover:scale-105"
+                /> */}
+
+                <FlipCard
+                    front={<img src="/foto-animacao.png" alt="Wooded landscape" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}
+                    back={
+                        <img src="/codando-animacao.png" alt="Wooded landscape" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    }
+                    axis="y"
+                    flipOnClick
+                    draggable
+                    dragDistance={0}
+                    tilt
+                    tiltMax={12}
+                    glare
+                    glareOpacity={0.22}
+                    hoverScale={1.03}
+                    perspective={1100}
+                    stiffness={170}
+                    damping={20}
+                    width={300}
+                    height={400}
+                    radius={22}
+                    background="#27272a"
+                    color="#f5f5f5"
+                    shadow
+                    shadowColor="#000000"
+                    shadowOpacity={0.45}
+                    onFlipChange={flipped => console.log(flipped)}
                 />
 
                 {/* QUADRO DE CÓDIGO */}

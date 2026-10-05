@@ -10,6 +10,8 @@ export const translations = {
     inicio: {
       textos: [
         "Desenvolvedor de Software",
+        "Desenvolvedor Web",
+        "Desenvolvedor Mobile",
         "Formado em Engenharia de Software",
         "Seja Bem-Vindo ao Meu Portfólio!",
       ],
@@ -245,8 +247,9 @@ export const translations = {
     },
     inicio: {
       textos: [
-        "Hi, my name is Felipe Deangelles",
         "I am a Software Developer",
+        "Web Developer",
+        "Mobile Developer",
         "I hold a degree in Software Engineering",
         "Welcome to my Portfolio!",
       ],
