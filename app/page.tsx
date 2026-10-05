@@ -29,7 +29,7 @@ export default function Home() {
         downloadText={t.inicio.download}
         conversarText={t.inicio.conversar} />
 
-      <Sobre/>
+      <Sobre t={t.sobre} />
 
       <Habilidades t={t.habilidades} />
 

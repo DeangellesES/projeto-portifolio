@@ -3,7 +3,17 @@ import Image from "next/image";
 import { GraduationCap } from 'lucide-react';
 import GhostFibers from '../GhostFibers';
 
-function Sobre() {
+// tradução
+type Props = {
+    t: {
+        titulo: string;
+        subtitulo: string;
+        descricao: string;
+        formacao: { titulo: string; curso: string; status: string };
+    };
+};
+
+function Sobre({ t }: Props) {
     return (
         <section className="h-screen py-15 px-15" id='sobre'>
 
@@ -12,9 +22,9 @@ function Sobre() {
                 animationSpeed={4}
                 showBorder={false}
             >
-                Sobre Mim
+                {t.titulo}
             </GradientText></h1>
-            <p className='text-center text-[#a1a1a1] text-xl'>Apresentação Pessoal</p>
+            <p className='text-center text-[#a1a1a1] text-xl'>{t.subtitulo}</p>
             <div className="flex justify-around gap-20 px-10 items-center h-full">
                 <div className="w-[30%]">
                     <Image
@@ -28,7 +38,7 @@ function Sobre() {
 
                 <div className="w-[70%]">
 
-                    <p>Meu nome é Felipe Deangelles, sou formado em Engenharia de Software, desde muito novo eu sempre gostei e ficava adimirado e encantado por tecnologia e computadores, com o passar do tempo minha curiosidade e interesse foram só aumentando, cada vez mais eu ficava mais facinado e queria saber como tudo isso funcionava, a ponto de quere ser a pessoa por tras disso, desenvolvendo toda essa tecnologia, tenho muita vontade de aprender e estou sempre estudando, me aperfeiçoando, evoluindo e buscando ser cada vez melhor para conseguir dominar e desenvolver sistemas complexos, desenvolver soluções, experiências incríveis, ajudar pessoas alcancarem seus objetivos atravez do meu trabalho que gosto tanto e fazer o que mais gosto. </p>
+                    <p>{t.descricao}</p>
 
                     <div className="relative w-[270px] overflow-hidden rounded-3xl border border-gray-300/20 mt-8">
 
@@ -69,7 +79,7 @@ function Sobre() {
                         <div className="group relative z-10 p-4 text-center bg-[#0d0d0d]/60 backdrop-blur-[2px]">
 
                             <h2 className="text-lg font-bold">
-                                Formação
+                                {t.formacao.titulo}
                             </h2>
 
                             <div className="flex justify-center my-2">
@@ -77,11 +87,11 @@ function Sobre() {
                             </div>
 
                             <p>
-                                Engenharia de Software
+                                {t.formacao.curso}
                             </p>
 
                             <p className="text-sm text-[#a1a1a1]">
-                                Concluído
+                                {t.formacao.status}
                             </p>
 
                         </div>
