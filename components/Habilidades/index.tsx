@@ -135,7 +135,7 @@ function Habilidades({ t }: Props) {
                             key={skill.key}
                             style={{
                                 '--shadow-color': skill.shadowColor,
-                                transitionDelay: `${index * 150}ms`
+                                transitionDelay: `${index * 200}ms`
                             } as React.CSSProperties}
                             className={`border border-gray-300/20 p-8 rounded-2xl bg-[#0d0d0d] group
                                 transition-transform transition-opacity duration-2000 ease-out
@@ -165,10 +165,17 @@ function Habilidades({ t }: Props) {
                             </p>
 
                             <div className="flex flex-wrap gap-2">
-                                {skill.items.map((item) => (
+                                {skill.items.map((item, itemIndex) => (
                                     <p
                                         key={item}
-                                        className="rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300"
+                                        style={{
+                                            '--shadow-color': skill.shadowColor,
+                                            transitionDelay: `${index * 200 + itemIndex * 220}ms`
+                                        } as React.CSSProperties}
+                                        className={`rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300
+                                            transition-all duration-1200 ease-out
+                                            ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}
+                                        `}
                                     >
                                         {item}
                                     </p>
