@@ -220,7 +220,7 @@ export const translations = {
       subtitulo: 'Entre em Contato',
       descricao:
         'Estou sempre aberto a novas oportunidades e projetos interessantes. Vamos criar algo incrível juntos! Entre em contato e vamos conversar!',
-      telefone: 'Telefone',
+      telefone: 'Celular / WhatsApp',
       localizacao: 'Localização',
       endereco: 'Ouro Fino - Minas Gerais - Brasil',
       nome: 'Nome',
@@ -459,7 +459,7 @@ export const translations = {
       subtitulo: 'Get in touch',
       descricao:
         'I am always open to new opportunities and interesting projects. Let’s create something amazing together! Get in touch and let’s talk!',
-      telefone: 'Telephone',
+      telefone: 'Mobile / WhatsApp',
       localizacao: 'Location',
       endereco: 'Ouro Fino - Minas Gerais - Brazil',
       nome: 'Name',

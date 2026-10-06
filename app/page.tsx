@@ -12,6 +12,7 @@ import Inicio from "@/components/Inicio";
 import Rodape from "@/components/Rodape";
 import Projetos from '@/components/Projetos';
 import Sobre from '@/components/Sobre';
+import Experiencia from '@/components/Experiencia';
 
 export default function Home() {
   // hooks para a tradução
@@ -45,6 +46,8 @@ export default function Home() {
         projetosBack={t.projetos.projetosBack} 
         projetosFull={t.projetos.projetosFull}
       />
+
+      <Experiencia/>
 
       <Contato titulo={t.contato.titulo}
         subtitulo={t.contato.subtitulo} descricao={t.contato.descricao} telefone={t.contato.telefone}
