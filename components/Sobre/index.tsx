@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react"
 import GradientText from '../GradientText'
 import Image from "next/image";
 import { GraduationCap } from 'lucide-react';
@@ -14,18 +15,75 @@ type Props = {
 };
 
 function Sobre({ t }: Props) {
-    return (
-        <section className="h-screen py-15 px-15" id='sobre'>
+    const sectionRef = useRef<HTMLDivElement | null>(null)
+    // aparecer e sumir na tela
+    const [isVisible, setIsVisible] = useState(false)
+    const [habilidadesVisivel, setHabilidadesVisivel] = useState(false)
 
-            <h1 className="text-center text-5xl"><GradientText
-                colors={["#160070", "#d1d1d1"]}
-                animationSpeed={4}
-                showBorder={false}
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting)
+            },
+            { threshold: 0.05 }
+        )
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current)
+        }
+
+        return () => observer.disconnect()
+    }, [])
+
+    // esconder a section quando a habilidades entrar na tela
+    useEffect(() => {
+        const habilidadesEl = document.getElementById('habilidades')
+        if (!habilidadesEl) return
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setHabilidadesVisivel(entry.isIntersecting)
+            },
+            { threshold: 0.3 }
+        )
+
+        observer.observe(habilidadesEl)
+
+        return () => observer.disconnect()
+    }, [])
+
+    return (
+        <section
+            ref={sectionRef}
+            className={`h-screen py-15 px-15 transition-all duration-1000 ease-out
+                ${habilidadesVisivel ? "opacity-0 -translate-y-10 pointer-events-none" : "opacity-100 translate-y-0"}`}
+            id='sobre'
+        >
+
+            <h1
+                className={`text-center text-5xl transition-all duration-2000 ease-out
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
             >
-                {t.titulo}
-            </GradientText></h1>
-            <p className='text-center text-[#a1a1a1] text-xl'>{t.subtitulo}</p>
-            <div className="flex justify-around gap-20 px-10 items-center h-full">
+                <GradientText
+                    colors={["#160070", "#d1d1d1"]}
+                    animationSpeed={4}
+                    showBorder={false}
+                >
+                    {t.titulo}
+                </GradientText>
+            </h1>
+
+            <p
+                className={`text-center text-[#a1a1a1] text-xl transition-all duration-2000 ease-out delay-150
+                ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
+            >
+                {t.subtitulo}
+            </p>
+
+            <div
+                className={`flex justify-around gap-20 px-10 items-center h-full transition-all duration-2000 ease-out delay-300
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
+            >
                 <div className="w-[30%]">
                     <Image
                         src="/sobre-portifolio.jpeg"
