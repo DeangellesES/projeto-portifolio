@@ -156,7 +156,7 @@ export default function Experiencia() {
                                     {/* PONTO */}
                                     {/* ===================== */}
 
-                                    <div className="experience-dot absolute left-0 top-7 flex h-4 w-4 items-center justify-center rounded-full border border-white/20 bg-[#090711] transition-all duration-500 group-hover:scale-150 group-hover:border-violet-300 group-hover:shadow-[0_0_25px_rgba(139,92,246,0.9)]">
+                                    <div className="experience-dot absolute left-0 top-7 flex h-4 w-4 items-center justify-center rounded-full border border-white/20 bg-[#090711] transition-all duration-500 group-hover:scale-150 group-hover:border-white group-hover:shadow-[0_0_25px_rgba(139,92,246,0.9)]">
 
                                         <div className="h-1.5 w-1.5 rounded-full bg-white/30 transition-all duration-500 group-hover:h-2 group-hover:w-2" />
 
