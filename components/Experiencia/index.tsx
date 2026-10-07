@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import GradientText from "../GradientText";
 
 interface ExperienciaItem {
@@ -20,10 +20,48 @@ interface ExperienciaProps {
 }
 
 export default function Experiencia({ t }: ExperienciaProps) {
-  const experiences = t.experiencias;
+    const experiences = t.experiencias;
 
-    const timelineRef = useRef(null);
-    const progressRef = useRef(null);
+    const sectionRef = useRef<HTMLElement | null>(null);
+    // aparecer e sumir na tela
+    const [isVisible, setIsVisible] = useState(false);
+    const [contatoVisivel, setContatoVisivel] = useState(false);
+
+    // aparecer quando chegar na section Experiencia
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting);
+            },
+            { threshold: 0.05 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
+    // esconder a section quando a Contato (titulo "Vamos Conversar") entrar na tela
+    useEffect(() => {
+        const contatoEl = document.getElementById("contato");
+        if (!contatoEl) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setContatoVisivel(entry.isIntersecting);
+            },
+            { threshold: 0.05 }
+        );
+
+        observer.observe(contatoEl);
+
+        return () => observer.disconnect();
+    }, []);
+
+    const timelineRef = useRef<HTMLDivElement | null>(null);
+    const progressRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
 
@@ -79,10 +117,18 @@ export default function Experiencia({ t }: ExperienciaProps) {
     }, []);
 
     return (
-        <section id="experiencias">
+        <section
+            id="experiencias"
+            ref={sectionRef}
+            className={`transition-all duration-1000 ease-out
+                ${contatoVisivel ? "opacity-0 -translate-y-10 pointer-events-none" : "opacity-100 translate-y-0"}`}
+        >
 
             {/* Título */}
-            <h1 className="text-center text-5xl">
+            <h1
+                className={`text-center text-5xl transition-all duration-2000 ease-out
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
+            >
 
                 <GradientText
                     colors={["#160070", "#d1d1d1"]}
@@ -95,13 +141,19 @@ export default function Experiencia({ t }: ExperienciaProps) {
             </h1>
 
             {/* Descrição Seção */}
-            <p className="m-auto w-[60%] text-center text-xl text-[#a1a1a1]">
+            <p
+                className={`m-auto w-[60%] text-center text-xl text-[#a1a1a1] transition-all duration-2000 ease-out delay-150
+                ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
+            >
                 {t.subtitulo}
             </p>
 
 
             {/* Timeline */}
-            <section className="relative mx-auto max-w-5xl px-6 py-24">
+            <section
+                className={`relative mx-auto max-w-5xl px-6 py-24 transition-all duration-2000 ease-out delay-300
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
+            >
 
                 {/* Container da timeline */}
                 <div

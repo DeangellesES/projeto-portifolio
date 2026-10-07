@@ -91,13 +91,15 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
     }
 
     // funçao para aparecer e desaparecer da tela
+    // mesmo gatilho do desaparecimento da section Experiencia
+    // (threshold 0.05 na #contato) para sincronizar as duas
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 setIsVisible(entry.isIntersecting)
             },
             {
-                threshold: 0.3,
+                threshold: 0.05,
             }
         )
 
