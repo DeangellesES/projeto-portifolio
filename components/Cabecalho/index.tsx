@@ -14,6 +14,7 @@ type Props = {
         sobre: string;
         habilidades: string;
         projetos: string;
+        experiencias: string;
         contato: string;
     };
     lang: "pt" | "en";
@@ -68,6 +69,9 @@ function Cabecalho({ text, lang, setLang }: Props) {
                     </a>
                     <a href="#projetos" className="hover:text-[#acacac] transition">
                         {text.projetos}
+                    </a>
+                    <a href="#experiencias" className="hover:text-[#acacac] transition">
+                        {text.experiencias}
                     </a>
                     <a href="#contato" className="hover:text-[#acacac] transition">
                         {text.contato}

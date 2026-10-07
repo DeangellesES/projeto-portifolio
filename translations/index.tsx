@@ -5,7 +5,8 @@ export const translations = {
       sobre: "Sobre",
       habilidades: "Habilidades",
       projetos: "Projetos",
-      contato: "Contato",
+      experiencias: "Experiências",
+      contato: "Contatos",
     },
     inicio: {
       textos: [
@@ -303,7 +304,7 @@ export const translations = {
       ],
     },
     rodape: {
-      desenvolvido: '© 2026 Felipe Deangelles. Desenvolvedor de Software',
+      desenvolvido: '© 2026 Felipe Deangelles. Desenvolvedor de Software.',
     }
   },
 
@@ -313,7 +314,8 @@ export const translations = {
       sobre: "About",
       habilidades: "Skills",
       projetos: "Projects",
-      contato: "Contact",
+      experiencias: "Experiences",
+      contato: "Contacts",
     },
     inicio: {
       textos: [
@@ -601,7 +603,7 @@ export const translations = {
       ],
     },
     rodape: {
-      desenvolvido: '© 2026 Felipe Deangelles. Software Developer',
+      desenvolvido: '© 2026 Felipe Deangelles. Software Developer.',
     },
   },
 };

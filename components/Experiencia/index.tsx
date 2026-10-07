@@ -79,7 +79,7 @@ export default function Experiencia({ t }: ExperienciaProps) {
     }, []);
 
     return (
-        <section>
+        <section id="experiencias">
 
             {/* Título */}
             <h1 className="text-center text-5xl">
