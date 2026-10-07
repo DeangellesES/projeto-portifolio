@@ -184,93 +184,12 @@ export default function Experiencia({ t }: ExperienciaProps) {
 
                     <div className="space-y-14">
 
-                        {experiences.map(
-                            (experience, index) => (
-
-                                <div
-                                    key={experience.year}
-                                    className="experience-item group relative pl-12"
-                                >
-
-                                    {/* ===================== */}
-                                    {/* PONTO */}
-                                    {/* ===================== */}
-
-                                    <div className="experience-dot absolute left-0 top-7 flex h-4 w-4 items-center justify-center rounded-full border border-white/20 bg-[#090711] transition-all duration-500 group-hover:scale-150 group-hover:border-white group-hover:shadow-[0_0_25px_rgba(139,92,246,0.9)]">
-
-                                        <div className="h-1.5 w-1.5 rounded-full bg-white/30 transition-all duration-500 group-hover:h-2 group-hover:w-2" />
-
-                                    </div>
-
-                                    {/* ===================== */}
-                                    {/* CARD */}
-                                    {/* ===================== */}
-
-                                    <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.025] p-6 backdrop-blur-xl transition-all duration-500 group-hover:-translate-y-1 group-hover:border-violet-400/30 group-hover:bg-white/[0.045] group-hover:shadow-[0_15px_60px_rgba(139,92,246,0.08)] md:p-8">
-
-                                        {/* Glow superior */}
-                                        <div className="pointer-events-none absolute -right-24 -top-24 h-52 w-52 rounded-full bg-violet-500/10 blur-3xl opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-
-                                        {/* Glow inferior */}
-                                        <div className="pointer-events-none absolute -bottom-24 -left-24 h-40 w-40 rounded-full bg-fuchsia-500/5 blur-3xl opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-
-                                        {/* Conteúdo */}
-                                        <div className="relative">
-
-                                            {/* Ano / Número */}
-                                            {/* <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-
-                                                <span className="text-sm font-medium tracking-wide text-violet-400">
-                                                    {experience.year}
-                                                </span>
-
-                                                <span className="w-fit rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/40">
-                                                    0{index + 1}
-                                                </span>
-
-                                            </div> */}
-
-                                            {/* Cargo */}
-                                            <h3 className="mt-4 text-2xl font-semibold tracking-tight text-white transition-colors duration-300 group-hover:text-violet-100">
-                                                {experience.role}
-                                            </h3>
-
-                                            {/* Empresa */}
-                                            <p className="mt-1 text-sm text-white/40">
-                                                {experience.company}
-                                            </p>
-
-                                            {/* Descrição */}
-                                            <p className="mt-5 max-w-2xl leading-7 text-white/50">
-                                                {experience.description}
-                                            </p>
-
-                                            {/* Tecnologias */}
-                                            <div className="mt-6 flex flex-wrap gap-2">
-
-                                                {experience.technologies.map(
-                                                    (technology) => (
-
-                                                        <span
-                                                            key={technology}
-                                                            className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-white/50 transition-all duration-300 group-hover:border-violet-400/20 group-hover:text-white/70"
-                                                        >
-                                                            {technology}
-                                                        </span>
-
-                                                    )
-                                                )}
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            )
-                        )}
+                        {experiences.map((experience) => (
+                            <CardExperiencia
+                                key={experience.year}
+                                experience={experience}
+                            />
+                        ))}
 
                     </div>
 
@@ -279,5 +198,113 @@ export default function Experiencia({ t }: ExperienciaProps) {
             </section>
 
         </section>
+    );
+}
+
+function CardExperiencia({ experience }: { experience: ExperienciaItem }) {
+    const tecnologiasRef = useRef<HTMLDivElement | null>(null);
+    const [tecnologiasVisiveis, setTecnologiasVisiveis] = useState(false);
+
+    // tecnologias aparecem uma por uma quando chegam na tela
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setTecnologiasVisiveis(entry.isIntersecting);
+            },
+            { threshold: 0.3 }
+        );
+
+        if (tecnologiasRef.current) {
+            observer.observe(tecnologiasRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+        <div className="experience-item group relative pl-12">
+
+            {/* ===================== */}
+            {/* PONTO */}
+            {/* ===================== */}
+
+            <div className="experience-dot absolute left-0 top-7 flex h-4 w-4 items-center justify-center rounded-full border border-white/20 bg-[#090711] transition-all duration-500 group-hover:scale-150 group-hover:border-white group-hover:shadow-[0_0_25px_rgba(139,92,246,0.9)]">
+
+                <div className="h-1.5 w-1.5 rounded-full bg-white/30 transition-all duration-500 group-hover:h-2 group-hover:w-2" />
+
+            </div>
+
+            {/* ===================== */}
+            {/* CARD */}
+            {/* ===================== */}
+
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.025] p-6 backdrop-blur-xl transition-all duration-500 group-hover:-translate-y-1 group-hover:border-violet-400/30 group-hover:bg-white/[0.045] group-hover:shadow-[0_15px_60px_rgba(139,92,246,0.08)] md:p-8">
+
+                {/* Glow superior */}
+                <div className="pointer-events-none absolute -right-24 -top-24 h-52 w-52 rounded-full bg-violet-500/10 blur-3xl opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+
+                {/* Glow inferior */}
+                <div className="pointer-events-none absolute -bottom-24 -left-24 h-40 w-40 rounded-full bg-fuchsia-500/5 blur-3xl opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+
+                {/* Conteúdo */}
+                <div className="relative">
+
+                    {/* Ano / Número */}
+                    {/* <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+
+                        <span className="text-sm font-medium tracking-wide text-violet-400">
+                            {experience.year}
+                        </span>
+
+                        <span className="w-fit rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/40">
+                            0{index + 1}
+                        </span>
+
+                    </div> */}
+
+                    {/* Cargo */}
+                    <h3 className="mt-4 text-2xl font-semibold tracking-tight text-white transition-colors duration-300 group-hover:text-violet-100">
+                        {experience.role}
+                    </h3>
+
+                    {/* Empresa */}
+                    <p className="mt-1 text-sm text-white/40">
+                        {experience.company}
+                    </p>
+
+                    {/* Descrição */}
+                    <p className="mt-5 max-w-2xl leading-7 text-white/50">
+                        {experience.description}
+                    </p>
+
+                    {/* Tecnologias */}
+                    <div ref={tecnologiasRef} className="mt-6 flex flex-wrap gap-2">
+
+                        {experience.technologies.map(
+                            (technology, techIndex) => (
+
+                                    <span
+                                        key={technology}
+                                        style={{
+                                            transitionProperty: "opacity, translate, transform, color, border-color",
+                                            transitionDuration: "1200ms, 1200ms, 1200ms, 300ms, 300ms",
+                                            transitionDelay: `${techIndex * 220}ms, ${techIndex * 220}ms, ${techIndex * 220}ms, 0ms, 0ms`,
+                                        }}
+                                        className={`rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-white/50 ease-out group-hover:border-violet-400/20 group-hover:text-white/70
+                                            ${tecnologiasVisiveis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                                    >
+                                        {technology}
+                                    </span>
+
+                            )
+                        )}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
     );
 }
