@@ -3,34 +3,24 @@
 import { useEffect, useRef } from "react";
 import GradientText from "../GradientText";
 
-const experiences = [
-    {
-        year: "2022 — 2023",
-        role: "Desenvolvedor de Software Freelancer",
-        company: "Projetos Independentes",
-        description:
-            "Desenvolvimento de soluções digitais personalizadas para clientes e negócios, transformando ideias em aplicações modernas, responsivas e funcionais. Atuação em todo o processo, desde a concepção da interface até a implementação, com foco em performance, experiência do usuário e qualidade do código.",
-        technologies: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "TailwindCSS", "Node.js", "PostgreSQL", "MySQL", "MongoDB", "ReactNative", "API Rest"],
-    },
-    {
-        year: "2023 — 2025",
-        role: "Desenvolvimento de Projetos Pessoais",
-        company: "Projetos Independentes",
-        description:
-            "Construção de aplicações que resolvem problemas reais, trabalhando tanto no frontend quanto no backend.",
-        technologies: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "TailwindCSS", "Node.js", "PostgreSQL", "MySQL", "MongoDB", "ReactNative", "API Rest"],
-    },
-    {
-        year: "2025 — Atualmente",
-        role: "Estagiário em Desenvolvimento BackEnd",
-        company: "Compila",
-        description:
-            "Auxiliava no desenvolvimento de novas funcionalidades e manutenção de produtos já existentes.",
-        technologies: ["Node.js", "JavaScript", "express.js", "MongoDB"],
-    },
-];
+interface ExperienciaItem {
+  year: string;
+  role: string;
+  company: string;
+  description: string;
+  technologies: string[];
+}
 
-export default function Experiencia() {
+interface ExperienciaProps {
+  t: {
+    titulo: string;
+    subtitulo: string;
+    experiencias: ExperienciaItem[];
+  };
+}
+
+export default function Experiencia({ t }: ExperienciaProps) {
+  const experiences = t.experiencias;
 
     const timelineRef = useRef(null);
     const progressRef = useRef(null);
@@ -99,16 +89,14 @@ export default function Experiencia() {
                     animationSpeed={4}
                     showBorder={false}
                 >
-                    Experiência
+                    {t.titulo}
                 </GradientText>
 
             </h1>
 
             {/* Descrição Seção */}
             <p className="m-auto w-[60%] text-center text-xl text-[#a1a1a1]">
-                Cada projeto trouxe um desafio, cada desafio trouxe
-                aprendizado e cada experiência ajudou a construir
-                quem sou como desenvolvedor.
+                {t.subtitulo}
             </p>
 
 

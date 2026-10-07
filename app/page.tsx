@@ -47,7 +47,7 @@ export default function Home() {
         projetosFull={t.projetos.projetosFull}
       />
 
-      <Experiencia/>
+      <Experiencia t={t.experiencia} />
 
       <Contato titulo={t.contato.titulo}
         subtitulo={t.contato.subtitulo} descricao={t.contato.descricao} telefone={t.contato.telefone}
