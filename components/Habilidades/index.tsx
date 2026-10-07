@@ -135,11 +135,13 @@ function Habilidades({ t }: Props) {
                             key={skill.key}
                             style={{
                                 '--shadow-color': skill.shadowColor,
-                                transitionDelay: `${index * 200}ms`
+                                transitionDelay: `${index * 200}ms, ${index * 200}ms, 0ms`
                             } as React.CSSProperties}
                             className={`border border-gray-300/20 p-8 rounded-2xl bg-[#0d0d0d] group
-                                transition-transform transition-opacity duration-2000 ease-out
-                                transition-shadow duration-300
+                                [transition-property:transform,translate,border-color]
+                                [transition-duration:2000ms,2000ms,300ms]
+                                ease-out
+                                hover:border-[color:rgb(var(--shadow-color))]
                                 hover:shadow-[0_0_35px_rgba(var(--shadow-color),0.35)]
                                 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}
                             `}

@@ -24,7 +24,7 @@ export const translations = {
       titulo: "Sobre Mim",
       subtitulo: "Apresentação Pessoal",
       descricao:
-        "Meu nome é Felipe Deangelles, sou formado em Engenharia de Software, desde muito novo eu sempre gostei e ficava adimirado e encantado por tecnologia e computadores, com o passar do tempo minha curiosidade e interesse foi só aumentando, cada vez mais eu ficava mais facinado e queria saber como tudo isso funcionava, a ponto de quere ser a pessoa por tras disso, desenvolvendo toda essa tecnologia, tenho muita vontade de aprender e estou sempre estudando, me aperfeiçoando, evoluindo e buscando ser cada vez melhor para conseguir dominar e desenvolver sistemas complexos, desenvolver soluções, experiências incríveis, ajudar pessoas alcancarem seus objetivos atravez do meu trabalho que gosto tanto e fazer o que mais gosto.",
+        "Meu nome é Felipe Deangelles, sou formado em Engenharia de Software, desde muito novo eu sempre gostei e ficava adimirado e encantado por tecnologia e computadores, com o passar do tempo minha curiosidade e interesse foram só aumentando, cada vez mais eu ficava mais facinado e queria saber como tudo isso funcionava, a ponto de quere ser a pessoa por tras disso, desenvolvendo toda essa tecnologia, tenho muita vontade de aprender e estou sempre estudando, me aperfeiçoando, evoluindo e buscando ser cada vez melhor para conseguir dominar e desenvolver sistemas complexos, desenvolver soluções, experiências incríveis, ajudar pessoas alcancarem seus objetivos atravez do meu trabalho que gosto tanto e fazer o que mais gosto.",
       formacao: {
         titulo: "Formação",
         curso: "Engenharia de Software",
