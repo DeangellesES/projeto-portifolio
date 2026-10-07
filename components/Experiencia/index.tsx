@@ -6,27 +6,27 @@ import GradientText from "../GradientText";
 const experiences = [
     {
         year: "2022 — 2023",
-        role: "Frontend Developer",
-        company: "Empresa / Projeto",
+        role: "Desenvolvedor de Software Freelancer",
+        company: "Projetos Independentes",
         description:
-            "Desenvolvimento de interfaces modernas, responsivas e focadas em experiência do usuário.",
-        technologies: ["React", "JavaScript", "Tailwind CSS"],
+            "Desenvolvimento de soluções digitais personalizadas para clientes e negócios, transformando ideias em aplicações modernas, responsivas e funcionais. Atuação em todo o processo, desde a concepção da interface até a implementação, com foco em performance, experiência do usuário e qualidade do código.",
+        technologies: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "TailwindCSS", "Node.js", "PostgreSQL", "MySQL", "MongoDB", "ReactNative", "API Rest"],
     },
     {
         year: "2023 — 2025",
-        role: "Full Stack Developer",
-        company: "Empresa / Projeto",
+        role: "Desenvolvimento de Projetos Pessoais",
+        company: "Projetos Independentes",
         description:
-            "Construção de aplicações completas, trabalhando tanto no frontend quanto no backend.",
-        technologies: ["Next.js", "Node.js", "PostgreSQL"],
+            "Construção de aplicações que resolvem problemas reais, trabalhando tanto no frontend quanto no backend.",
+        technologies: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "TailwindCSS", "Node.js", "PostgreSQL", "MySQL", "MongoDB", "ReactNative", "API Rest"],
     },
     {
         year: "2025 — Atualmente",
-        role: "Software Developer",
-        company: "Empresa / Projeto",
+        role: "Estagiário em Desenvolvimento BackEnd",
+        company: "Compila",
         description:
-            "Desenvolvimento de produtos digitais escaláveis com foco em performance, arquitetura e interfaces.",
-        technologies: ["Next.js", "TypeScript", "AI"],
+            "Auxiliava no desenvolvimento de novas funcionalidades e manutenção de produtos já existentes.",
+        technologies: ["Node.js", "JavaScript", "express.js", "MongoDB"],
     },
 ];
 
@@ -178,7 +178,7 @@ export default function Experiencia() {
                                         <div className="relative">
 
                                             {/* Ano / Número */}
-                                            <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+                                            {/* <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
 
                                                 <span className="text-sm font-medium tracking-wide text-violet-400">
                                                     {experience.year}
@@ -188,7 +188,7 @@ export default function Experiencia() {
                                                     0{index + 1}
                                                 </span>
 
-                                            </div>
+                                            </div> */}
 
                                             {/* Cargo */}
                                             <h3 className="mt-4 text-2xl font-semibold tracking-tight text-white transition-colors duration-300 group-hover:text-violet-100">
