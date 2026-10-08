@@ -20,6 +20,7 @@ export const translations = {
       download: "Download Currículo",
       conversar: "Vamos Conversar",
       codigo: {
+        variavel: "desenvolvedor",
         nome: "Felipe Deangelles",
         paixao: ["Código", "Tecnologia", "Inovação"],
         foco: "Criar soluções que fazem a diferença!",
@@ -335,6 +336,7 @@ export const translations = {
       download: "Download Resume",
       conversar: "Let's Talk",
       codigo: {
+        variavel: "developer",
         nome: "Felipe Deangelles",
         paixao: ["Code", "Technology", "Innovation"],
         foco: "Creating solutions that make a difference!",

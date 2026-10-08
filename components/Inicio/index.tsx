@@ -13,6 +13,7 @@ type Props = {
     downloadText: string;
     conversarText: string;
     codigo: {
+        variavel: string;
         nome: string;
         paixao: string[];
         foco: string;
@@ -193,7 +194,7 @@ export default function Inico({
                     <pre className="font-mono text-xs leading-5">
                         <code>
                             <span className="text-blue-400">const</span>{" "}
-                            <span className="text-yellow-300">desenvolvedor</span>{" "}
+                            <span className="text-yellow-300">{codigo.variavel}</span>{" "}
                             = {"{"}{"\n"}
 
                             {"  "}
