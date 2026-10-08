@@ -189,27 +189,27 @@ export default function Inico({
                 />
 
                 {/* QUADRO DE CÓDIGO */}
-                <div className="absolute bottom-5 left-1 z-10 w-[365px] rounded-lg border border-white/10 bg-[#0d1117] p-3 shadow-2xl">
+                <div className="absolute bottom-5 left-1 z-10 w-[365px] rounded-lg border border-black/10 bg-white p-3 shadow-2xl dark:border-white/10 dark:bg-[#0d1117]">
 
                     <pre className="font-mono text-xs leading-5">
                         <code>
                             <span className="text-blue-400">const</span>{" "}
                             <span className="text-yellow-300">{codigo.variavel}</span>{" "}
-                            = {"{"}{"\n"}
+                            <span className="text-black dark:text-white">= {"{"}</span>{"\n"}
 
                             {"  "}
-                            <span className="text-purple-400">nome</span>:{" "}
+                            <span className="text-purple-400">nome</span><span className="text-black dark:text-white">:</span>{" "}
                             <span className="text-green-400">
                                 '{codigo.nome}'
-                            </span>,
+                            </span><span className="text-black dark:text-white">,</span>
                             {"\n"}
 
                             {"  "}
-                            <span className="text-purple-400">paixao</span>: [
+                            <span className="text-purple-400">paixao</span><span className="text-black dark:text-white">: [</span>
                             <span className="text-green-400">
                                 {codigo.paixao.map((item) => `'${item}'`).join(", ")}
                             </span>
-                            ],
+                            <span className="text-black dark:text-white">],</span>
                             {"\n"}
 
                             {/* {"  "}
@@ -221,20 +221,20 @@ export default function Inico({
                 {"\n"} */}
 
                             {"  "}
-                            <span className="text-purple-400">foco</span>:{" "}
+                            <span className="text-purple-400">foco</span><span className="text-black dark:text-white">:</span>{" "}
                             <span className="text-green-400">
                                 '{codigo.foco}'
-                            </span>,
+                            </span><span className="text-black dark:text-white">,</span>
                             {"\n"}
 
                             {"  "}
-                            <span className="text-purple-400">status</span>:{" "}
+                            <span className="text-purple-400">status</span><span className="text-black dark:text-white">:</span>{" "}
                             <span className="text-green-400">
                                 '{codigo.status}'
                             </span>
                             {"\n"}
 
-                            {"};"}
+                            <span className="text-black dark:text-white">{"};"}</span>
                         </code>
                     </pre>
 
