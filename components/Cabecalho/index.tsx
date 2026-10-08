@@ -41,7 +41,7 @@ function Cabecalho({ text, lang, setLang }: Props) {
                 <div className="flex gap-3">
                     <a
                         href="https://www.linkedin.com/in/felipe-deangelles-da-silva-lopes/"
-                        className="text-muted-foreground hover:text-[#002080] dark:hover:text-white transition"
+                        className="text-foreground hover:text-[#002080] dark:hover:text-[#002080] transition"
                         target="_blank"
                     >
                         <Linkedin />
@@ -49,7 +49,7 @@ function Cabecalho({ text, lang, setLang }: Props) {
 
                     <a
                         href="https://github.com/DeangellesES"
-                        className="text-muted-foreground hover:text-foreground dark:hover:text-white transition"
+                        className="text-foreground hover:text-gray-500 dark:hover:text-foreground/50 transition"
                         target="_blank"
                     >
                         <Github />

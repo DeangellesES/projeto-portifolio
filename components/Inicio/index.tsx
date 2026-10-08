@@ -216,7 +216,7 @@ export default function Inico({
                             <span className="text-purple-400">foco</span>:{" "}
                             <span className="text-green-400">
                                 'Criar soluções que fazem a diferença!'
-                            </span>
+                            </span>,
                             {"\n"}
 
                             {"  "}
