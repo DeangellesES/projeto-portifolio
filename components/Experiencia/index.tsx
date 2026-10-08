@@ -263,17 +263,17 @@ function CardExperiencia({ experience }: { experience: ExperienciaItem }) {
                     </div> */}
 
                     {/* Cargo */}
-                    <h3 className="mt-4 text-2xl font-semibold tracking-tight text-white transition-colors duration-300 group-hover:text-violet-100">
+                    <h3 className="mt-4 text-2xl font-semibold tracking-tight text-foreground transition-colors duration-300 group-hover:text-foreground">
                         {experience.role}
                     </h3>
 
                     {/* Empresa */}
-                    <p className="mt-1 text-sm text-white/40">
+                    <p className="mt-1 text-sm text-foreground/50">
                         {experience.company}
                     </p>
 
                     {/* Descrição */}
-                    <p className="mt-5 max-w-2xl leading-7 text-white/50">
+                    <p className="mt-5 max-w-2xl leading-7 text-foreground/50">
                         {experience.description}
                     </p>
 
@@ -290,7 +290,7 @@ function CardExperiencia({ experience }: { experience: ExperienciaItem }) {
                                             transitionDuration: "1200ms, 1200ms, 1200ms, 300ms, 300ms",
                                             transitionDelay: `${techIndex * 220}ms, ${techIndex * 220}ms, ${techIndex * 220}ms, 0ms, 0ms`,
                                         }}
-                                        className={`rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-white/50 ease-out group-hover:border-violet-400/20 group-hover:text-white/70
+                                        className={`rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-foreground/50 ease-out group-hover:border-violet-400/20 group-hover:text-foreground
                                             ${tecnologiasVisiveis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                                     >
                                         {technology}
