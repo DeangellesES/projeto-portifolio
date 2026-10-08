@@ -28,7 +28,8 @@ export default function Home() {
       <Inicio texts={t.inicio.textos}
         sobre={t.inicio.sobre}
         downloadText={t.inicio.download}
-        conversarText={t.inicio.conversar} />
+        conversarText={t.inicio.conversar}
+        codigo={t.inicio.codigo} />
 
       <Sobre t={t.sobre} />
 

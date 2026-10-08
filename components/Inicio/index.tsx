@@ -12,6 +12,12 @@ type Props = {
     sobre: string;
     downloadText: string;
     conversarText: string;
+    codigo: {
+        nome: string;
+        paixao: string[];
+        foco: string;
+        status: string;
+    };
 };
 
 export default function Inico({
@@ -19,6 +25,7 @@ export default function Inico({
     sobre,
     downloadText,
     conversarText,
+    codigo,
 }: Props) {
 
     const [texto, setTexto] = useState("");
@@ -181,7 +188,7 @@ export default function Inico({
                 />
 
                 {/* QUADRO DE CÓDIGO */}
-                <div className="absolute bottom-5 left-1 z-10 w-[335px] rounded-lg border border-white/10 bg-[#0d1117] p-3 shadow-2xl">
+                <div className="absolute bottom-5 left-1 z-10 w-[365px] rounded-lg border border-white/10 bg-[#0d1117] p-3 shadow-2xl">
 
                     <pre className="font-mono text-xs leading-5">
                         <code>
@@ -192,14 +199,14 @@ export default function Inico({
                             {"  "}
                             <span className="text-purple-400">nome</span>:{" "}
                             <span className="text-green-400">
-                                'Felipe Deangelles'
+                                '{codigo.nome}'
                             </span>,
                             {"\n"}
 
                             {"  "}
                             <span className="text-purple-400">paixao</span>: [
                             <span className="text-green-400">
-                                'Código', 'Tecnologia', 'Inovação'
+                                {codigo.paixao.map((item) => `'${item}'`).join(", ")}
                             </span>
                             ],
                             {"\n"}
@@ -215,14 +222,14 @@ export default function Inico({
                             {"  "}
                             <span className="text-purple-400">foco</span>:{" "}
                             <span className="text-green-400">
-                                'Criar soluções que fazem a diferença!'
+                                '{codigo.foco}'
                             </span>,
                             {"\n"}
 
                             {"  "}
                             <span className="text-purple-400">status</span>:{" "}
                             <span className="text-green-400">
-                                'Aprendizado Contínuo'
+                                '{codigo.status}'
                             </span>
                             {"\n"}
 

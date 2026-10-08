@@ -19,6 +19,12 @@ export const translations = {
       sobre: 'Sou um desenvolvedor Full-Stack apaixonado em criar soluções digitais eficientes, escaláveis e com excelente experiência de uso.',
       download: "Download Currículo",
       conversar: "Vamos Conversar",
+      codigo: {
+        nome: "Felipe Deangelles",
+        paixao: ["Código", "Tecnologia", "Inovação"],
+        foco: "Criar soluções que fazem a diferença!",
+        status: "Aprendizado Contínuo",
+      },
     },
     sobre: {
       titulo: "Sobre Mim",
@@ -328,6 +334,12 @@ export const translations = {
       sobre: 'I am a Full-Stack developer passionate about creating efficient, scalable digital solutions with an excellent user experience.',
       download: "Download Resume",
       conversar: "Let's Talk",
+      codigo: {
+        nome: "Felipe Deangelles",
+        paixao: ["Code", "Technology", "Innovation"],
+        foco: "Creating solutions that make a difference!",
+        status: "Continuous Learning",
+      },
     },
     sobre: {
       titulo: "About Me",
