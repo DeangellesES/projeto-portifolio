@@ -74,7 +74,7 @@ function Sobre({ t }: Props) {
             </h1>
 
             <p
-                className={`text-center text-[#a1a1a1] text-xl transition-all duration-2000 ease-out delay-150
+                className={`text-center text-foreground/50 text-xl transition-all duration-2000 ease-out delay-150
                 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
             >
                 {t.subtitulo}
@@ -137,18 +137,18 @@ function Sobre({ t }: Props) {
 
                             <div className="relative z-10 p-4 text-center backdrop-blur-[2px]">
 
-                                <h2 className="text-lg font-bold">
+                                <h2 className="text-lg font-bold text-white">
                                     {t.formacao.titulo}
                                 </h2>
 
-                                <div className="flex justify-center my-2">
+                                <div className="flex justify-center my-2 text-white">
                                     <GraduationCap
                                         size={35}
                                         className="transition-transform duration-300 group-hover:scale-125"
                                     />
                                 </div>
 
-                                <p>
+                                <p className="text-white">
                                     {t.formacao.curso}
                                 </p>
 
@@ -198,18 +198,18 @@ function Sobre({ t }: Props) {
 
                             <div className="relative z-10 p-4 text-center backdrop-blur-[2px]">
 
-                                <h2 className="text-lg font-bold">
+                                <h2 className="text-lg font-bold text-white">
                                     Solucionador de Problemas
                                 </h2>
 
                                 <div className="flex justify-center my-2">
                                     <Lightbulb
                                         size={35}
-                                        className="transition-transform duration-300 group-hover:scale-125"
+                                        className="transition-transform duration-300 text-white group-hover:scale-125"
                                     />
                                 </div>
 
-                                <p>
+                                <p className="text-white">
                                     Enfrentando Desafios
                                 </p>
 
@@ -255,16 +255,16 @@ function Sobre({ t }: Props) {
 
                             <div className="relative z-10 p-4 text-center backdrop-blur-[2px]">
 
-                                <h2 className="text-lg font-bold">
+                                <h2 className="text-lg font-bold text-white">
                                     Aprendiz Contínuo
                                 </h2>
 
                                 <div className="flex justify-center my-2">
                                     <BookOpenText size={35}
-                                        className="transition-transform duration-300 group-hover:scale-125" />
+                                        className="transition-transform text-white duration-300 group-hover:scale-125" />
                                 </div>
 
-                                <p>
+                                <p className="text-white">
                                     Evoluir
                                 </p>
 

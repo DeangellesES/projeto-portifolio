@@ -98,20 +98,20 @@ export default function Inico({
                 {/* TEXTO ANIMADO */}
                 <div className="max-w-full mt-3 mb-5">
                     <p
-                        className="text-base sm:text-lg md:text-4xl font-black text-white"
+                        className="text-base sm:text-lg md:text-4xl font-black text-foreground"
                         style={{
                             WebkitTextStroke: "2px",
                         }}
                     >
                         {texto}
-                        <span className="ml-1 inline-block h-6 w-[2px] animate-pulse bg-white align-middle md:h-7" />
+                        <span className="ml-1 inline-block h-6 w-[2px] animate-pulse bg-foreground align-middle md:h-9" />
                     </p>
                 </div>
 
 
                 {/* SUBTÍTULO */}
                 <div className="mt-3">
-                    <p className="max-w-xl text-base text-[#a1a1a1] sm:text-lg md:text-xl">
+                    <p className="max-w-xl text-base text-foreground/60 sm:text-lg md:text-xl">
                         {sobre}
                     </p>
                 </div>

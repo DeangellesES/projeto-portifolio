@@ -142,7 +142,7 @@ export default function Experiencia({ t }: ExperienciaProps) {
 
             {/* Descrição Seção */}
             <p
-                className={`m-auto w-[60%] text-center text-xl text-[#a1a1a1] transition-all duration-2000 ease-out delay-150
+                className={`m-auto w-[60%] text-center text-xl text-foreground/50 transition-all duration-2000 ease-out delay-150
                 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
             >
                 {t.subtitulo}

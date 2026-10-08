@@ -155,7 +155,7 @@ function Contato({ titulo, subtitulo, descricao, telefone, localizacao, endereco
                             
                         />
                     </h2>
-                    <p className='text-lg py-5 text-[#a1a1a1]'>{descricao}</p>
+                    <p className='text-lg py-5 text-foreground/50'>{descricao}</p>
                     <div className='grid gap-3'>
                         <div className='flex items-center gap-4 border border-gray-700/20 px-5 py-3 bg-[#0d0d0d] rounded-sm'>
                             <Mail className='md:block hidden !hidden md:!block contato-icones text-white' />

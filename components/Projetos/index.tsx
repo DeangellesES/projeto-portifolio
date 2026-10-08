@@ -127,7 +127,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
             </h1>
 
             <p
-                className={`m-auto text-center text-[#a1a1a1] text-xl w-[60%] transition-all duration-2000 ease-out delay-150
+                className={`m-auto text-center text-foreground/50 text-xl w-[60%] transition-all duration-2000 ease-out delay-150
                 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
             >
                 {subtitulo}

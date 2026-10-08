@@ -119,7 +119,7 @@ function Habilidades({ t }: Props) {
                 </GradientText>
             </h1>
 
-            <p className={`text-center text-[#a1a1a1] text-xl transition-all duration-2000 ease-out delay-150
+            <p className={`text-center text-foreground/50 text-xl transition-all duration-2000 ease-out delay-150
                         ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
             >
                 {t.subtitulo}
