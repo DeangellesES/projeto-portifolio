@@ -77,14 +77,14 @@ export default function Inico({
     return (
         <section
             id="inicio"
-            className="min-h-screen flex px-4 pt-24 sm:pt-28 md:pt-32"
+            className="min-h-screen flex flex-col items-center gap-16 px-4 pb-16 pt-24 sm:pt-28 md:flex-row md:items-stretch md:gap-0 md:pb-0 md:pt-32"
         >
 
-            <div className="w-[55%] px-20">
+            <div className="w-full px-2 text-center sm:px-6 md:w-[55%] md:px-20 md:text-left">
 
                 <div>
                     <h1
-                        className="text-7xl font-black [text-shadow:0_0_20px_rgba(255,255,255,0.8)]"
+                        className="text-5xl font-black [text-shadow:0_0_20px_rgba(255,255,255,0.8)] sm:text-6xl md:text-7xl"
                         style={{
                             WebkitTextStroke: "2px #fff",
                         }}
@@ -93,7 +93,7 @@ export default function Inico({
                     </h1>
 
                     <h1
-                        className="text-7xl font-black tracking-tight [text-shadow:0_0_20px_rgba(255,255,255,0.8)]"
+                        className="text-5xl font-black tracking-tight [text-shadow:0_0_20px_rgba(255,255,255,0.8)] sm:text-6xl md:text-7xl"
                         style={{
                             WebkitTextStroke: "1px #fff",
                         }}
@@ -106,27 +106,27 @@ export default function Inico({
                 {/* TEXTO ANIMADO */}
                 <div className="max-w-full mt-3 mb-5">
                     <p
-                        className="text-base sm:text-lg md:text-4xl font-black text-foreground"
+                        className="text-xl sm:text-2xl md:text-4xl font-black text-foreground"
                         style={{
                             WebkitTextStroke: "2px",
                         }}
                     >
                         {texto}
-                        <span className="ml-1 inline-block h-6 w-[2px] animate-pulse bg-foreground align-middle md:h-9" />
+                        <span className="ml-1 inline-block h-4 w-[2px] animate-pulse bg-foreground align-middle sm:h-5 md:h-9" />
                     </p>
                 </div>
 
 
                 {/* SUBTÍTULO */}
                 <div className="mt-3">
-                    <p className="max-w-xl text-base text-foreground/60 sm:text-lg md:text-xl">
+                    <p className="mx-auto max-w-xl text-base text-foreground/60 sm:text-lg md:mx-0 md:text-xl">
                         {sobre}
                     </p>
                 </div>
 
 
                 {/* BOTÕES PRINCIPAIS */}
-                <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6">
+                <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6 md:justify-start">
 
                     <a
                         href="../curriculoportifolio.pdf"
@@ -150,7 +150,7 @@ export default function Inico({
             </div>
 
 
-            <div className="relative w-[45%] pl-40">
+            <div className="relative flex w-full justify-center md:w-[45%] md:justify-start md:pl-40">
 
                 {/* wrapper do tamanho da imagem: mantém o quadro de código sempre na mesma posição */}
                 <div className="relative inline-block">
@@ -192,7 +192,7 @@ export default function Inico({
                 />
 
                 {/* QUADRO DE CÓDIGO */}
-                <div className="absolute left-[-156px] -bottom-5 z-10 w-[365px] rounded-lg border border-black/10 bg-white p-3 shadow-2xl dark:border-white/10 dark:bg-[#0d1117]">
+                <div className="relative z-10 mt-6 w-[300px] max-w-full rounded-lg border border-black/10 bg-white p-3 shadow-2xl dark:border-white/10 dark:bg-[#0d1117] md:absolute md:left-[-156px] md:-bottom-5 md:mt-0 md:w-[365px]">
 
                     <pre className="font-mono text-xs leading-5">
                         <code>
