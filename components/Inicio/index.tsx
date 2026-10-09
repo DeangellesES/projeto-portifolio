@@ -192,7 +192,7 @@ export default function Inico({
                 />
 
                 {/* QUADRO DE CÓDIGO */}
-                <div className="relative z-10 mt-6 w-[300px] max-w-full rounded-lg border border-black/10 bg-white p-3 shadow-2xl dark:border-white/10 dark:bg-[#0d1117] md:absolute md:left-[-156px] md:-bottom-5 md:mt-0 md:w-[365px]">
+                <div className="relative z-10 mt-6 w-[330px]  rounded-lg border border-black/10 bg-white p-3 shadow-2xl dark:border-white/10 dark:bg-[#0d1117] md:absolute md:left-[-156px] md:-bottom-5 md:mt-0 md:w-[365px]">
 
                     <pre className="font-mono text-xs leading-5">
                         <code>

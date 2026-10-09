@@ -77,7 +77,7 @@ function Sobre({ t }: Props) {
             </h1>
 
             <p
-                className={`text-center text-foreground/50 text-base transition-all duration-2000 ease-out delay-150 sm:text-lg md:text-xl
+                className={`text-center text-foreground/50 text-base md:mb-8 transition-all duration-2000 ease-out delay-150 sm:text-lg md:text-xl
                 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
             >
                 {t.subtitulo}
