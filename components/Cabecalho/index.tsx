@@ -117,7 +117,7 @@ function Cabecalho({ text, lang, setLang }: Props) {
             {/* responsividade MENU MOBILE – apenas links do meio */}
             <nav className={`md:hidden bg-background/95 dark:bg-black/90 backdrop-blur-md border-t border-border/60
                              transition-all duration-300
-                             ${open ? "max-h-64 opacity-100" : "max-h-0 opacity-0 overflow-hidden"}
+                             ${open ? "max-h-74 opacity-100" : "max-h-0 opacity-0 overflow-hidden"}
                             `}
             >
                 {/* lista links cabecalho navegacao */}
@@ -128,6 +128,11 @@ function Cabecalho({ text, lang, setLang }: Props) {
                         </a>
                     </li>
                     <li>
+                        <a href="#inicio" className="hover:text-muted-foreground transition-colors" onClick={() => setOpen(false)}>
+                            {text.sobre}
+                        </a>
+                    </li>
+                    <li>
                         <a href="#habilidades" className="hover:text-muted-foreground transition-colors" onClick={() => setOpen(false)}>
                             {text.habilidades}
                         </a>
@@ -135,6 +140,11 @@ function Cabecalho({ text, lang, setLang }: Props) {
                     <li>
                         <a href="#projetos" className="hover:text-muted-foreground transition-colors" onClick={() => setOpen(false)}>
                             {text.projetos}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#projetos" className="hover:text-muted-foreground transition-colors" onClick={() => setOpen(false)}>
+                            {text.experiencias}
                         </a>
                     </li>
                     <li>
