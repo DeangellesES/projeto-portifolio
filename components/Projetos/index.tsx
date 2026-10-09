@@ -141,28 +141,28 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                 {/* botoes categoria projeto */}
                 <button
                     onClick={() => setCategoria("front")}
-                    className={`border px-3 rounded-xl text-sm font-bold cursor-pointer ${categoria === "front" ? "bg-white text-black" : "border-gray-300/20"}`}
+                    className={`border px-3 rounded-xl text-sm font-bold cursor-pointer ${categoria === "front" ? "bg-white text-black" : "border-foreground/20"}`}
                 >
                     Front End
                 </button>
 
                 <button
                     onClick={() => setCategoria("back")}
-                    className={`border p-3 rounded-xl text-sm font-bold cursor-pointer ${categoria === "back" ? "bg-white text-black" : "border-gray-300/20"}`}
+                    className={`border p-3 rounded-xl text-sm font-bold cursor-pointer ${categoria === "back" ? "bg-white text-black" : "border-foreground/20"}`}
                 >
                     Back End
                 </button>
 
                 <button
                     onClick={() => setCategoria("full")}
-                    className={`border p-3 rounded-xl text-sm font-bold cursor-pointer ${categoria === "full" ? "bg-white text-black" : "border-gray-300/20"}`}
+                    className={`border p-3 rounded-xl text-sm font-bold cursor-pointer ${categoria === "full" ? "bg-white text-black" : "border-foreground/20"}`}
                 >
                     Full Stack
                 </button>
 
                 <button
                     onClick={() => setCategoria("aplicativo")}
-                    className={`border p-3 rounded-xl text-sm font-bold cursor-pointer ${categoria === "aplicativo" ? "bg-white text-black" : "border-gray-300/20"}`}
+                    className={`border p-3 rounded-xl text-sm font-bold cursor-pointer ${categoria === "aplicativo" ? "bg-white text-black" : "border-foreground/20"}`}
                 >
                     {categoriaAplicativo}
                 </button>
