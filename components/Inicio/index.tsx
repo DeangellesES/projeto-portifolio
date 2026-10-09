@@ -152,6 +152,9 @@ export default function Inico({
 
             <div className="relative w-[45%] pl-40">
 
+                {/* wrapper do tamanho da imagem: mantém o quadro de código sempre na mesma posição */}
+                <div className="relative inline-block">
+
                 {/* <Image
                     src="/foto-animacao.png"
                     alt="Foto de perfil"
@@ -189,7 +192,7 @@ export default function Inico({
                 />
 
                 {/* QUADRO DE CÓDIGO */}
-                <div className="absolute bottom-5 left-1 z-10 w-[365px] rounded-lg border border-black/10 bg-white p-3 shadow-2xl dark:border-white/10 dark:bg-[#0d1117]">
+                <div className="absolute left-[-156px] -bottom-5 z-10 w-[365px] rounded-lg border border-black/10 bg-white p-3 shadow-2xl dark:border-white/10 dark:bg-[#0d1117]">
 
                     <pre className="font-mono text-xs leading-5">
                         <code>
@@ -237,6 +240,8 @@ export default function Inico({
                             <span className="text-black dark:text-white">{"};"}</span>
                         </code>
                     </pre>
+
+                </div>
 
                 </div>
 
