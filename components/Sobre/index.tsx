@@ -11,6 +11,8 @@ type Props = {
         subtitulo: string;
         descricao: string;
         formacao: { titulo: string; curso: string; status: string };
+        solucionador: {titulo: string; enfrentando: string};
+        aprendiz: {titulo: string; evoluir: string}
     };
 };
 
@@ -199,7 +201,7 @@ function Sobre({ t }: Props) {
                             <div className="relative z-10 p-4 text-center backdrop-blur-[2px]">
 
                                 <h2 className="text-lg font-bold text-white">
-                                    Solucionador de Problemas
+                                    {t.solucionador.titulo}
                                 </h2>
 
                                 <div className="flex justify-center my-2">
@@ -210,7 +212,7 @@ function Sobre({ t }: Props) {
                                 </div>
 
                                 <p className="text-white">
-                                    Enfrentando Desafios
+                                    {t.solucionador.enfrentando}
                                 </p>
 
                             </div>
@@ -256,7 +258,7 @@ function Sobre({ t }: Props) {
                             <div className="relative z-10 p-4 text-center backdrop-blur-[2px]">
 
                                 <h2 className="text-lg font-bold text-white">
-                                    Aprendiz Contínuo
+                                    {t.aprendiz.titulo}
                                 </h2>
 
                                 <div className="flex justify-center my-2">
@@ -265,7 +267,7 @@ function Sobre({ t }: Props) {
                                 </div>
 
                                 <p className="text-white">
-                                    Evoluir
+                                    {t.aprendiz.evoluir}
                                 </p>
 
                             </div>

@@ -37,6 +37,14 @@ export const translations = {
         curso: "Engenharia de Software",
         status: "Concluído",
       },
+      solucionador: {
+        titulo: "Solucionador de Problemas",
+        enfrentando: "Enfrentando Desafios",
+      },
+      aprendiz: {
+        titulo: "Aprendiz Contínuo",
+        evoluir: "Evoluir",
+      }
     },
     habilidades: {
       titulo: 'Minhas Habilidades',
@@ -353,6 +361,14 @@ export const translations = {
         curso: "Software Engineering",
         status: "Completed",
       },
+      solucionador: {
+        titulo: "Problem Solver",
+        enfrentando: "Facing Challenges",
+      },
+      aprendiz: {
+        titulo: "Lifelong Learner",
+        evoluir: "To evolve",
+      }
     },
     habilidades: {
       titulo: 'My Skills',
@@ -481,7 +497,7 @@ export const translations = {
           // verSite: "Ver App",
           codigo: "View Code",
           imagem: "/clinica-odontologica.png",
-          tecnologias: ["Next.js", "TailwindCSS", "TypeScript", "Node.Js", "express", "API REST","PrismaORM", "PostgreSQL"],
+          tecnologias: ["Next.js", "TailwindCSS", "TypeScript", "Node.Js", "express", "API REST", "PrismaORM", "PostgreSQL"],
           site: "#",
           codigoLink: "https://github.com/DeangellesES/projeto_clinica_odontologica_completo-Next.js-TailwindCSS-TypeScript-Node.js-PrismaORM-PostgreSQL"
         },
