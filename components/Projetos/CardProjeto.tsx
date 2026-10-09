@@ -1,6 +1,6 @@
 "use client"
 
-import { useLayoutEffect, useRef, useState } from "react"
+import { useEffect, useLayoutEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { SquareArrowOutUpRight, Github } from "lucide-react"
 
@@ -30,6 +30,8 @@ type Props = {
 function CardProjeto({ projeto, index, isVisible, categoria, verMais, verMenos, expandido, alturaRecolhida, onToggle }: Props) {
     const [temMais, setTemMais] = useState(false)
     const textoRef = useRef<HTMLParagraphElement | null>(null)
+    const tecnologiasRef = useRef<HTMLDivElement | null>(null)
+    const [tecnologiasVisiveis, setTecnologiasVisiveis] = useState(false)
 
     useLayoutEffect(() => {
         const el = textoRef.current
@@ -37,6 +39,22 @@ function CardProjeto({ projeto, index, isVisible, categoria, verMais, verMenos, 
             setTemMais(el.scrollHeight > el.clientHeight)
         }
     }, [projeto.descricao, expandido])
+
+    // tecnologias aparecem uma por uma quando o card chega na tela
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setTecnologiasVisiveis(entry.isIntersecting)
+            },
+            { threshold: 0.3 }
+        )
+
+        if (tecnologiasRef.current) {
+            observer.observe(tecnologiasRef.current)
+        }
+
+        return () => observer.disconnect()
+    }, [])
 
     return (
         <div
@@ -117,18 +135,18 @@ function CardProjeto({ projeto, index, isVisible, categoria, verMais, verMenos, 
 
 
                 {/* TECNOLOGIAS */}
-                <div className="flex gap-3 flex-wrap mb-5">
+                <div ref={tecnologiasRef} className="flex gap-3 flex-wrap mb-5">
 
                     {projeto.tecnologias.map((tech, i) => (
 
                         <p
                             key={i}
                             style={{
-                                transitionDelay: `${index * 200 + i * 220}ms`
+                                transitionDelay: `${i * 220}ms`
                             }}
                             className={`rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold
                                 transition-all duration-1200 ease-out
-                                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}
+                                ${tecnologiasVisiveis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}
                             `}
                         >
                             {tech}

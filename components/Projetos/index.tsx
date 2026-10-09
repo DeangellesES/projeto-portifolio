@@ -174,7 +174,7 @@ function Projetos({ titulo, subtitulo, categoriaAplicativo, projetosFront, verMa
                 {projetosFiltrados.map((projeto, index) => (
 
                     <TiltedCard
-                        key={index}
+                        key={`${categoria}-${index}`}
                         rotateAmplitude={12}
                         scaleOnHover={1}
                         showMobileWarning={false}
