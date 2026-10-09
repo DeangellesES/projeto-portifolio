@@ -355,7 +355,7 @@ export const translations = {
       titulo: "About Me",
       subtitulo: "Personal Introduction",
       descricao:
-        "My name is Felipe Deangelles, and I hold a degree in Software Engineering. Since I was very young, I've always been fascinated by technology and computers. Over time, that curiosity and interest only grew—I became increasingly amazed and eager to understand how everything worked, to the point where I wanted to be the one behind it, developing that technology. I'm eager to learn and constantly study, improve, and evolve, striving to get better every day so I can master and develop complex systems, create solutions and incredible experiences, help people achieve their goals through work I truly enjoy, and do what I love most.",
+        "My name is Felipe Deangelles, and I hold a degree in Software Engineering. From a very young age, I have been fascinated and captivated by technology and computers. Over time, my curiosity and interest only grew; I became increasingly intrigued and wanted to understand how it all worked—to the point where I wanted to be the person behind it, developing that technology myself. I have a strong desire to learn and am constantly studying, honing my skills, and evolving. I strive to improve so that I can master and build complex systems, create solutions and amazing experiences, and help people achieve their goals through the work I love—doing exactly what I enjoy most.",
       formacao: {
         titulo: "Education",
         curso: "Software Engineering",
@@ -583,7 +583,7 @@ export const translations = {
           role: "Freelance Software Developer",
           company: "Independent Projects",
           description:
-            "Development of customized digital solutions for clients and businesses, turning ideas into modern, responsive, and functional applications. Worked throughout the entire process, from UI conception to implementation, with a focus on performance, user experience, and code quality.",
+            "Development of custom digital solutions for clients and businesses, transforming ideas into modern, responsive, and functional applications. Involvement in the entire process—from interface conception to implementation—with a focus on performance, user experience, and code quality.",
           technologies: [
             "HTML",
             "CSS",
@@ -605,7 +605,7 @@ export const translations = {
           role: "Personal Projects Development",
           company: "Independent Projects",
           description:
-            "Built applications that solve real problems, working on both frontend and backend.",
+            "Building applications that solve real-world problems, working on both the frontend and the backend.",
           technologies: [
             "HTML",
             "CSS",
@@ -627,7 +627,7 @@ export const translations = {
           role: "Backend Development Intern",
           company: "Compila Processamento Eletrônico de Dados",
           description:
-            "Assisted in developing new features and maintaining existing products.",
+            "Assisted in the development of new features and the maintenance of existing products.",
           technologies: ["Node.js", "JavaScript", "express.js", "MongoDB"],
         },
       ],

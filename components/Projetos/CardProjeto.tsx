@@ -123,7 +123,13 @@ function CardProjeto({ projeto, index, isVisible, categoria, verMais, verMenos, 
 
                         <p
                             key={i}
-                            className="rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold"
+                            style={{
+                                transitionDelay: `${index * 200 + i * 220}ms`
+                            }}
+                            className={`rounded-2xl bg-[#262626] border border-gray-300/20 px-2 py-1 text-xs text-gray-300 font-bold
+                                transition-all duration-1200 ease-out
+                                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}
+                            `}
                         >
                             {tech}
                         </p>
