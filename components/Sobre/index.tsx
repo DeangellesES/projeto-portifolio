@@ -57,13 +57,14 @@ function Sobre({ t }: Props) {
     return (
         <section
             ref={sectionRef}
-            className={`h-screen py-15 px-15 mt-20 transition-all duration-1000 ease-out
+            className={`flex min-h-screen flex-col py-10 px-4 mt-20 transition-all duration-1000 ease-out
+                md:h-screen md:px-15 md:py-15
                 ${habilidadesVisivel ? "opacity-0 -translate-y-10 pointer-events-none" : "opacity-100 translate-y-0"}`}
             id='sobre'
         >
 
             <h1
-                className={`text-center text-5xl transition-all duration-2000 ease-out
+                className={`text-center text-3xl transition-all duration-2000 ease-out sm:text-4xl md:text-5xl
                 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
             >
                 <GradientText
@@ -76,27 +77,27 @@ function Sobre({ t }: Props) {
             </h1>
 
             <p
-                className={`text-center text-foreground/50 text-xl transition-all duration-2000 ease-out delay-150
+                className={`text-center text-foreground/50 text-base transition-all duration-2000 ease-out delay-150 sm:text-lg md:text-xl
                 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
             >
                 {t.subtitulo}
             </p>
 
             <div
-                className={`flex justify-around gap-20 px-10 items-center h-full transition-all duration-2000 ease-out delay-300
+                className={`mt-6 flex flex-1 flex-col items-center justify-around gap-10 px-0 transition-all duration-2000 ease-out delay-300 sm:px-4 md:mt-0 md:flex-row md:gap-20 md:px-10
                 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
             >
-                <div className="w-[30%]">
+                <div className="mx-auto w-full max-w-xs md:mx-0 md:max-w-none md:w-[30%]">
                     <Image
                         src="/sobre-portifolio.jpeg"
                         alt="Foto de perfil"
                         width={400}
                         height={300}
-                        className="rounded-3xl"
+                        className="w-full h-auto rounded-3xl"
                     />
                 </div>
 
-                <div className="w-[70%]">
+                <div className="w-full md:w-[70%]">
 
                     <p>{t.descricao}</p>
 
