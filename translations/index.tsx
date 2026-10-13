@@ -125,13 +125,23 @@ export const translations = {
         },
         {
           titulo: "Site para uma Lanchonete",
-          descricao: "Landing Page fictícia para uma Lanchonete, o site possui informações sobra a lanchonete, mostra o cardápio, informações de endereço e endereço com mapa, horário de funcionamente, perguntas frequentes, contatos e redes sociais.",
+          descricao: "Landing Page para uma Lanchonete, o site possui informações sobre a lanchonete, mostra o cardápio, informações de endereço e endereço com mapa, horário de funcionamente, perguntas frequentes, contatos e redes sociais.",
           verSite: "Ver Site",
           codigo: "Ver Código",
           imagem: "/lanchonete.png",
           tecnologias: ["HTML", "CSS", "JavaScript"],
           site: "https://deangelleses.github.io/site_lanchonete_landing_page-HTML-CSS-JavaScript/",
           codigoLink: "https://github.com/DeangellesES/site_lanchonete_landing_page-HTML-CSS-JavaScript"
+        },
+        {
+          titulo: "Site para uma Barbearia",
+          descricao: "Landing Page para uma Barbearia, o site possui informações sobre a barbearia, mostra os serviços e preços, agendamento pelo whatsapp, informações de endereço e endereço com mapa, horário de funcionamente, perguntas frequentes, contatos e redes sociais.",
+          verSite: "Ver Site",
+          codigo: "Ver Código",
+          imagem: "/barbearia.png",
+          tecnologias: ["Next.js", "TailwindCSS", "TypeScript"],
+          site: "https://site-barbearia-lgpage.vercel.app/",
+          codigoLink: "https://github.com/DeangellesES/site_barbearia_landing_page-Next.js-TailwindCSS-TypeScript"
         },
         // {
         //   titulo: "Site para uma Academia",
@@ -456,6 +466,16 @@ export const translations = {
           tecnologias: ["HTML", "CSS", "JavaScript"],
           site: "https://deangelleses.github.io/site_lanchonete_landing_page-HTML-CSS-JavaScript/",
           codigoLink: "https://github.com/DeangellesES/site_lanchonete_landing_page-HTML-CSS-JavaScript"
+        },
+        {
+          titulo: "Website for a Barbershop",
+          descricao: "A landing page for a barbershop featuring information about the shop, a list of services and prices, WhatsApp appointment booking, address details (including a map), business hours, FAQs, contact information, and social media links.",
+          verSite: "View Site",
+          codigo: "View Code",
+          imagem: "/barbearia.png",
+          tecnologias: ["Next.js", "TailwindCSS", "TypeScript"],
+          site: "https://site-barbearia-lgpage.vercel.app/",
+          codigoLink: "https://github.com/DeangellesES/site_barbearia_landing_page-Next.js-TailwindCSS-TypeScript"
         },
       ],
       projetosBack: [
